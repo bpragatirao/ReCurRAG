@@ -1,0 +1,64 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+bin/
+lib/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+# Fixes "Exceeded secondary rate limit" and large file issues
+.virtual_documents/
+
+# Datasets and Large Files
+# These often cause LFS errors or rate limits
+*.csv
+data/raw/Multi-HopQA/*.json
+data/raw/Long-Docs/papers/*.pdf
+data/raw/Semi-Strcutured/*.zip
+*.tar.gz
+
+# Specific project data mentioned in your files
+data_science_job.csv
+train.csv
+
+# IDEs and Editors
+.visualstudio/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project-specific logs
+*.log
