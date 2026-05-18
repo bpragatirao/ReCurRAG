@@ -1,0 +1,3847 @@
+{
+  "pipeline": "rlm",
+  "metadata": {
+    "data_type": "multi_hop",
+    "data_path": "data/raw/Multi-HopQA/hotpotqa.json",
+    "num_documents": 500,
+    "num_chunks": 7257,
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "max_iterations": 10,
+    "model": "flan-t5-base",
+    "load_time_s": 17.05,
+    "chunk_time_s": 0.02,
+    "embed_time_s": 2201.33,
+    "timestamp": "2026-05-18T14:27:34.987375"
+  },
+  "results": [
+    {
+      "question": "Which magazine was started first Arthur's Magazine or First for Women?",
+      "answer": "Arthur's Magazine",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which magazine was started first Arthur's Magazine or First for Women?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_0)\nin University and Salem College, offer coeducational courses at the graduate level.\n\n[First Arthur County Courthouse and Jail]\nThe First Arthur County Courthouse and Jail, was perhaps the smallest court house in the United States, and serves now as a museum.\n\n["
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Arthur's Magazine was founded in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_0)\nin University and Salem College, offer coeducational courses at the graduate level.\n\n[First Arthur County Courthouse and Jail]\nThe First Arthur County Courthouse and Jail, was perhaps the smallest court house in the United States, and serves now as a museum.\n\n["
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Arthur's Magazine"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 38.942,
+      "ground_truth_answer": "Arthur's Magazine",
+      "supporting_facts": [
+        [
+          "Arthur's Magazine",
+          0
+        ],
+        [
+          "First for Women",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "The Oberoi family is part of a hotel company that has a head office in what city?",
+      "answer": "Parma",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Oberoi family is part of a hotel company that has a head office in what city?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_1)\nver, the financing plans fell through and the hotel was again in bankruptcy.  The building was sold at auction to the Roman Catholic Archdiocese of Hartford in 1965, and it became the home of the Saint Francis Hospital School of Nursing.  The Bond Ballroom reop"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Oberoi is located in what city?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_371)\nO: LIMP ) is located 1.3 NM northwest of Parma, a city in the Emilia-Romagna region of Italy.  The airport was opened on 5 May 1991.  It is also known as Giuseppe Verdi Airport or Parma \"Giuseppe Verdi\" Airport, named after Giuseppe Verdi.\n\n[Former headquarte"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Parma"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 20.113,
+      "ground_truth_answer": "Delhi",
+      "supporting_facts": [
+        [
+          "Oberoi family",
+          0
+        ],
+        [
+          "The Oberoi Group",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Musician and satirist Allie Goertz wrote a song about the \"The Simpsons\" character Milhouse, who Matt Groening named after who?",
+      "answer": "Bart",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Musician and satirist Allie Goertz wrote a song about the \"The Simpsons\" character Milhouse, who Matt Groening named after who?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_2)\nsed on his comic strip, \"Life in Hell\", but instead decided to create a new set of characters.  While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word \"brat\".  After appearing on \"The Tracey Ullman Sho"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Allie Goertz wrote a song about what character?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_2)\nsed on his comic strip, \"Life in Hell\", but instead decided to create a new set of characters.  While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word \"brat\".  After appearing on \"The Tracey Ullman Sho"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Bart"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 25.291,
+      "ground_truth_answer": "President Richard Nixon",
+      "supporting_facts": [
+        [
+          "Allie Goertz",
+          0
+        ],
+        [
+          "Allie Goertz",
+          1
+        ],
+        [
+          "Allie Goertz",
+          2
+        ],
+        [
+          "Milhouse Van Houten",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": " What nationality was James Henry Miller's wife?",
+      "answer": "American",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": " What nationality was James Henry Miller's wife?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_3)\n 1919)]\nJames Henry Miller (born 30 May 1919) is a former Australian rules footballer in the Victorian Football League (VFL).\n\n[Result 2] (Source: hotpotqa_sample_3)\ne Miller]\nJune Miller (January 7 or 28, 1902 – February 1, 1979) was the much-written-about sec"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "James Henry Miller was an American."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_3)\n 1919)]\nJames Henry Miller (born 30 May 1919) is a former Australian rules footballer in the Victorian Football League (VFL).\n\n[Result 2] (Source: hotpotqa_sample_3)\nhese people into her diary.  Much of this book was written in English, although those of her le"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "American"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 9.801,
+      "ground_truth_answer": "American",
+      "supporting_facts": [
+        [
+          "Peggy Seeger",
+          0
+        ],
+        [
+          "Peggy Seeger",
+          1
+        ],
+        [
+          "Ewan MacColl",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Cadmium Chloride is slightly soluble in this chemical, it is also called what?",
+      "answer": "[Cadmium chloride",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Cadmium Chloride is slightly soluble in this chemical, it is also called what?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_4)\n[Cadmium chloride]\nCadmium chloride is a white crystalline compound of cadmium and chlorine, with the formula CdCl.  It is a hygroscopic solid that is highly soluble in water and slightly soluble in alcohol.  Although it is considered to be ionic, it has consid"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Cadmium chloride is slightly soluble in what chemical?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_4)\n[Cadmium chloride]\nCadmium chloride is a white crystalline compound of cadmium and chlorine, with the formula CdCl.  It is a hygroscopic solid that is highly soluble in water and slightly soluble in alcohol.  Although it is considered to be ionic, it has consid"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "[Cadmium chloride"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 14.164,
+      "ground_truth_answer": "alcohol",
+      "supporting_facts": [
+        [
+          "Cadmium chloride",
+          1
+        ],
+        [
+          "Ethanol",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which tennis player won more Grand Slam titles, Henri Leconte or Jonathan Stark?",
+      "answer": "Jonathan Stark",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which tennis player won more Grand Slam titles, Henri Leconte or Jonathan Stark?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_5)\nm Rothenbaum in Hamburg, West Germany, from 15 September through 21 September 1986.  Henri Leconte won the singles title.  Fourth-seeded Henri Leconte won the singles title.\n\n[Jonathan Stark (tennis)]\nJonathan Stark (born April 3, 1971) is a former professional"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Henri Leconte won more Grand Slam titles than Jonathan Stark."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_5)\nm Rothenbaum in Hamburg, West Germany, from 15 September through 21 September 1986.  Henri Leconte won the singles title.  Fourth-seeded Henri Leconte won the singles title.\n\n[Jonathan Stark (tennis)]\nJonathan Stark (born April 3, 1971) is a former professional"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Jonathan Stark"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 16.785,
+      "ground_truth_answer": "Jonathan Stark",
+      "supporting_facts": [
+        [
+          "Jonathan Stark (tennis)",
+          0
+        ],
+        [
+          "Jonathan Stark (tennis)",
+          1
+        ],
+        [
+          "Henri Leconte",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Which genus of moth in the world's seventh-largest country contains only one species?",
+      "answer": "Nepita",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which genus of moth in the world's seventh-largest country contains only one species?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_6)\nbe in error.  The genus contains only one species, Yoshiyasua yasudai, which is found in Japan, where it has been recorded from the Ryukyu Islands.\n\n[Nepita]\nNepita is a genus of moth in the family Arctiidae.  The genus consists of only one species, Nepita conf"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which genus of moth in the world's seventh largest country contains only one species?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_6)\nbe in error.  The genus contains only one species, Yoshiyasua yasudai, which is found in Japan, where it has been recorded from the Ryukyu Islands.\n\n[Nepita]\nNepita is a genus of moth in the family Arctiidae.  The genus consists of only one species, Nepita conf"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Nepita"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 18.301,
+      "ground_truth_answer": "Crambidae",
+      "supporting_facts": [
+        [
+          "Indogrammodes",
+          0
+        ],
+        [
+          "Indogrammodes",
+          1
+        ],
+        [
+          "India",
+          0
+        ],
+        [
+          "India",
+          1
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was once considered the best kick boxer in the world, however he has been involved in a number of controversies relating to his \"unsportsmanlike conducts\" in the sport and crimes of violence outside of the ring.",
+      "answer": "Badr Hari",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who was once considered the best kick boxer in the world, however he has been involved in a number of controversies relating to his \"unsportsmanlike conducts\" in the sport and crimes of violence outside of the ring."
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_401)\nr professional boxer who competed from 1984 to 2000.  He is most notable for portraying fictional boxer Union Cane in the 1990 film \"Rocky V\".\n\n[Result 2] (Source: hotpotqa_sample_7)\nignation thus ended his second term as the president; he had previously serv"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who was considered the best kick boxer in the world, however he has been involved in a number of controversies relating to his \"unsportsmanlike conducts\" in the sport and crimes of violence outside of the ring?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_401)\nr professional boxer who competed from 1984 to 2000.  He is most notable for portraying fictional boxer Union Cane in the 1990 film \"Rocky V\".\n\n[Result 2] (Source: hotpotqa_sample_7)\nignation thus ended his second term as the president; he had previously serv"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Badr Hari"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 24.344,
+      "ground_truth_answer": "Badr Hari",
+      "supporting_facts": [
+        [
+          "Global Fighting Championship",
+          1
+        ],
+        [
+          "Global Fighting Championship",
+          2
+        ],
+        [
+          "Badr Hari",
+          0
+        ],
+        [
+          "Badr Hari",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The Dutch-Belgian television series that \"House of Anubis\" was based on first aired in what year?",
+      "answer": "2011",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Dutch-Belgian television series that \"House of Anubis\" was based on first aired in what year?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_8)\n[House of Anubis]\nHouse of Anubis is a mystery television series developed for Nickelodeon based on the Dutch-Belgian television series \"Het Huis Anubis\".  The series was created by Hans Bourlon and Gert Verhulst and premiered on Nickelodeon on 1 January 2011 i"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Dutch-Belgian television series that \"House of Anubis\" was based on first aired in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_8)\n[House of Anubis]\nHouse of Anubis is a mystery television series developed for Nickelodeon based on the Dutch-Belgian television series \"Het Huis Anubis\".  The series was created by Hans Bourlon and Gert Verhulst and premiered on Nickelodeon on 1 January 2011 i"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "2011"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.48,
+      "ground_truth_answer": "2006",
+      "supporting_facts": [
+        [
+          "House of Anubis",
+          0
+        ],
+        [
+          "Het Huis Anubis",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "What is the length of the track where the 2013 Liqui Moly Bathurst 12 Hour was staged?",
+      "answer": "7 February",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What is the length of the track where the 2013 Liqui Moly Bathurst 12 Hour was staged?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_9)\nth Liqui Moly Bathurst 12 Hour on 7 February and the season concluded with the Sepang 12 Hours on 10 December.\n\n[Bathurst 12 Hour]\nThe Bathurst 12 Hour (currently known as the Liqui Moly Bathurst 12 Hour for sponsorship reasons) is an endurance race for GT and "
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The length of the track where the 2013 Liqui Moly Bathurst 12 Hour was staged is how long?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_9)\nth Liqui Moly Bathurst 12 Hour on 7 February and the season concluded with the Sepang 12 Hours on 10 December.\n\n[Bathurst 12 Hour]\nThe Bathurst 12 Hour (currently known as the Liqui Moly Bathurst 12 Hour for sponsorship reasons) is an endurance race for GT and "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "7 February"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 7.558,
+      "ground_truth_answer": "6.213 km long",
+      "supporting_facts": [
+        [
+          "2013 Liqui Moly Bathurst 12 Hour",
+          0
+        ],
+        [
+          "2013 Liqui Moly Bathurst 12 Hour",
+          1
+        ],
+        [
+          "Mount Panorama Circuit",
+          0
+        ],
+        [
+          "Mount Panorama Circuit",
+          2
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Fast Cars, Danger, Fire and Knives includes guest appearances from which hip hop record executive?",
+      "answer": "Aesop Rock",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Fast Cars, Danger, Fire and Knives includes guest appearances from which hip hop record executive?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_10)\ns of hip hop subculture and arts movements beyond the main four are: hip hop culture and historical knowledge of the movement (intellectual/philosophical); beatboxing, a percussive vocal style; street entrepreneurship; hip hop language; and hip hop fashion and"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who is the producer of Fast Cars, Danger, Fire and Knives?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_10)\ns of hip hop subculture and arts movements beyond the main four are: hip hop culture and historical knowledge of the movement (intellectual/philosophical); beatboxing, a percussive vocal style; street entrepreneurship; hip hop language; and hip hop fashion and"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Aesop Rock"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 9.345,
+      "ground_truth_answer": "Jaime Meline",
+      "supporting_facts": [
+        [
+          "Fast Cars, Danger, Fire and Knives",
+          2
+        ],
+        [
+          "El-P",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Gunmen from Laredo starred which narrator of \"Frontier\"?",
+      "answer": "Walter Coy",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Gunmen from Laredo starred which narrator of \"Frontier\"?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_11)\n)]\nPiranha, also known as Piranha, Piranha or Caribe, is a 1972 adventure film shot in Venezuela starring William Smith and Peter Brown who had previously starred together in the \"Laredo\" Western TV series and Ahna Capri.\n\n[Gunmen from Laredo]\nGunmen from Lare"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The narrator of \"Frontier\" is who?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_11)\nary 31, 1909 – December 11, 1974) was an American stage, radio, film, and, principally, television actor, originally from Great Falls, Montana.  He was best known for narrating the NBC western anthology series, \"Frontier\", which aired early Sunday evenings in "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Walter Coy"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 7.159,
+      "ground_truth_answer": "Walter Darwin Coy",
+      "supporting_facts": [
+        [
+          "Gunmen from Laredo",
+          0
+        ],
+        [
+          "Walter Coy",
+          0
+        ],
+        [
+          "Walter Coy",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Where did the form of music played by Die Rhöner Säuwäntzt originate?",
+      "answer": "Germany",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Where did the form of music played by Die Rhöner Säuwäntzt originate?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_12)\nlador it is very much like the music played on charango.  The main difference between charango and chillador is that the charango soundbox is made of an armadillo shell while the chillador is just a little guitar.\n\n[Die Rhöner Säuwäntzt]\nDie Rhöner Säuwäntzt a"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The form of music played by Die Rhöner Säuwäntzt originated in Germany."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_12)\nlador it is very much like the music played on charango.  The main difference between charango and chillador is that the charango soundbox is made of an armadillo shell while the chillador is just a little guitar.\n\n[Die Rhöner Säuwäntzt]\nDie Rhöner Säuwäntzt a"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Germany"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 7.271,
+      "ground_truth_answer": "United States",
+      "supporting_facts": [
+        [
+          "Die Rhöner Säuwäntzt",
+          0
+        ],
+        [
+          "Skiffle",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "In which American football game was Malcolm Smith named Most Valuable player?",
+      "answer": "Super Bowl",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "In which American football game was Malcolm Smith named Most Valuable player?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_13)\nluding all major topographical features.\n\n[Malcolm Smith (American football)]\nMalcolm Xavier Smith (born July 5, 1989) is an American football linebacker for the San Francisco 49ers of the National Football League (NFL).  Smith played college football at USC. "
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Malcolm Smith (American football) was named Most Valuable player in the 2017 NFL season."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_13)\nluding all major topographical features.\n\n[Malcolm Smith (American football)]\nMalcolm Xavier Smith (born July 5, 1989) is an American football linebacker for the San Francisco 49ers of the National Football League (NFL).  Smith played college football at USC. "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Super Bowl"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 6.787,
+      "ground_truth_answer": "Super Bowl XLVIII",
+      "supporting_facts": [
+        [
+          "Malcolm Smith (American football)",
+          3
+        ],
+        [
+          "Super Bowl XLVIII",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "What U.S Highway gives access to Zilpo Road, and is also known as Midland Trail?",
+      "answer": "U.S Highway 60",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What U.S Highway gives access to Zilpo Road, and is also known as Midland Trail?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_14)\n[Zilpo Road]\nZilpo Road is a National Forest Scenic Byway in the forested hills of eastern Kentucky, United States.  The nine mile byway starts south of Morehead, Kentucky and can be accessed by U.S. Highway 60.  The byway travels through the Daniel Boone Nati"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "U.S. Highway 202 gives access to Zilpo Road, and is also known as Midland Trail."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_14)\n[Zilpo Road]\nZilpo Road is a National Forest Scenic Byway in the forested hills of eastern Kentucky, United States.  The nine mile byway starts south of Morehead, Kentucky and can be accessed by U.S. Highway 60.  The byway travels through the Daniel Boone Nati"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "U.S Highway 60"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 8.944,
+      "ground_truth_answer": "US 60",
+      "supporting_facts": [
+        [
+          "Zilpo Road",
+          1
+        ],
+        [
+          "Morehead, Kentucky",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "The 1988 American comedy film, The Great Outdoors, starred a four-time Academy Award nominee, who received a star on the Hollywood Walk of Fame in what year?",
+      "answer": "2003",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The 1988 American comedy film, The Great Outdoors, starred a four-time Academy Award nominee, who received a star on the Hollywood Walk of Fame in what year?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_15)\nn.  In 2003, Bacon received a star on the Hollywood Walk of Fame for his contributions to the motion pictures industry.\n\n[Larry R. Williams]\nLarry Richard Williams (born October 6, 1942) is an American author, stock and commodity trader, and politician from th"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The 1988 American comedy film, The Great Outdoors, starred a four-time Academy Award nominee, who received a star on the Hollywood Walk of Fame in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_15)\nn.  In 2003, Bacon received a star on the Hollywood Walk of Fame for his contributions to the motion pictures industry.\n\n[Larry R. Williams]\nLarry Richard Williams (born October 6, 1942) is an American author, stock and commodity trader, and politician from th"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "2003"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 3.987,
+      "ground_truth_answer": "2006",
+      "supporting_facts": [
+        [
+          "The Great Outdoors (film)",
+          0
+        ],
+        [
+          "The Great Outdoors (film)",
+          1
+        ],
+        [
+          "Annette Bening",
+          0
+        ],
+        [
+          "Annette Bening",
+          3
+        ],
+        [
+          "Annette Bening",
+          4
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "What are the names of the current members of  American heavy metal band who wrote the music for  Hurt Locker The Musical? ",
+      "answer": "Phil Demmel",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What are the names of the current members of  American heavy metal band who wrote the music for  Hurt Locker The Musical? "
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_16)\n Formed on October 12, 1991, the group was founded by vocalist/guitarist Robb Flynn and bassist Adam Duce.  The current lineup of the band comprises Flynn, drummer Dave McClain, guitarist Phil Demmel and bassist Jared MacEachern.  Machine Head is one of the pi"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The current members of American heavy metal band Hurt Locker The Musical are:"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_16)\n.  His first solo album, \"A Thousand Faces\", was released in 1994.  His current solo project, A Chinese Firedrill, released an album titled \"Circles\" in 2007.\n\n[Hurt Locker (musical)]\nHurt Locker The Musical is a fictional musical in the 2014 Broadway premiere"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Phil Demmel"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 10.201,
+      "ground_truth_answer": "Hetfield and Ulrich, longtime lead guitarist Kirk Hammett, and bassist Robert Trujillo.",
+      "supporting_facts": [
+        [
+          "Hurt Locker (musical)",
+          3
+        ],
+        [
+          "Metallica",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Human Error\" is the season finale of the third season of a tv show that aired on what network?",
+      "answer": "House",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Human Error\" is the season finale of the third season of a tv show that aired on what network?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_17)\nond-season finale aired on April 6, 2011 and drew 1,265,000 viewers.  The third season debuted on January 11, 2012 with 1,361,000 viewers, and the season finale drew 968,000 viewers.\n\n[Human Error (House)]\n\"Human Error\" is the twenty-fourth episode and season "
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Human Error\" is the season finale of the third season of a tv show that aired on what network?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_17)\nond-season finale aired on April 6, 2011 and drew 1,265,000 viewers.  The third season debuted on January 11, 2012 with 1,361,000 viewers, and the season finale drew 968,000 viewers.\n\n[Human Error (House)]\n\"Human Error\" is the twenty-fourth episode and season "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "House"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.662,
+      "ground_truth_answer": "Fox",
+      "supporting_facts": [
+        [
+          "Human Error (House)",
+          0
+        ],
+        [
+          "House (TV series)",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what year?",
+      "answer": "2017",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what year?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_18)\n  The tour supports her debut studio album \"Dua Lipa\" (2017).  The tour began on 24 February 2017 in Chicago.\n\n[Dua Lipa (album)]\nDua Lipa is the debut studio album by English singer Dua Lipa.  It was released on 2 June 2017 by Warner Bros.  Records.  The lyri"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_18)\n  The tour supports her debut studio album \"Dua Lipa\" (2017).  The tour began on 24 February 2017 in Chicago.\n\n[Dua Lipa (album)]\nDua Lipa is the debut studio album by English singer Dua Lipa.  It was released on 2 June 2017 by Warner Bros.  Records.  The lyri"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "2017"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.819,
+      "ground_truth_answer": "2017",
+      "supporting_facts": [
+        [
+          "Dua Lipa",
+          5
+        ],
+        [
+          "New Rules (song)",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "American politician Joe Heck ran unsuccessfully against Democrat Catherine Cortez Masto, a woman who previously served as the 32nd Attorney General of where?",
+      "answer": "Nevada",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "American politician Joe Heck ran unsuccessfully against Democrat Catherine Cortez Masto, a woman who previously served as the 32nd Attorney General of where?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_19)\n and served as a Nevada State Senator from 2004-08.  He ran unsuccessfully against Democrat Catherine Cortez Masto in the general election for the open Nevada United States Senate seat in 2016.  In the same year, Heck made headlines by joining a long list of R"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "United States"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_168)\n, were bombed by Allied aircraft in 1943 and 1944.\n\n[Italian declaration of war on the United States]\nOn December 11, 1941, Italy declared war on the United States in response to that country's declaration of war upon the Empire of Japan following the attack "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Nevada"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.591,
+      "ground_truth_answer": "Nevada",
+      "supporting_facts": [
+        [
+          "Joe Heck",
+          0
+        ],
+        [
+          "Joe Heck",
+          2
+        ],
+        [
+          "Catherine Cortez Masto",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Which state does the drug stores, of which the CEO is Warren Bryant, are located?",
+      "answer": "New Hampshire",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which state does the drug stores, of which the CEO is Warren Bryant, are located?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_20)\n operated for over 100 years; currently, it is the second-oldest family-run pharmacy chain in the United States.\n\n[Warren Bryant]\nWarren Bryant was the CEO of Longs Drugs Store Corporation out of California prior to the retail chain's acquisition by CVS/Carema"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "New Hampshire is the state where Warren Bryant is the CEO."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_21)\nction in 2016 and was replaced by Sonny Borrelli.\n\n[Frank J. Donahue]\nFrank J. Donahue (1881–1979) was an American politician who served as the Massachusetts Secretary of the Commonwealth, Chairman of the Massachusetts Democratic State Committee, and as an Ass"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "New Hampshire"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 6.011,
+      "ground_truth_answer": "Hawaii",
+      "supporting_facts": [
+        [
+          "Warren Bryant",
+          0
+        ],
+        [
+          "Longs Drugs",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which  American politician did Donahue replaced ",
+      "answer": "Kelli Ward",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which  American politician did Donahue replaced "
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_21)\npoint\", a quarterly mental health publication distributed for free throughout Vermont.\n\n[Sue Donahue]\nSue Donahue is an American politician.  Donahue was appointed in 2016 to serve in the Arizona State Senate representing the fifth legislative district as a me"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Donahue was replaced by whom?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_21)\npoint\", a quarterly mental health publication distributed for free throughout Vermont.\n\n[Sue Donahue]\nSue Donahue is an American politician.  Donahue was appointed in 2016 to serve in the Arizona State Senate representing the fifth legislative district as a me"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Kelli Ward"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.985,
+      "ground_truth_answer": "Kelli Ward",
+      "supporting_facts": [
+        [
+          "Sue Donahue",
+          2
+        ],
+        [
+          "Kelli Ward",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Which band was founded first, Hole, the rock band that Courtney Love was a frontwoman of, or The Wolfhounds?",
+      "answer": "The Wolfhounds",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which band was founded first, Hole, the rock band that Courtney Love was a frontwoman of, or The Wolfhounds?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_22)\nn Courtney Love, lead guitarist Eric Erlandson and drummer Patty Schemel.  The song was released as the band's fourth single in April 1993 on the European label City Slang.  To coincide with the song's lyrics, Love used a photograph of her husband, Kurt Cobain"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Wolfhounds was the rock band that Courtney Love was a frontwoman of."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_22)\nn Courtney Love, lead guitarist Eric Erlandson and drummer Patty Schemel.  The song was released as the band's fourth single in April 1993 on the European label City Slang.  To coincide with the song's lyrics, Love used a photograph of her husband, Kurt Cobain"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "The Wolfhounds"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 11.727,
+      "ground_truth_answer": "The Wolfhounds",
+      "supporting_facts": [
+        [
+          "Courtney Love",
+          0
+        ],
+        [
+          "Courtney Love",
+          2
+        ],
+        [
+          "The Wolfhounds",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "How old is the female main protagonist of Catching Fire?",
+      "answer": "17",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "How old is the female main protagonist of Catching Fire?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_23)\n[Catching Fire]\nCatching Fire is a 2009 science fiction young adult novel by the American novelist Suzanne Collins, the second book in \"The Hunger Games trilogy\".  As the sequel to the 2008 bestseller \"The Hunger Games\", it continues the story of Katniss Everd"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "How old is the female main protagonist of Catching Fire?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_23)\n[Catching Fire]\nCatching Fire is a 2009 science fiction young adult novel by the American novelist Suzanne Collins, the second book in \"The Hunger Games trilogy\".  As the sequel to the 2008 bestseller \"The Hunger Games\", it continues the story of Katniss Everd"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "17"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.952,
+      "ground_truth_answer": "16-year-old",
+      "supporting_facts": [
+        [
+          "Catching Fire",
+          0
+        ],
+        [
+          "The Hunger Games (novel)",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Chang Ucchin was born in korea during a time that ended with the conclusion of what? ",
+      "answer": "World War Two",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Chang Ucchin was born in korea during a time that ended with the conclusion of what? "
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_24)\n Korean writer.  Chang was born in Hamyeong Buk-do in what is now North Korea.  He studied at Waseda University in Japan, before being drafted into the Japanese army.  After the end of World War Two, he taught high school in Korea, writing fiction on the side."
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "the Korean War"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_24)\nthe influence of the occupational country; the United States in South Korea and the Soviet Union in North Korea.  Both new Korean governments discredited the other and claimed to be the only legitimate political system.  Tensions between the North and South es"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "World War Two"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.532,
+      "ground_truth_answer": "World War II",
+      "supporting_facts": [
+        [
+          "Chang Ucchin",
+          1
+        ],
+        [
+          "Korea under Japanese rule",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Who is the director of the 2003 film which has scenes in it filmed at the Quality Cafe in Los Angeles?",
+      "answer": "John Travolta",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who is the director of the 2003 film which has scenes in it filmed at the Quality Cafe in Los Angeles?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_25)\ne, con aroma de mujer\" were filmed.\n\n[Quality Cafe (diner)]\nThe Quality Cafe (also known as Quality Diner) is a now-defunct diner at 1236 West 7th Street in Los Angeles, California.  The restaurant ceased to function as a diner in late 2006 but has appeared as"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who is the director of the 2003 film which has scenes in it filmed at the Quality Cafe in Los Angeles?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_25)\ne, con aroma de mujer\" were filmed.\n\n[Quality Cafe (diner)]\nThe Quality Cafe (also known as Quality Diner) is a now-defunct diner at 1236 West 7th Street in Los Angeles, California.  The restaurant ceased to function as a diner in late 2006 but has appeared as"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "John Travolta"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 9.894,
+      "ground_truth_answer": "Todd Phillips",
+      "supporting_facts": [
+        [
+          "Quality Cafe (diner)",
+          0
+        ],
+        [
+          "Quality Cafe (diner)",
+          1
+        ],
+        [
+          "Old School (film)",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "New Faces of 1952 is a musical revue with songs and comedy skits, it helped jump start the career of which young performer, and American actress?",
+      "answer": "Dick Van Dyke",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "New Faces of 1952 is a musical revue with songs and comedy skits, it helped jump start the career of which young performer, and American actress?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_26)\nl variety stars Dick Van Dyke as the resident \"grown-up\" alongside 15 children (8 boys and 7 girls) ranging in age from 7 to 13.  Several of the special's young performers would subsequently go on to achieve child stardom in their own right, most notably Corey"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "New Faces of 1952 is a musical revue with songs and comedy skits, it helped jump start the career of which young performer, and American actress?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_26)\nl variety stars Dick Van Dyke as the resident \"grown-up\" alongside 15 children (8 boys and 7 girls) ranging in age from 7 to 13.  Several of the special's young performers would subsequently go on to achieve child stardom in their own right, most notably Corey"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Dick Van Dyke"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 11.34,
+      "ground_truth_answer": "Carol Lawrence",
+      "supporting_facts": [
+        [
+          "New Faces of 1952",
+          2
+        ],
+        [
+          "Carol Lawrence",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Were Pavel Urysohn and Leonid Levin known for the same type of work?",
+      "answer": "yes",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Were Pavel Urysohn and Leonid Levin known for the same type of work?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_27)\nh Levin ( ; Russian: Леони́д Анато́льевич Ле́вин ; Ukrainian: Леоні́д Анато́лійович Ле́він ; born November 2, 1948) is a Soviet-American computer scientist.\n\n[Pavel Urysohn]\nPavel Samuilovich Urysohn (Па́вел Самуи́лович Урысо́н ) (February 3, 1898 – August 17,"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Pavel Urysohn and Leonid Levin were known for what?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_27)\nh Levin ( ; Russian: Леони́д Анато́льевич Ле́вин ; Ukrainian: Леоні́д Анато́лійович Ле́він ; born November 2, 1948) is a Soviet-American computer scientist.\n\n[Pavel Urysohn]\nPavel Samuilovich Urysohn (Па́вел Самуи́лович Урысо́н ) (February 3, 1898 – August 17,"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "yes"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 7.751,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "Pavel Urysohn",
+          0
+        ],
+        [
+          "Leonid Levin",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Are both The New Pornographers and Kings of Leon American rock bands?",
+      "answer": "yes",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Are both The New Pornographers and Kings of Leon American rock bands?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_28)\nnds Superconductor and Zumpano in the 1990s.  Following the breakup of those bands, he reemerged as the leader of the New Pornographers in 2000, a band who have enjoyed commercial and critical success.\n\n[Kings of Leon]\nKings of Leon is an American rock band th"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Are The New Pornographers and Kings of Leon American rock bands?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_28)\nnds Superconductor and Zumpano in the 1990s.  Following the breakup of those bands, he reemerged as the leader of the New Pornographers in 2000, a band who have enjoyed commercial and critical success.\n\n[Kings of Leon]\nKings of Leon is an American rock band th"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "yes"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 6.292,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "The New Pornographers",
+          0
+        ],
+        [
+          "Kings of Leon",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "comparison"
+    },
+    {
+      "question": "750 7th Avenue and 101 Park Avenue, are located in which city?",
+      "answer": "New York City",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "750 7th Avenue and 101 Park Avenue, are located in which city?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_35)\nginning in 2001, Powell represented the 68th Assembly District, which includes parts of Harlem and East Harlem.  He was defeated by Charles Rangel in the 2010 Democratic Primary for the seat of the 15th Congressional District.\n\n[Seventh Avenue (Manhattan)]\nSev"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "New York City"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_128)\nldings in Upstate New York]\nUpstate New York, broadly defined as a region of the U.S. state of New York north of New York City and Westchester County, is home to several skyscrapers and high-rises.  The tallest building in New York State is the 104-story One "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "New York City"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.381,
+      "ground_truth_answer": "New York City",
+      "supporting_facts": [
+        [
+          "750 7th Avenue",
+          0
+        ],
+        [
+          "101 Park Avenue",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "comparison"
+    },
+    {
+      "question": "Which actress played the part of fictitious character Kimberly Ann Hart, in the franchise built around a live action superhero television series taking much of its footage from the Japanese tokusatsu 'Super Sentai'?",
+      "answer": "Kmura",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which actress played the part of fictitious character Kimberly Ann Hart, in the franchise built around a live action superhero television series taking much of its footage from the Japanese tokusatsu 'Super Sentai'?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_30)\nunko Kōmura.\n\n[Chouriki Sentai Ohranger]\nChōriki Sentai Ohranger (超力戦隊オーレンジャー , Chōriki Sentai Ōrenjā ) is a Japanese tokusatsu television series and the 19th installment in the long-running Super Sentai franchise of superhero programs.  Its footage was used i"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who played the role of Kimberly Ann Hart in the franchise built around a live action superhero television series taking much of its footage from the Japanese tokusatsu Super Sentai?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_30)\nunko Kōmura.\n\n[Chouriki Sentai Ohranger]\nChōriki Sentai Ohranger (超力戦隊オーレンジャー , Chōriki Sentai Ōrenjā ) is a Japanese tokusatsu television series and the 19th installment in the long-running Super Sentai franchise of superhero programs.  Its footage was used i"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Kmura"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 14.41,
+      "ground_truth_answer": "Amy Jo Johnson",
+      "supporting_facts": [
+        [
+          "Kimberly Hart",
+          0
+        ],
+        [
+          "Kimberly Hart",
+          1
+        ],
+        [
+          "Power Rangers",
+          0
+        ],
+        [
+          "Power Rangers",
+          1
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was born first, Pablo Trapero or Aleksander Ford?",
+      "answer": "Pablo Trapero",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who was born first, Pablo Trapero or Aleksander Ford?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_297)\nased in Nuevo Laredo, Tamaulipas, Mexico.  He worked for a number of media outlets in Mexico, including the \"El Norte\" and \"El Diario de Monterrey\", prior to his assassination.\n\n[Result 2] (Source: hotpotqa_sample_88)\nmerican actor, director, singer, and chor"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Pablo Trapero was born in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_287)\n fielder, Ibañez often filled in as a designated hitter as well throughout his career.\n\n[Pablo Sandoval]\nPablo Emilio Juan Pedro Sandoval Jr. (born August 11, 1986) is a Venezuelan professional baseball third baseman for the San Francisco Giants of Major Leag"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Pablo Trapero"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 6.214,
+      "ground_truth_answer": "Aleksander Ford",
+      "supporting_facts": [
+        [
+          "Pablo Trapero",
+          0
+        ],
+        [
+          "Aleksander Ford",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "comparison"
+    },
+    {
+      "question": "Are Jane and First for Women both women's magazines?",
+      "answer": "yes",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Are Jane and First for Women both women's magazines?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_32)\ne, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common in Malaysia.\n\n[First for Women]\nFirst for Women is a woman's magazine published by Bauer Media Group in the USA.  The magazine was started in 1989.  It is based"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Jane and First for Women are both women's magazines."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_32)\ne, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common in Malaysia.\n\n[First for Women]\nFirst for Women is a woman's magazine published by Bauer Media Group in the USA.  The magazine was started in 1989.  It is based"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "yes"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 6.054,
+      "ground_truth_answer": "yes",
+      "supporting_facts": [
+        [
+          "Jane (magazine)",
+          0
+        ],
+        [
+          "First for Women",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "What profession does Nicholas Ray and Elia Kazan have in common?",
+      "answer": "film director",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What profession does Nicholas Ray and Elia Kazan have in common?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_33)\nout a Cause.\"\n\n[Elia Kazan]\nElia Kazan (born Elias Kazantzoglou September 7, 1909 – September 28, 2003) was a Greek-American director, producer, writer and actor, described by \"The New York Times\" as \"one of the most honored and influential directors in Broadw"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "film director"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_380)\nis a French film director, actor, comic strip writer, and screenwriter.\n\n[Result 2] (Source: hotpotqa_sample_240)\nlish film director.  He is the son of the film director Ken Loach.\n\n[Result 3] (Source: hotpotqa_sample_105)\nctor]\nThe Academy Award for Best Dir"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "film director"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 3.759,
+      "ground_truth_answer": "director",
+      "supporting_facts": [
+        [
+          "Nicholas Ray",
+          0
+        ],
+        [
+          "Elia Kazan",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Where is the company that purchased Aixam based in?",
+      "answer": "Lyon-Cor",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Where is the company that purchased Aixam based in?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_34)\nnc. in 2003.  (Topps was, in turn, acquired by Michael Eisner's Tornante Company and Madison Dearborn Partners in 2007.)\n\n[Aixam]\nAixam-Mega is a French automobile manufacturer based in Aix-les-Bains, Savoie.  It was founded in 1983 to make microcars following"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Aixam is based in what city?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_34)\nnc. in 2003.  (Topps was, in turn, acquired by Michael Eisner's Tornante Company and Madison Dearborn Partners in 2007.)\n\n[Aixam]\nAixam-Mega is a French automobile manufacturer based in Aix-les-Bains, Savoie.  It was founded in 1983 to make microcars following"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Lyon-Cor"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.378,
+      "ground_truth_answer": "Roseau, Minnesota, USA",
+      "supporting_facts": [
+        [
+          "Aixam",
+          2
+        ],
+        [
+          "Polaris Industries",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which documentary is about Finnish rock groups, Adam Clayton Powell or The Saimaa Gesture?",
+      "answer": "The Saimaa Gesture",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which documentary is about Finnish rock groups, Adam Clayton Powell or The Saimaa Gesture?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_35)\n designed by the African-American architecture firm of Ifill Johnson Hanchard in the shape of an African mask in the Brutalist Architecture style.  It is the tallest building in Harlem, overtaking the nearby Hotel Theresa.\n\n[The Saimaa Gesture]\nThe Saimaa Gest"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Saimaa Gesture is a documentary about Finnish rock group Adam Clayton Powell."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_35)\n designed by the African-American architecture firm of Ifill Johnson Hanchard in the shape of an African mask in the Brutalist Architecture style.  It is the tallest building in Harlem, overtaking the nearby Hotel Theresa.\n\n[The Saimaa Gesture]\nThe Saimaa Gest"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "The Saimaa Gesture"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 10.1,
+      "ground_truth_answer": "The Saimaa Gesture",
+      "supporting_facts": [
+        [
+          "Adam Clayton Powell (film)",
+          0
+        ],
+        [
+          "The Saimaa Gesture",
+          0
+        ],
+        [
+          "The Saimaa Gesture",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Who was inducted into the Rock and Roll Hall of Fame, David Lee Roth or Cia Berg?",
+      "answer": "David Lee Roth",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who was inducted into the Rock and Roll Hall of Fame, David Lee Roth or Cia Berg?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_36)\nle \"Hobo Humpin' Slobo Babe\".\n\n[David Lee Roth]\nDavid Lee Roth (born October 10, 1954) is an American rock vocalist, musician, songwriter, actor, author, and former radio personality.  In 2007, he was inducted into the Rock and Roll Hall of Fame.\n\n[David Lee R"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "David Lee Roth and Cia Berg were both inducted into the Rock and Roll Hall of Fame."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_36)\nle \"Hobo Humpin' Slobo Babe\".\n\n[David Lee Roth]\nDavid Lee Roth (born October 10, 1954) is an American rock vocalist, musician, songwriter, actor, author, and former radio personality.  In 2007, he was inducted into the Rock and Roll Hall of Fame.\n\n[David Lee R"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "David Lee Roth"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 8.536,
+      "ground_truth_answer": "David Lee Roth",
+      "supporting_facts": [
+        [
+          "Cia Berg",
+          0
+        ],
+        [
+          "Cia Berg",
+          1
+        ],
+        [
+          "David Lee Roth",
+          0
+        ],
+        [
+          "David Lee Roth",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Zimbabwe's Guwe Secondary School has a sister school in what New York cunty?",
+      "answer": "Carle Place",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Zimbabwe's Guwe Secondary School has a sister school in what New York cunty?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_37)\nor seating of students.  Head of school is thought to be Principal or headmaster and the former principal was Mr.Mahesh Niraula whereas the current Principal is Mr. Ram Prasad Timsina.Since it is a government school it has not any sister school however few nam"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Guwe Secondary School is located in what New York city?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_37)\nor seating of students.  Head of school is thought to be Principal or headmaster and the former principal was Mr.Mahesh Niraula whereas the current Principal is Mr. Ram Prasad Timsina.Since it is a government school it has not any sister school however few nam"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Carle Place"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.774,
+      "ground_truth_answer": "Nassau County",
+      "supporting_facts": [
+        [
+          "Guwe Secondary School",
+          1
+        ],
+        [
+          "Carle Place High School",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "The Royal Commission into Drug Trafficking (1977–1979) or Woodward Royal Commission was a royal commission initiated by the New South Wales Government to investigate drug trafficking in New South Wales, Australia, especially links between the New South Wales Police and Mafia, The Honoured Society, is a Calabrian 'Ndrangheta criminal confederation, started in Melbourne and currently active in all of which country?  ",
+      "answer": "Australia",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The Royal Commission into Drug Trafficking (1977–1979) or Woodward Royal Commission was a royal commission initiated by the New South Wales Government to investigate drug trafficking in New South Wales, Australia, especially links between the New South Wales Police and Mafia, The Honoured Society, is a Calabrian 'Ndrangheta criminal confederation, started in Melbourne and currently active in all of which country?  "
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_38)\nner or simply just \"Commissioner\".  The New South Wales Police Force has had 22 Commissioners since 1851.\n\n[Royal Commission into Drug Trafficking]\nThe Royal Commission into Drug Trafficking (1977–1979) or Woodward Royal Commission was a royal commission initi"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Australia"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_84)\nrat is located approximately 218 km west of Melbourne.  The township is located at the base of Mount Noorat, a dormant volcano, which is considered to have Australia's largest dry crater.  At the 2006 census, Noorat had a population of 252.  By 2011, according"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Australia"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.477,
+      "ground_truth_answer": "Australia",
+      "supporting_facts": [
+        [
+          "Royal Commission into Drug Trafficking",
+          0
+        ],
+        [
+          "Honoured Society (Australia)",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The 337th Flight Test Squadron (337 FLTS) was most recently part of the 46th Test Wing and based at McClellan Air Force Base, a former United States Air Force base located in the North Highlands area of Sacramento County, in which US state?",
+      "answer": "California",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The 337th Flight Test Squadron (337 FLTS) was most recently part of the 46th Test Wing and based at McClellan Air Force Base, a former United States Air Force base located in the North Highlands area of Sacramento County, in which US state?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_39)\ne]\nMcClellan Air Force Base (1935–2001) is a former United States Air Force base located in the North Highlands area of Sacramento County, 7 mi northeast of Sacramento, California.\n\n[417th Flight Test Squadron]\nThe 417th Flight Test Squadron is an inactive Uni"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "California"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_29)\n LEED certified.\n\n[Berkeley, Denver]\nBerkeley is a city-center neighborhood in Denver, Colorado, located in the area traditionally called Northwest Denver, on the west side of Interstate 25 and just south of Interstate 70.  The neighborhood is bounded by Feder"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "California"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.413,
+      "ground_truth_answer": "California",
+      "supporting_facts": [
+        [
+          "337th Flight Test Squadron",
+          0
+        ],
+        [
+          "McClellan Air Force Base",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The axial turbojet Pirna 014 was designed by engineers from this German aircraft and aircraft engine manufacturer based in which city?",
+      "answer": "Munich",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "The axial turbojet Pirna 014 was designed by engineers from this German aircraft and aircraft engine manufacturer based in which city?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_40)\ns AG is a German aircraft engine manufacturer.  MTU develops, manufactures and provides service support for military and civil aircraft engines.  MTU Aero Engines was formerly known as MTU München.\n\n[Pirna 014]\nThe Pirna 014 was an axial turbojet designed in E"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Munich, Germany"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_378)\n[Garmisch-Partenkirchen]\nGarmisch-Partenkirchen (] ) is a ski town in Bavaria, southern Germany.  It is the seat of government of the district of Garmisch-Partenkirchen (abbreviated \"GAP\"), in the Oberbayern region, which borders Austria.  Nearby is Germany's"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Munich"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.397,
+      "ground_truth_answer": "Dessau",
+      "supporting_facts": [
+        [
+          "Pirna 014",
+          0
+        ],
+        [
+          "Junkers",
+          0
+        ],
+        [
+          "Junkers",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which faith is designated to the University of Providence, private university accredited by the NW association of Schools and Colleges and located in a third largest city in Montana after being passed by Missoula? ",
+      "answer": "Christianity",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Which faith is designated to the University of Providence, private university accredited by the NW association of Schools and Colleges and located in a third largest city in Montana after being passed by Missoula? "
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_41)\nnd private institutions as well as 2-year community colleges, all of which are non-profit schools accredited by the New England Association of Schools and Colleges.\n\n[University of Providence]\nThe University of Providence (UP) (renamed from University of Great"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Christianity is designated to the University of Providence, private university accredited by the NW association of Schools and Colleges and located in a third largest city in Montana after being passed by Missoula"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_41)\nnd private institutions as well as 2-year community colleges, all of which are non-profit schools accredited by the New England Association of Schools and Colleges.\n\n[University of Providence]\nThe University of Providence (UP) (renamed from University of Great"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Christianity"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 10.024,
+      "ground_truth_answer": "Roman Catholic",
+      "supporting_facts": [
+        [
+          "University of Providence",
+          0
+        ],
+        [
+          "University of Providence",
+          1
+        ],
+        [
+          "Great Falls, Montana",
+          0
+        ],
+        [
+          "Great Falls, Montana",
+          5
+        ],
+        [
+          "Great Falls, Montana",
+          6
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Pauline Henry was known as the vocalist of a very popular cover song. Which album was this song from?",
+      "answer": "Finding 1",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Pauline Henry was known as the vocalist of a very popular cover song. Which album was this song from?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_42)\n vocals, the album includes their cover of U2's \"I Still Haven't Found What I'm Looking For\", which reached number 6 in the UK Singles Chart, along with their other Top 40 hit \"Heaven\", which reached number 24.  The album was certified silver in the UK, and go"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Pauline Henry was known as the vocalist of a very popular cover song from which album?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_42)\n vocals, the album includes their cover of U2's \"I Still Haven't Found What I'm Looking For\", which reached number 6 in the UK Singles Chart, along with their other Top 40 hit \"Heaven\", which reached number 24.  The album was certified silver in the UK, and go"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Finding 1"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 7.216,
+      "ground_truth_answer": "The Joshua Tree",
+      "supporting_facts": [
+        [
+          "Pauline Henry",
+          0
+        ],
+        [
+          "Pauline Henry",
+          1
+        ],
+        [
+          "I Still Haven't Found What I'm Looking For",
+          0
+        ],
+        [
+          "I Still Haven't Found What I'm Looking For",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Guitars for Wounded Warriors is an album that was recorded in the village in which New York county?",
+      "answer": "Suffolk County",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Guitars for Wounded Warriors is an album that was recorded in the village in which New York county?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_43)\ntal District.\n\n[Guitars for Wounded Warriors]\nGuitars for Wounded Warriors is the sixth solo studio album by guitarist Brian Tarquin, released in August 2014 by Cleopatra Records.  In 2016, it received a Best Compilation Album nomination by the Independent Mus"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Suffolk County"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_201)\n[Suffolk County, New York]\nSuffolk County is a suburban county on Long Island and the easternmost county in the U.S. state of New York.  As of the 2010 census, the county's population was 1,493,350, estimated to have decreased to 1,492,583 in 2016, making it "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Suffolk County"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 4.151,
+      "ground_truth_answer": "Ulster County",
+      "supporting_facts": [
+        [
+          "Guitars for Wounded Warriors",
+          2
+        ],
+        [
+          "New Paltz (village), New York",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "What American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song \"The Battle?\"",
+      "answer": "Loretta Lynn",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song \"The Battle?\""
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_44)\n[Loretta Lynn]\nLoretta Lynn (née Webb; born April 14, 1932) is an American country music singer-songwriter with multiple gold albums over a career of almost 60 years.  She has received numerous awards and other accolades for her groundbreaking role in country "
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song The Battle?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_44)\n[Loretta Lynn]\nLoretta Lynn (née Webb; born April 14, 1932) is an American country music singer-songwriter with multiple gold albums over a career of almost 60 years.  She has received numerous awards and other accolades for her groundbreaking role in country "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Loretta Lynn"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 10.494,
+      "ground_truth_answer": "Tammy Wynette",
+      "supporting_facts": [
+        [
+          "The Battle (George Jones song)",
+          0
+        ],
+        [
+          "The Battle (George Jones song)",
+          5
+        ],
+        [
+          "Tammy Wynette",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was born first, Francis Nethersole or Elizabeth Stuart?",
+      "answer": "Elizabeth Stuart",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who was born first, Francis Nethersole or Elizabeth Stuart?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_45)\ngaret Stuart (or Stewart) (c. 1591 – 4 August 1639), was an English court office holder.  She served as lady-in-waiting to the queen consort of England, Anne of Denmark.  She was the daughter of James Stewart, 2nd Earl of Moray, and Elizabeth Stuart, 2nd Count"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Elizabeth Stuart was born in what year?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_45)\nelsbach), the \"Winter King\" of Bohemia, by his consort, the English princess Elizabeth Stuart.  Charlotte was born up in the Dutch Republic, where her family had sought refuge after the sequestration of their Electorate during the Thirty Years' War.  Charlotte"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Elizabeth Stuart"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 5.517,
+      "ground_truth_answer": "Sir Francis Nethersole",
+      "supporting_facts": [
+        [
+          "Francis Nethersole",
+          0
+        ],
+        [
+          "Elizabeth Stuart, Queen of Bohemia",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "What does the Hacker-Pschorr Brewery have to limit in order to comply with German regulations?",
+      "answer": "Ingredients",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What does the Hacker-Pschorr Brewery have to limit in order to comply with German regulations?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_46)\n[Hacker-Pschorr Brewery]\nHacker-Pschorr is a brewery in Munich, formed in 1972 out of the merger of two breweries, Hacker and Pschorr.  Hacker was founded in 1417, 99 years before the enactment of the Reinheitsgebot Purity Law of 1516.\n\n[Reinheitsgebot]\nThe Re"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What does Hacker-Pschorr Brewery have to limit in order to comply with German regulations?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_46)\n[Hacker-Pschorr Brewery]\nHacker-Pschorr is a brewery in Munich, formed in 1972 out of the merger of two breweries, Hacker and Pschorr.  Hacker was founded in 1417, 99 years before the enactment of the Reinheitsgebot Purity Law of 1516.\n\n[Reinheitsgebot]\nThe Re"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Ingredients"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 8.294,
+      "ground_truth_answer": "ingredients in beer",
+      "supporting_facts": [
+        [
+          "Hacker-Pschorr Brewery",
+          0
+        ],
+        [
+          "Reinheitsgebot",
+          0
+        ],
+        [
+          "Reinheitsgebot",
+          1
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Don Barry Mason was the founder of the Psychedelic Shamanistic Institute (PSI), which other member that's Welsh, that died on 10 April 2016?",
+      "answer": "Mathew Atha",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Don Barry Mason was the founder of the Psychedelic Shamanistic Institute (PSI), which other member that's Welsh, that died on 10 April 2016?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_47)\nnistic Institute (PSI), a networking organisation that encouraged ethnobotany and scientific research into cannabis and other psychoactive plants while contributing substantially to the public debate about drug policy reform.  Associates of PSI include: Mathew"
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Don Barry Mason was the founder of the Psychedelic Shamanistic Institute (PSI), who was also a member that's Welsh."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_47)\nnistic Institute (PSI), a networking organisation that encouraged ethnobotany and scientific research into cannabis and other psychoactive plants while contributing substantially to the public debate about drug policy reform.  Associates of PSI include: Mathew"
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Mathew Atha"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 17.365,
+      "ground_truth_answer": "Dennis Howard Marks",
+      "supporting_facts": [
+        [
+          "Don Barry Mason",
+          1
+        ],
+        [
+          "Howard Marks",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "What male actor starred in The Messenger?",
+      "answer": "Nathan Young",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "What male actor starred in The Messenger?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_48)\nnuary 1988) is an Irish actor.  He is best known for television roles such as Nathan Young in \"Misfits\" and Darren in \"Love/Hate\", as well as the 2009 film \"Cherrybomb\" alongside Rupert Grint.  He also co-starred in the film \"Killing Bono\" as Ivan McCormick.  "
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Who starred in The Messenger?"
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_48)\nnuary 1988) is an Irish actor.  He is best known for television roles such as Nathan Young in \"Misfits\" and Darren in \"Love/Hate\", as well as the 2009 film \"Cherrybomb\" alongside Rupert Grint.  He also co-starred in the film \"Killing Bono\" as Ivan McCormick.  "
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "Nathan Young"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 17.738,
+      "ground_truth_answer": "Robert Sheehan",
+      "supporting_facts": [
+        [
+          "The Messenger (2015 horror film)",
+          0
+        ],
+        [
+          "Robert Sheehan",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Are Gin and tonic and Paloma both cocktails based on tequila?",
+      "answer": "yes",
+      "reasoning_trace": [
+        {
+          "iteration": 1,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Are Gin and tonic and Paloma both cocktails based on tequila?"
+          }
+        },
+        {
+          "iteration": 1,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_49)\nand G minor have different modes but both have the same tonic, G; so we say that G minor is the parallel minor of G major.  In contrast, a major scale and a minor scale that have the same key signature (and therefore different tonics) are called relative keys."
+        },
+        {
+          "iteration": 2,
+          "type": "tool_call",
+          "tool": "search_knowledge_base",
+          "arguments": {
+            "query": "Yes, Gin and tonic and Paloma are based on tequila."
+          }
+        },
+        {
+          "iteration": 2,
+          "type": "tool_result",
+          "tool": "search_knowledge_base",
+          "result": "[Result 1] (Source: hotpotqa_sample_49)\nand G minor have different modes but both have the same tonic, G; so we say that G minor is the parallel minor of G major.  In contrast, a major scale and a minor scale that have the same key signature (and therefore different tonics) are called relative keys."
+        },
+        {
+          "iteration": 3,
+          "type": "tool_call",
+          "tool": "reason_step",
+          "arguments": {
+            "current_findings": "Found 2 pieces of evidence."
+          }
+        },
+        {
+          "iteration": 3,
+          "type": "tool_result",
+          "tool": "reason_step",
+          "result": "📝 Reasoning Step:\n  Findings: Found 2 pieces of evidence.\n  Reasoning: Combining evidence from 1 sub-questions\n  Next Action: Synthesize final answer\n"
+        },
+        {
+          "iteration": 4,
+          "type": "final_answer",
+          "content": "yes"
+        }
+      ],
+      "num_iterations": 4,
+      "total_tool_calls": 3,
+      "tool_call_breakdown": {
+        "search_knowledge_base": 2,
+        "reason_step": 1
+      },
+      "reasoning_depth": 3,
+      "latency_s": 9.651,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "Gin and tonic",
+          0
+        ],
+        [
+          "Paloma (cocktail)",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    }
+  ],
+  "summary": {
+    "total_queries": 50,
+    "avg_latency_s": 9.727,
+    "avg_iterations": 4.0,
+    "avg_tool_calls": 3.0,
+    "avg_reasoning_depth": 3.0,
+    "timestamp": "2026-05-18T14:35:41.473892"
+  }
+}

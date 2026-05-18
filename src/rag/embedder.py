@@ -1,178 +1,99 @@
-import os
-from dotenv import load_dotenv
-from openai import OpenAI
-# from langchain_openai import OpenAIEmbeddings
-# from langchain_community.vectorstores import FAISS
-# from langchain_community.embeddings import HuggingFaceEmbeddings
-# from langchain_huggingface import HuggingFaceEmbeddings
-# from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.vectorstores import FAISS
+"""
+Embedding & Retrieval Module for the RAG Pipeline.
 
-# Load environment variables
-load_dotenv()
+Handles:
+1. Embedding generation using HuggingFace sentence-transformers (local, free)
+2. FAISS vector store creation and similarity search
+3. Answer generation via local HuggingFace model (google/flan-t5-base — free)
+"""
 
-# Initialize OpenAI client for the LLM part (Generation)
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+from langchain_community.vectorstores import FAISS
 
-# def get_embeddings_model(use_huggingface=True):
-#     """
-#     Returns the chosen embedding model. 
-#     Set use_huggingface=True to run locally and save OpenAI credits.
-#     """
-#     if use_huggingface:
-#         # Runs locally on your CPU/GPU
-#         return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-#     else:
-#         # Requires OpenAI API Quota
-#         return OpenAIEmbeddings()
+try:
+    from langchain_huggingface import HuggingFaceEmbeddings
+except ImportError:
+    from langchain_community.embeddings import HuggingFaceEmbeddings
 
-# Updated imports for LangChain 0.2+
-from langchain_community.embeddings import HuggingFaceEmbeddings
-
-def get_embeddings_model(use_huggingface=True):
-    if use_huggingface:
-        # This will now use the stable 4.38.0 transformers internally
-        return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-    else:
-        from langchain_openai import OpenAIEmbeddings
-        return OpenAIEmbeddings()
+from ..utils.local_llm import answer_question
 
 
-# Converts chunks → embeddings using FAISS
-def create_embeddings(chunks, use_huggingface=True):
+# ---------------------------------------------------------------------------
+# Embedding Model
+# ---------------------------------------------------------------------------
+
+def get_embeddings_model():
+    """
+    Returns the local HuggingFace embedding model (free, no API quota).
+    """
+    return HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+
+# ---------------------------------------------------------------------------
+# Vector Store Creation
+# ---------------------------------------------------------------------------
+
+def create_embeddings(chunks: list):
+    """
+    Create a FAISS vector store from text chunks.
+
+    Args:
+        chunks: List of dicts with 'text' and 'source' keys.
+
+    Returns:
+        A FAISS vector store instance.
+    """
     texts = [c["text"] for c in chunks]
-    
-    # Initialize the chosen embedding model
-    embeddings_model = get_embeddings_model(use_huggingface)
-    
-    # Create the FAISS vector store
-    vector_store = FAISS.from_texts(texts, embeddings_model)
+    metadatas = [{"source": c["source"], "chunk_id": c.get("chunk_id", i)}
+                 for i, c in enumerate(chunks)]
+
+    embeddings_model = get_embeddings_model()
+
+    vector_store = FAISS.from_texts(texts, embeddings_model, metadatas=metadatas)
     return vector_store
 
 
-# def create_embeddings(chunks):
-#     texts = [c["text"] for c in chunks]
+# ---------------------------------------------------------------------------
+# Retrieval
+# ---------------------------------------------------------------------------
 
-#     embeddings = HuggingFaceEmbeddings(
-#         model_name="sentence-transformers/all-MiniLM-L6-v2"
-#     )
+def retrieve(vector_store, query: str, k: int = 5) -> tuple:
+    """
+    Retrieve the top-k most relevant chunks from the vector store.
 
-#     vector_store = FAISS.from_texts(texts, embeddings)
-#     return vector_store
+    Args:
+        vector_store: A FAISS vector store.
+        query: The search query.
+        k: Number of top results to retrieve.
 
-# Retrieves top-k relevant chunks
-def retrieve(vector_store, query, k=5):
-    # FAISS uses the embedding model attached to it during creation
+    Returns:
+        Tuple of (context_string, list_of_source_documents).
+    """
     docs = vector_store.similarity_search(query, k=k)
-    
+
     context = "\n\n".join([doc.page_content for doc in docs])
-    return context
+    sources = [doc.metadata.get("source", "unknown") for doc in docs]
 
-# Generates answer using LLM (GPT-4o-mini)
-def generate_answer(query, context):
-    prompt = f"""
-You must strictly answer using ONLY the provided context.
+    return context, sources
 
-- Do NOT use outside knowledge
-- If unsure, say "I don't know"
 
-Context:
-{context}
+# ---------------------------------------------------------------------------
+# Generation (Local — Free, no API key needed)
+# ---------------------------------------------------------------------------
 
-Question:
-{query}
+def generate_answer(query: str, context: str) -> str:
+    """
+    Generate an answer using the local HuggingFace model (google/flan-t5-base).
 
-Answer:
-"""
+    Completely free — runs on CPU, no API key or billing required.
+
+    Args:
+        query: The user's question.
+        context: The retrieved context string.
+
+    Returns:
+        The generated answer string.
+    """
     try:
-        response = client.chat.completions.create(
-            model="gpt-4o-mini",
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0
-        )
-        return response.choices[0].message.content.strip()
+        return answer_question(query, context)
     except Exception as e:
         return f"Error generating response: {str(e)}"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# from langchain_openai import OpenAIEmbeddings
-# from langchain_community.vectorstores import FAISS
-# from openai import OpenAI
-# from dotenv import load_dotenv
-# import os
-# # pip install sentence-transformers
-# from langchain_community.embeddings import HuggingFaceEmbeddings
-
-# # Replace OpenAIEmbeddings with this:
-# embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-
-# # Load environment variables from .env
-# load_dotenv()
-
-# # Initialize OpenAI client using API key from environment
-# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-
-# # Converts chunks → embeddings using FAISS
-# def create_embeddings(chunks):
-#     texts = [c["text"] for c in chunks]
-    
-#     embeddings = OpenAIEmbeddings()  # requires OPENAI_API_KEY
-#     vector_store = FAISS.from_texts(texts, embeddings)
-
-#     return vector_store
-
-
-# # Retrieves top-k relevant chunks
-# def retrieve(vector_store, query, k=5):
-#     docs = vector_store.similarity_search(query, k=k)
-    
-#     context = "\n\n".join([doc.page_content for doc in docs])
-#     return context
-
-
-# # Generates answer using LLM
-# def generate_answer(query, context):
-#     prompt = f"""
-# You must strictly answer using ONLY the provided context.
-
-# - Do NOT use outside knowledge
-# - If unsure, say "I don't know"
-
-# Context:
-# {context}
-
-# Question:
-# {query}
-
-# Answer:
-# """
-
-#     try:
-#         response = client.chat.completions.create(
-#             model="gpt-4o-mini",
-#             messages=[
-#                 {"role": "user", "content": prompt}
-#             ],
-#             temperature=0
-#         )
-
-#         return response.choices[0].message.content.strip()
-
-#     except Exception as e:
-#         return f"Error generating response: {str(e)}"

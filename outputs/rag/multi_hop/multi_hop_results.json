@@ -1,0 +1,1492 @@
+{
+  "pipeline": "rag",
+  "metadata": {
+    "data_type": "multi_hop",
+    "data_path": "data/raw/Multi-HopQA/hotpotqa.json",
+    "num_documents": 500,
+    "num_chunks": 7257,
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "load_time_s": 20.87,
+    "chunk_time_s": 0.05,
+    "embed_time_s": 607.72,
+    "timestamp": "2026-05-16T19:32:06.998091"
+  },
+  "results": [
+    {
+      "question": "Which magazine was started first Arthur's Magazine or First for Women?",
+      "answer": "Arthur's Magazine",
+      "context": "in University and Salem College, offer coeducational courses at the graduate level.\n\n[First Arthur County Courthouse and Jail]\nThe First Arthur County Courthouse and Jail, was perhaps the smallest court house in the United States, and serves now as a museum.\n\n[Arthur's Magazine]\nArthur's Magazine (1844–1846) was an American literary periodical published in Philadelphia in the 19th century.  Edited by T.S. Arthur, it featured work by Edgar A. Poe, J.H. Ingraham, Sarah Josepha Hale, Thomas G. Spea\n\n everyday life\" experienced by its readers.\n\n[List of magazines in China]\nIn 1898 the first women's magazine was published in China.  The number of women's magazines has increased in the country since the late 1980s.  In addition to national titles international magazines are also published in the country. \" Madame Figaro\", and \"Elle\" are among such titles both of which entered into the Chinese market in 1988.  In 1998 \"Cosmopolitan\" began to be published in the country. \" Esquire\" is the first \n\ne, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common in Malaysia.\n\n[First for Women]\nFirst for Women is a woman's magazine published by Bauer Media Group in the USA.  The magazine was started in 1989.  It is based in Englewood Cliffs, New Jersey.  In 2011 the circulation of the magazine was 1,310,696 copies.\n\n[Jane (magazine)]\nJane was an American magazine created to appeal to the women who grew up reading \"Sassy Magazine\"; Jane Pratt was the foundi\n\nrket in 1988.  In 1998 \"Cosmopolitan\" began to be published in the country. \" Esquire\" is the first international men's magazine which entered into the magazine market in China in 1999.  Starting in the 2000s several Japanese magazines began to be circulated in Chinese language in the country, including \"CanCam\".\n\n[List of magazines in Malaysia]\nThe first women's magazine was published in Malaysia in 1932.  In the 2000s there were nearly fifty local titles addressing women in the country.  These magazines also include those having an Islamic perspective.  Some international women's magazines are also published in Malaysia.  One of them is \"Elle Malaysia\", which was first published in March 2014.  Another one, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common ",
+      "sources": [
+        "hotpotqa_sample_0",
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_32"
+      ],
+      "latency_s": 18.009,
+      "top_k": 5,
+      "ground_truth_answer": "Arthur's Magazine",
+      "supporting_facts": [
+        [
+          "Arthur's Magazine",
+          0
+        ],
+        [
+          "First for Women",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "The Oberoi family is part of a hotel company that has a head office in what city?",
+      "answer": "Delhi",
+      "context": "ver, the financing plans fell through and the hotel was again in bankruptcy.  The building was sold at auction to the Roman Catholic Archdiocese of Hartford in 1965, and it became the home of the Saint Francis Hospital School of Nursing.  The Bond Ballroom reopened in 2001, with the rest of the building becoming a Homewood Suites by Hilton in 2006.\n\n[The Oberoi Group]\nThe Oberoi Group is a hotel company with its head office in Delhi.  Founded in 1934, the company owns and/or operates 30+ luxury \n\no the Sheraton Corporation was part of the second largest hotel sale in United States history.  The Tallcorn was listed as a contributing property in the Marshalltown Downtown Historic District on the National Register of Historic Places in 2002.\n\n[Mohan Singh Oberoi]\nRai Bahadur Mohan Singh Oberoi (15 August 1898 – 3 May 2002) was an Indian hotelier, the founder and chairman of Oberoi Hotels & Resorts, India's second-largest hotel company, with 35 hotels in India, Sri Lanka, Nepal, Egypt, Austr\n\nkara and Rudra, the three heirs of the Oberoi family.  The show initially focused on the tale of three brothers, later become centered on the love story of Shivaay and Annika (Surbhi Chandna); with the story of Omkara and Rudra being shifted to the spinoff series \"Dil Boley Oberoi\".  In July 2017 \"Dil Boley Oberoi\" ended and the storylines were merged back into \"Ishqbaaaz\" which doubled its runtime.\n\n[Hotel Tallcorn]\nThe Hotel Tallcorn is located in Marshalltown, Iowa.  Today it is called the Ta\n\nned in 2005.\n\n[Oberoi family]\nThe Oberoi family is an Indian family that is famous for its involvement in hotels, namely through The Oberoi Group.\n\n[Ishqbaaaz]\nIshqbaaaz (English: \"Lovers\") is an Indian drama television series which is broadcast on Star Plus.  It premiered on 27 June 2016 and airs Mon-Fri 10-11pm IST. Nakuul Mehta, Kunal Jaisingh and Leenesh Mattoo respectively portray Shivaay, Omkara and Rudra, the three heirs of the Oberoi family.  The show initially focused on the tale of thr\n\ns Hotel was a nationally known resort complex located in the Borscht Belt area of upstate New York, in the Catskill Mountains.  It was one of the largest and most elaborate establishments of its kind during an era when the entire region prospered as a tourist destination.  From the 1940s to the 1980s, the hotel was a popular vacation destination for many upper-middle-class families living in the New York City metropolitan area.  Jewish-American families were welcomed and even catered to specific",
+      "sources": [
+        "hotpotqa_sample_1",
+        "hotpotqa_sample_1",
+        "hotpotqa_sample_1",
+        "hotpotqa_sample_1",
+        "hotpotqa_sample_102"
+      ],
+      "latency_s": 4.164,
+      "top_k": 5,
+      "ground_truth_answer": "Delhi",
+      "supporting_facts": [
+        [
+          "Oberoi family",
+          0
+        ],
+        [
+          "The Oberoi Group",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Musician and satirist Allie Goertz wrote a song about the \"The Simpsons\" character Milhouse, who Matt Groening named after who?",
+      "answer": "Bo Burnham",
+      "context": "sed on his comic strip, \"Life in Hell\", but instead decided to create a new set of characters.  While the rest of the characters were named after Groening's family members, Bart's name is an anagram of the word \"brat\".  After appearing on \"The Tracey Ullman Show\" for three years, the Simpson family received its own series on Fox, which debuted December 17, 1989.\n\n[Allie Goertz]\nAllison Beth \"Allie\" Goertz (born March 2, 1991) is an American musician.  Goertz is known for her satirical songs base\n\n\"Ortved's thesis, essentially, is that lots of people are responsible for the success of \"The Simpsons\", and their creator, Matt Groening, has too often been viewed as the sole source to the detriment of others who also deserve to be praised.\"\n\n[List of The Simpsons guest stars]\nIn addition to the show's regular cast of voice actors, celebrity guest stars have been a staple of \"The Simpsons\", an American animated television sitcom created by Matt Groening for the Fox Broadcasting Company, since \n\n\" Goertz (born March 2, 1991) is an American musician.  Goertz is known for her satirical songs based on various pop culture topics.  Her videos are posted on YouTube under the name of Cossbysweater.  Subjects of her songs have included the film \"The Room\", the character Milhouse from the television show \"The Simpsons\", and the game Dungeons & Dragons.  Her style has been compared to that of Bo Burnham.  In December 2015, Goertz released a concept album based on the Adult Swim series \"Rick and M\n\nuten is a fictional character featured in the animated television series \"The Simpsons\", voiced by Pamela Hayden, and created by Matt Groening who named the character after President Richard Nixon's middle name.  Later in the series, it is revealed that Milhouse's middle name is \"Mussolini.\"\n\n[Los Angeles Reader]\nLos Angeles Reader was a weekly paper established in 1978 and distributed in Los Angeles, United States.  It followed the format of the (still active) Chicago Reader.  The paper was kno\n\nHell\" but instead decided to create a new set of characters.  He named the character after his father, Homer Groening.  After appearing for three seasons on \"The Tracey Ullman Show\", the Simpson family got their own series on Fox that debuted December 17, 1989.\n\n[List of The Simpsons video games]\n\"The Simpsons\" is an American animated television sitcom created by Matt Groening for the Fox Broadcasting Company.  The series is a satirical parody of a middle class American lifestyle epitomized by i",
+      "sources": [
+        "hotpotqa_sample_2",
+        "hotpotqa_sample_2",
+        "hotpotqa_sample_2",
+        "hotpotqa_sample_2",
+        "hotpotqa_sample_2"
+      ],
+      "latency_s": 7.366,
+      "top_k": 5,
+      "ground_truth_answer": "President Richard Nixon",
+      "supporting_facts": [
+        [
+          "Allie Goertz",
+          0
+        ],
+        [
+          "Allie Goertz",
+          1
+        ],
+        [
+          "Allie Goertz",
+          2
+        ],
+        [
+          "Milhouse Van Houten",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": " What nationality was James Henry Miller's wife?",
+      "answer": "Australian",
+      "context": " 1919)]\nJames Henry Miller (born 30 May 1919) is a former Australian rules footballer in the Victorian Football League (VFL).\n\ne Miller]\nJune Miller (January 7 or 28, 1902 – February 1, 1979) was the much-written-about second wife of Henry Miller.\n\n[James Innes-Ker, 7th Duke of Roxburghe]\nJames Henry Robert Innes-Ker, 7th Duke of Roxburghe (5 September 1839 – 23 October 1892), became Duke of Roxburghe on the death of his father, James Henry Robert Innes-Ker, 6th Duke of Roxburghe.\n\n[Jim Miller (Australian footballer, born 1919)]\nJames Henry Miller (born 30 May 1919) is a former Australian rules footballer in the Victori\n\nived for more than 30 years, and was married to the singer and songwriter Ewan MacColl until his death in 1989.\n\n[Henry Miller Memorial Library]\nThe Henry Miller Memorial Library is a nonprofit arts center, bookstore, and performance venue, championing the late writer, artist, and Big Sur resident Henry Miller, as well as many other, both living and dead, creative individuals living in or near Big Sur, California.  Henry Miller’s friend Emil White built the house that is now the Library in the m\n\n Sur, California.  Henry Miller’s friend Emil White built the house that is now the Library in the mid-1960s.  After Miller died, in 1980, Emil decided to maintain his property as a memorial to his friend and as a gallery where local artists could show their work.  In 1981 Emil White, with the help of the Big Sur Land Trust, created \"The Henry Miller Memorial Library, Founded by Emil White.\"\n\n[June Miller]\nJune Miller (January 7 or 28, 1902 – February 1, 1979) was the much-written-about second w\n\nhese people into her diary.  Much of this book was written in English, although those of her letters which were originally written in French and Spanish were translated.  Most of this diary takes place in France, particularly Clichy, Paris and Louveciennes.\n\n[James Henry Deakin (junior)]\nJames Henry Deakin (1851 – 8 November 1881) was a British Conservative politician, the son of Col. James Henry Deakin, a Manchester merchant.\n\n[Ewan MacColl]\nJames Henry Miller (25 January 1915 – 22 October 1989",
+      "sources": [
+        "hotpotqa_sample_3",
+        "hotpotqa_sample_3",
+        "hotpotqa_sample_3",
+        "hotpotqa_sample_3",
+        "hotpotqa_sample_3"
+      ],
+      "latency_s": 4.248,
+      "top_k": 5,
+      "ground_truth_answer": "American",
+      "supporting_facts": [
+        [
+          "Peggy Seeger",
+          0
+        ],
+        [
+          "Peggy Seeger",
+          1
+        ],
+        [
+          "Ewan MacColl",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Cadmium Chloride is slightly soluble in this chemical, it is also called what?",
+      "answer": "alcohol",
+      "context": "[Cadmium chloride]\nCadmium chloride is a white crystalline compound of cadmium and chlorine, with the formula CdCl.  It is a hygroscopic solid that is highly soluble in water and slightly soluble in alcohol.  Although it is considered to be ionic, it has considerable covalent character to its bonding.  The crystal structure of cadmium chloride (described below), composed of two-dimensional layers of ions, is a reference for describing other crystal structures.  Also known are CdCl•HO and CdCl•5H\n\nmitting nerve impulses and regulating fluid in and out of cells.  Less frequently, the word \"chloride\" may also form part of the \"common\" name of chemical compounds in which one or more chlorine atoms are covalently bonded.  For example, methyl chloride, with the standard name chloromethane (see IUPAC books) is an organic compound with a covalent C−Cl bond in which the chlorine is not an anion.\n\n common for gold compounds.  There is also another related chloride of gold, gold(I) chloride (AuCl).  Chloroauric acid, HAuCl, the product formed when gold dissolves in aqua regia, is sometimes referred to as \"gold chloride\" or \"acid gold trichloride\".  Gold(III) chloride is very hygroscopic and highly soluble in water as well as ethanol.  It decomposes above 160 °C or in light.\n\n[Chloride]\nThe chloride ion is the anion (negatively charged ion) Cl.  It is formed when the element chlorine (a hal\n\nhloride ion is the anion (negatively charged ion) Cl.  It is formed when the element chlorine (a halogen) gains an electron or when a compound such as hydrogen chloride is dissolved in water or other polar solvents.  Chloride salts such as sodium chloride are often very soluble in water.  It is an essential electrolyte located in all body fluids responsible for maintaining acid/base balance, transmitting nerve impulses and regulating fluid in and out of cells.  Less frequently, the word \"chlorid\n\ntly soluble in water, and soluble in many organic solvents.\n\n[Gold(III) chloride]\nGold(III) chloride, traditionally called auric chloride, is a chemical compound of gold and chlorine.  With the molecular formula AuCl, the name gold trichloride is a simplification, referring to the empirical formula, AuCl.  The Roman numerals in the name indicate that the gold has an oxidation state of +3, which is common for gold compounds.  There is also another related chloride of gold, gold(I) chloride (AuCl)",
+      "sources": [
+        "hotpotqa_sample_4",
+        "hotpotqa_sample_4",
+        "hotpotqa_sample_4",
+        "hotpotqa_sample_4",
+        "hotpotqa_sample_4"
+      ],
+      "latency_s": 10.354,
+      "top_k": 5,
+      "ground_truth_answer": "alcohol",
+      "supporting_facts": [
+        [
+          "Cadmium chloride",
+          1
+        ],
+        [
+          "Ethanol",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which tennis player won more Grand Slam titles, Henri Leconte or Jonathan Stark?",
+      "answer": "Jonathan Stark",
+      "context": "m Rothenbaum in Hamburg, West Germany, from 15 September through 21 September 1986.  Henri Leconte won the singles title.  Fourth-seeded Henri Leconte won the singles title.\n\n[Jonathan Stark (tennis)]\nJonathan Stark (born April 3, 1971) is a former professional tennis player from the United States.  During his career he won two Grand Slam doubles titles (the 1994 French Open Men's Doubles and the 1995 Wimbledon Championships Mixed Doubles).  Stark reached the World No. 1 doubles ranking in 1994.\n\n10, Serena would hold the No. 1 singles ranking and Venus would be right behind her at No. 2 in singles.  Their most recent grand slam doubles titles came at the 2012 Wimbledon & 2016 Wimbledon events.  They remain very close, often watching each other's matches in support, even after one of them has been knocked out of a tournament.\n\n[Henri Leconte]\nHenri Leconte (born 4 July 1963) is a former French professional tennis player.  He reached the men's singles final at the French Open in 1988, won\n\nench professional tennis player.  He reached the men's singles final at the French Open in 1988, won the French Open men's doubles title in 1984, and helped France win the Davis Cup in 1991.  Leconte's career-high singles ranking was world No. 5.\n\n[Steffi Graf]\nStefanie Maria \"Steffi\" Graf (] ; born 14 June 1969) is a German former tennis player, who was ranked world No. 1 during her career.  Graf won 22 Grand Slam singles titles.  Her 22 singles titles put her second on the list of Major wins i\n\n twenty-three-time Grand Slam title winner (singles), both of whom were coached from an early age by their parents Richard Williams and Oracene Price.  There is a noted professional rivalry between them – between the 2001 US Open and the 2017 Australian Open tournaments, they met in nine Grand Slam singles finals.  They became the first two players, female or male, to play in 4 consecutive grand slam singles finals from the 2002 French Open to the 2003 Australian Open; Serena famously won all 4 \n\nngs Team Tennis team in 1981 and won the Team Tennis Mixed Doubles Division with Tom Gullikson in 1977; they were also runners-up in the league that year.\n\n[Ken Rosewall]\nKenneth Robert Rosewall {'1': \", '2': \", '3': 'AM, MBE', '4': \"} (born 2 November 1934) is a former world top-ranking amateur and professional tennis player from Australia.  He won a record 23 tennis Majors including 8 Grand Slam singles titles and before the Open Era a record 15 Pro Slam titles and a record 35 Major finals ove",
+      "sources": [
+        "hotpotqa_sample_5",
+        "hotpotqa_sample_5",
+        "hotpotqa_sample_5",
+        "hotpotqa_sample_126",
+        "hotpotqa_sample_5"
+      ],
+      "latency_s": 7.723,
+      "top_k": 5,
+      "ground_truth_answer": "Jonathan Stark",
+      "supporting_facts": [
+        [
+          "Jonathan Stark (tennis)",
+          0
+        ],
+        [
+          "Jonathan Stark (tennis)",
+          1
+        ],
+        [
+          "Henri Leconte",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Which genus of moth in the world's seventh-largest country contains only one species?",
+      "answer": "Nymphuliella",
+      "context": "be in error.  The genus contains only one species, Yoshiyasua yasudai, which is found in Japan, where it has been recorded from the Ryukyu Islands.\n\n[Nepita]\nNepita is a genus of moth in the family Arctiidae.  The genus consists of only one species, Nepita conferta, which can be found in India and Sri Lanka.  The species commonly called footman moth.\n\n[Parectropis]\nParectropis is a genus in the geometer moth family (Geometridae).  A small Old World genus, it contains only a good dozen species al\n\n which is found in India.\n\n[Eumacaria]\nEumacaria is a genus of moth in the family Geometridae.  It contains only one species, Eumacaria madopata, the brown-bordered geometer moth, which is found in North America, where it has been recorded from British Columbia, northern Washington, southern Saskatchewan, from Maine to Florida, South Dakota, North Dakota, Nebraska, Wyoming, Idaho, Colorado and New Mexico.  The habitat consists of orchards and shrublands.\n\n[Nymphuliella]\nNymphuliella is a genus o\n\n Mexico.  The habitat consists of orchards and shrublands.\n\n[Nymphuliella]\nNymphuliella is a genus of moth of the Crambidae family.  It contains only one species, Nymphuliella daeckealis, the China Mark Moth, which is found from New Jersey south to Florida and west to Colorado.\n\nometer moth family (Geometridae).  A small Old World genus, it contains only a good dozen species altogether, though new ones are still being discovered.  Only one species (\"P. similaria\") is found in Europe; most others live in Asia though some occur in Africa.\n\n[Indogrammodes]\nIndogrammodes is a genus of moths of the Crambidae family.  It contains only one species, Indogrammodes pectinicornalis, which is found in India.\n\n[Eumacaria]\nEumacaria is a genus of moth in the family Geometridae.  It c\n\ncond-most populous country (with over 1.2 billion people), and the most populous democracy in the world.\n\n[Eutrapela]\nEutrapela is a genus of moth in the Geometridae family.  It contains only one species, Eutrapela clemataria, the curve-toothed geometer moth or purplish-brown looper, which is found in North America, where it has been recorded from Nova Scotia to Florida, west to Texas and north to Saskatchewan.  The habitat consists of deciduous and mixed woodlands.\n\n[Geography of India]\nIndia l",
+      "sources": [
+        "hotpotqa_sample_6",
+        "hotpotqa_sample_6",
+        "hotpotqa_sample_6",
+        "hotpotqa_sample_6",
+        "hotpotqa_sample_6"
+      ],
+      "latency_s": 9.993,
+      "top_k": 5,
+      "ground_truth_answer": "Crambidae",
+      "supporting_facts": [
+        [
+          "Indogrammodes",
+          0
+        ],
+        [
+          "Indogrammodes",
+          1
+        ],
+        [
+          "India",
+          0
+        ],
+        [
+          "India",
+          1
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was once considered the best kick boxer in the world, however he has been involved in a number of controversies relating to his \"unsportsmanlike conducts\" in the sport and crimes of violence outside of the ring.",
+      "answer": "Badr Hari",
+      "context": "r professional boxer who competed from 1984 to 2000.  He is most notable for portraying fictional boxer Union Cane in the 1990 film \"Rocky V\".\n\nignation thus ended his second term as the president; he had previously served as president of Ohio State from 1990 to 1997.\n\n[Badr Hari]\nBadr Hari (Arabic: بدر هاري‎ ‎ ; born 8 December 1984) is a Moroccan-Dutch super heavyweight kickboxer from Amsterdam, fighting out of Mike's Gym in Oostzaan.  He is a former K-1 Heavyweight champion (2007—2008), It's Showtime Heavyweight world champion (2009-2010) and \"K-1 World Grand Prix 2009\" finalist.  Hari has been a prominent figure in the world of kick\n\nr Chávez, fought for a world title, Chávez went on to become the new WBC Middleweight Champion.  The bout was on June 4th, 2011, at Staples Center, in Los Angeles, California and was broadcast on HBO.\n\n[Dan Henderson]\nDaniel Jeffery Henderson (born August 24, 1970) is an American former mixed martial artist and Olympic wrestler, who last competed as a middleweight in the Ultimate Fighting Championship.  He was the last Strikeforce Light Heavyweight Champion and was the last Welterweight (80 kg )\n\nor most TKO/KO victories (eight) in the Lightweight division, surpassing the previous record held by Multi-Divisional Champion B.J. Penn with his knockout of Shane Roller at \"UFC 132\".  He again extended this record in his knockout victory over Mac Danzig at \"\".\n\n[Khabib Nurmagomedov]\nKhabib Abdulmanapovich Nurmagomedov (Russian: Хабиб Абдулманапович Нурмагомедов ; Avar: ХIабиб ГӀабдулманапил НурмухӀамадов ; born September 20, 1988) is an undefeated Russian mixed martial artist of Avar heritage.\n\n[Lorenzo Sotomayor]\nLorenzo Sotomayor Collazo (born 16 February 1985) is an Cuban-born Azerbaijani light-welterweight boxer who won a silver medal at the 2016 Olympics.  He is a nephew of the high jumper Javier Sotomayor.  In 2013 he moved from Cuba to Azerbaijan to increase his chances for Olympic selection.  He chose to compete as Collazo, which means \"shining star\".\n\n[Javier Sotomayor]\nJavier Sotomayor Sanabria (] ; born October 13, 1967) is a Cuban former track and field athlete, who special",
+      "sources": [
+        "hotpotqa_sample_401",
+        "hotpotqa_sample_7",
+        "hotpotqa_sample_485",
+        "hotpotqa_sample_202",
+        "hotpotqa_sample_498"
+      ],
+      "latency_s": 7.424,
+      "top_k": 5,
+      "ground_truth_answer": "Badr Hari",
+      "supporting_facts": [
+        [
+          "Global Fighting Championship",
+          1
+        ],
+        [
+          "Global Fighting Championship",
+          2
+        ],
+        [
+          "Badr Hari",
+          0
+        ],
+        [
+          "Badr Hari",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The Dutch-Belgian television series that \"House of Anubis\" was based on first aired in what year?",
+      "answer": "2006",
+      "context": "[House of Anubis]\nHouse of Anubis is a mystery television series developed for Nickelodeon based on the Dutch-Belgian television series \"Het Huis Anubis\".  The series was created by Hans Bourlon and Gert Verhulst and premiered on Nickelodeon on 1 January 2011 in the United States and on 25 February 2011 in the United Kingdom.  The series is the first series from the network to be filmed outside the United States and the first telenovela-format series for the network.  The show aired from 1 Janua\n\n-Dutch children's television drama created by Studio 100 and Nickelodeon, airing in the Netherlands and Flanders.  It first aired in September 2006 and the last episode was broadcast on December 4, 2009.  The show was a huge success in the Benelux, despite the show's low budget for the first two seasons.\n\n[Das Haus Anubis]\nDas Haus Anubis is a television program produced jointly by Belgian broadcaster Studio 100 and Nickelodeon and the first remake of Het Huis Anubis aired in The Netherlands and\n\nster Studio 100 and Nickelodeon and the first remake of Het Huis Anubis aired in The Netherlands and Belgium.  Another English remake called House of Anubis aired in 2011.  With a seven-figure production budget, it is one of Nickelodeon's largest in-house productions, and the first German daily soap opera specifically aimed at older children.  From 29 September 2009 to 4 May 2012, the show had been running both on children's channel Nick (daily at 7:40pm, and repeated in the afternoon and at wee\n\n on 21 October 2013 and again consisted of 13 episodes.  Series 3 first aired on 15 September 2014 and concluded on 27 October 2014 and also consisted of 13 episodes.  Series 4 first aired on 8 March 2016 and concluded on 13 April 2016 and this time consisted of 12 episodes.  A fifth season was announced on 6 June 2016 and began airing on 27 February 2017 and concluded on 1 May 2017 with 10 episodes.\n\n[List of House of Anubis episodes]\nThis article is an episode list for \"House of Anubis\", a mys\n\nes.\n\n[List of House of Anubis episodes]\nThis article is an episode list for \"House of Anubis\", a mystery/comedy-drama television series broadcast on Nickelodeon.\n\n[Majisuka Gakuen]\nMajisuka Gakuen (マジすか学園 ) (lit.  \"Majisuka Academy\") is a Japanese television drama series first aired on TV Tokyo starring AKB48.  A second season Majisuka Gakuen 2 was aired the following year, the 3rd Season was aired on July 13, 2012.  In 2015, the series moved to NTV and the 4th Season was aired on January 19, 20",
+      "sources": [
+        "hotpotqa_sample_8",
+        "hotpotqa_sample_8",
+        "hotpotqa_sample_8",
+        "hotpotqa_sample_8",
+        "hotpotqa_sample_8"
+      ],
+      "latency_s": 5.065,
+      "top_k": 5,
+      "ground_truth_answer": "2006",
+      "supporting_facts": [
+        [
+          "House of Anubis",
+          0
+        ],
+        [
+          "Het Huis Anubis",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "What is the length of the track where the 2013 Liqui Moly Bathurst 12 Hour was staged?",
+      "answer": "10 miles",
+      "context": "th Liqui Moly Bathurst 12 Hour on 7 February and the season concluded with the Sepang 12 Hours on 10 December.\n\n[Bathurst 12 Hour]\nThe Bathurst 12 Hour (currently known as the Liqui Moly Bathurst 12 Hour for sponsorship reasons) is an endurance race for GT and production cars held at the Mount Panorama Circuit, in Bathurst, Australia in February each year.  The race was first held in 1991 for Series Production cars and moved to Sydney's Eastern Creek Raceway in 1995 before being discontinued.  T\n\n13 Liqui Moly Bathurst 12 Hour was an endurance race for a variety of GT and touring car classes, including: GT3 cars, GT4 cars, Group 3E Series Production Cars and Dubai 24 Hour cars.  The event, which was staged at the Mount Panorama Circuit, near Bathurst, in New South Wales, Australia on 10 February 2013, was the eleventh running of the Bathurst 12 Hour.  The race also incorporated the opening round of the 2013 Australian GT Championship.  The Australian GT Championship was to compete as the\n\n round of the 2013 Australian GT Championship.  The Australian GT Championship was to compete as the first hour only and cars were permitted to enter for only that hour or to cross-enter for both the first hour and continue for the endurance race.\n\n[2015 Liqui Moly Bathurst 12 Hour]\nThe 2015 Liqui Moly Bathurst 12 Hour was an endurance race for a variety of GT and touring car classes, including: GT3 cars, GT4 cars and Group 3E Series Production Cars.  The event, which was staged at the Mount Pan\n\na Circuit, near Bathurst, in New South Wales, Australia 5 February 2017.  The 15th running of the Bathurst 12 Hour constituted the opening round of the 2017 Intercontinental GT Challenge Series.  For the first time, the winners of the race were awarded the Australian Tourist Trophy.\n\n[2014 Liqui Moly Bathurst 12 Hour]\nThe 2014 Liqui Moly Bathurst 12 Hour was an endurance race for a variety of GT and touring car classes, including: GT3 cars, GT4 cars and Group 3E Series Production Cars.  The even\n\nT3 cars, GT4 cars and Group 3E Series Production Cars.  The event, which was staged at the Mount Panorama Circuit, near Bathurst, in New South Wales, Australia on 8 February 2015, was the thirteenth running of the Bathurst 12 Hour.\n\n[2017 Liqui Moly Bathurst 12 Hour]\nThe 2017 Liqui Moly Bathurst 12 Hour endurance race for GT and touring car classes, GT3 and GT4 cars was staged on the Mount Panorama Circuit, near Bathurst, in New South Wales, Australia 5 February 2017.  The 15th running of the Ba",
+      "sources": [
+        "hotpotqa_sample_9",
+        "hotpotqa_sample_9",
+        "hotpotqa_sample_9",
+        "hotpotqa_sample_9",
+        "hotpotqa_sample_9"
+      ],
+      "latency_s": 5.206,
+      "top_k": 5,
+      "ground_truth_answer": "6.213 km long",
+      "supporting_facts": [
+        [
+          "2013 Liqui Moly Bathurst 12 Hour",
+          0
+        ],
+        [
+          "2013 Liqui Moly Bathurst 12 Hour",
+          1
+        ],
+        [
+          "Mount Panorama Circuit",
+          0
+        ],
+        [
+          "Mount Panorama Circuit",
+          2
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Fast Cars, Danger, Fire and Knives includes guest appearances from which hip hop record executive?",
+      "answer": "Yo Gotti",
+      "context": "s of hip hop subculture and arts movements beyond the main four are: hip hop culture and historical knowledge of the movement (intellectual/philosophical); beatboxing, a percussive vocal style; street entrepreneurship; hip hop language; and hip hop fashion and style, among others.\n\n[Fast Cars, Danger, Fire and Knives]\nFast Cars, Danger, Fire and Knives is an EP by American hip hop artist Aesop Rock.  Released via the Definitive Jux label on February 22, 2005, the record is produced by Blockhead \n\n, by G-Unit Records and Caroline Records.  All 11 tracks on the standard edition were issued as singles prior to the album's release; in order, they are \"Don't Worry 'Bout It\", \"Hold On\", \"Pilot\", \"Smoke\", \"Hustler\", \"Chase the Paper\", \"Everytime I Come Around\", \"Irregular Heartbeat\", \"Winners Circle\", \"Twisted\", and \"Animal Ambition\".  The album features guest appearances from Yo Gotti, Trey Songz, Kidd Kidd, Jadakiss, Mr Probz, Guordan Banks, Prodigy, Schoolboy Q and Styles P.\n\nby Pinmonkey).  Other artists who have recorded his work include Kenny Chesney, Tim McGraw, Easton Corbin, Patty Loveless, Keith Whitley, John Michael Montgomery, Billy Ray Cyrus, Charley Pride, Anne Murray, Mindy McCready, Diamond Rio, Sammy Kershaw, Emmylou Harris, Ronnie Milsap, Highway 101, Molly Hatchet, Johnny Lee, Neal McCoy, Reba McEntire, Joe Nichols, Bob Welch, Nitty Gritty Dirt Band, Kenny Rogers, Matraca Berg, Pam Tillis, Crystal Gayle, Brenda Lee, B. J. Thomas, Alabama, Michelle Wri\n\nfour studio albums — \"Clay Walker\", \"If I Could Make a Living\", \"Hypnotize the Moon\" and \"Rumor Has It\" — are all certified platinum by the RIAA, and his greatest hits album and \"Live, Laugh, Love\" are each certified gold by the RIAA.  \"Clay Walker\" is also certified platinum by the CRIA, while \"If I Could Make a Living\" and \"Hypnotize the Moon\" are certified gold.\n\n[Selena Gomez &amp; the Scene discography]\nSelena Gomez & the Scene, an American band, has released three studio albums, one remix \n\nworking together as a potent duo, beginning with \"Still a G Thang,\" one of the better songs on Snoop's Da Game Is to Be Sold, Not to Be Told.  Wells produced a few No Limit songs featuring Snoop—Tru's \"It's a Beautiful Thang,\" Silkk the Shocker's \"Get It Up\"—before playing a major role in bringing a West Coast sound to Snoop's Top Dogg album in 1999: \"In Love With a Thug,\" \"Better Days,\" \"Gangsta Ride,\" among others.  In 2000 he reprised his role as one of Snoop's producers of choice, producing ",
+      "sources": [
+        "hotpotqa_sample_10",
+        "hotpotqa_sample_309",
+        "hotpotqa_sample_123",
+        "hotpotqa_sample_271",
+        "hotpotqa_sample_70"
+      ],
+      "latency_s": 9.568,
+      "top_k": 5,
+      "ground_truth_answer": "Jaime Meline",
+      "supporting_facts": [
+        [
+          "Fast Cars, Danger, Fire and Knives",
+          2
+        ],
+        [
+          "El-P",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Gunmen from Laredo starred which narrator of \"Frontier\"?",
+      "answer": "Robert Knapp",
+      "context": ")]\nPiranha, also known as Piranha, Piranha or Caribe, is a 1972 adventure film shot in Venezuela starring William Smith and Peter Brown who had previously starred together in the \"Laredo\" Western TV series and Ahna Capri.\n\n[Gunmen from Laredo]\nGunmen from Laredo is a 1959 American western film produced and directed by Wallace MacDonald, which stars Robert Knapp, Maureen Hingert, and Walter Coy.\n\n[Seemanto-heera]\nSheemanto heera (The Frontier Diamond) is a detective novella written in Bengali by \n\nased in Nuevo Laredo, Tamaulipas, Mexico.  He worked for a number of media outlets in Mexico, including the \"El Norte\" and \"El Diario de Monterrey\", prior to his assassination.\n\nary 31, 1909 – December 11, 1974) was an American stage, radio, film, and, principally, television actor, originally from Great Falls, Montana.  He was best known for narrating the NBC western anthology series, \"Frontier\", which aired early Sunday evenings in the 1955–1956 season.\n\n[Max McLean]\nMax McLean is the founder and artistic director of Fellowship for Performing Arts, a New York City-based producer of live theater from a Christian worldview.  McLean conceived, adapted, produced and starr\n\nSeemanto-heera]\nSheemanto heera (The Frontier Diamond) is a detective novella written in Bengali by Sharadindu Bandyopadhyay featuring the sleuth Byomkesh Bakshi and Ajit Bandyopadhyay.  Written in 1934, it is the third such work of fiction featuring Byomkesh and is written in first-person narrative, as experienced by Byomkesh's friend, associate, and narrator, Ajit Bandyopadhyay.\n\n[Frontier Texas!]\nFrontier Texas!  is a 14000 sqft museum of the American West in downtown Abilene, the seat of Tay\n\n951's \"The Cimarron Kid\", starring Audie Murphy; and \"Horizons West\" (1952), starring Robert Ryan, Julie Adams, and Rock Hudson.  Stevens' final screenplay was for \"Flaming Frontier\" in 1958, although he did some work on additional dialogue for the 1959 film, \"Desert Desperadoes\".  Stevens also wrote several television episodes, one for \"Cheyenne\", and two for \"Hawkeye and the Last of the Mohicans\", all in 1957.\n\n[The Lone Gunmen]\nThe Lone Gunmen are a trio of fictional characters, Richard \"Ring",
+      "sources": [
+        "hotpotqa_sample_11",
+        "hotpotqa_sample_297",
+        "hotpotqa_sample_11",
+        "hotpotqa_sample_11",
+        "hotpotqa_sample_11"
+      ],
+      "latency_s": 7.86,
+      "top_k": 5,
+      "ground_truth_answer": "Walter Darwin Coy",
+      "supporting_facts": [
+        [
+          "Gunmen from Laredo",
+          0
+        ],
+        [
+          "Walter Coy",
+          0
+        ],
+        [
+          "Walter Coy",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Where did the form of music played by Die Rhöner Säuwäntzt originate?",
+      "answer": "Hessen",
+      "context": "lador it is very much like the music played on charango.  The main difference between charango and chillador is that the charango soundbox is made of an armadillo shell while the chillador is just a little guitar.\n\n[Die Rhöner Säuwäntzt]\nDie Rhöner Säuwäntzt are a Skiffle-Bluesband from Eichenzell-Lütter in Hessen, Germany.  The line-up consists of Martin Caba, Christoph Günther and Christoph Leipold playing Skiffle-Blues with lyrics based on Rhön Mountains dialect and other Hessian dialects var\n\nmihalyi, Gnawa Music of Morocco, Jazz, experimental music, concepts of infinity, the works of Italo Calvino and Ludwig Wittgenstein, and his work as improviser\n\nl and psychedelic.  The group amassed a following beginning in the 2000s in part due to their live performances.\n\nband which added elements of funk, rock and jazz to their music, marking a difference from other traditional bands at that time.  The band is also considered the first serious music project of now renowned singer Björk Guðmundsdóttir.\n\ne type which shares certain qualities with the true baritone voice.  The term arose in the late 19th century to describe the particular type of voice required to sing three Wagnerian roles: the Dutchman in \"Der fliegende Holländer\", Wotan/Der Wanderer in the \"Ring Cycle\" and Hans Sachs in \"Die Meistersinger von Nürnberg\".  Wagner labelled these roles as \"Hoher Bass\" (\"high bass\")—see fach for more details.\n\n[Kaspar Bausewein]\nKaspar Bausewein (15 November 1838, Aub – 18 November 1903, Munich) wa",
+      "sources": [
+        "hotpotqa_sample_12",
+        "hotpotqa_sample_348",
+        "hotpotqa_sample_411",
+        "hotpotqa_sample_368",
+        "hotpotqa_sample_262"
+      ],
+      "latency_s": 6.037,
+      "top_k": 5,
+      "ground_truth_answer": "United States",
+      "supporting_facts": [
+        [
+          "Die Rhöner Säuwäntzt",
+          0
+        ],
+        [
+          "Skiffle",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "In which American football game was Malcolm Smith named Most Valuable player?",
+      "answer": "XLVIII",
+      "context": "luding all major topographical features.\n\n[Malcolm Smith (American football)]\nMalcolm Xavier Smith (born July 5, 1989) is an American football linebacker for the San Francisco 49ers of the National Football League (NFL).  Smith played college football at USC.  He was drafted by the Seattle Seahawks in the seventh round of the 2011 NFL Draft.  Smith was named the Most Valuable Player of Super Bowl XLVIII after they defeated the Denver Broncos.\n\n[Super Bowl XLVIII]\nSuper Bowl XLVIII was an America\n\n five seasons for the [[Miami Dolphins]].  He also played on two state championship teams in high school which were a combined (25-1) over two years and was a five team all-American including \"Parade Magazine\", he was also named Most Valuable Player of the state of Utah.  At the University of Utah he was named two time All-WAC defensive tackle, Defensive Most Valuable Player of the Western Athletic Conference and First Team All-American.  He also played in the East-West Shrine Game and was named\n\nrned a starting position at right guard and played against [[William Perry (American football)|the Fridge]] when the Dolphins beat the Chicago Bears on Monday Night Football to help keep the undefeated Dolphin record intact.  In the NFL, he also played on two Super Bowl teams with the Miami Dolphins and was the starting right guard before being injured.  Just recently Steve was named to the top 100 greatest players in the history of the University of Utah actually being named 9th best of All-Tim\n\noronto Raptors went on to be named the Most Valuable Player of the Las Vegas Summer League.  Ian Clark of the Golden State Warriors was named the Most Valuable Player of the Las Vegas Summer League Championship Game.\n\n[Steve Clark (American football)]\nStephen Spence Clark (born August 2, 1960) is a former professional American football player who played [[defensive tackle]and offensive guard ] for five seasons for the [[Miami Dolphins]].  He also played on two state championship teams in high sc\n\nurth season under head coach Ernie McCoy, the Wolverines team compiled a 7–15 record and finished in a tie for eighth place in the Big Ten Conference.  Senior Jim Skala was the team captain, leading scorer and Most Valuable Player.  The team was notable as the first racially integrated Michigan basketball team with Don Eaddy and John Codwell becoming the first two African-American players.\n\n[Charles Matthews (basketball)]\nCharles I. Matthews (born November 15, 1996) is an American basketball pla",
+      "sources": [
+        "hotpotqa_sample_13",
+        "hotpotqa_sample_13",
+        "hotpotqa_sample_13",
+        "hotpotqa_sample_13",
+        "hotpotqa_sample_104"
+      ],
+      "latency_s": 6.31,
+      "top_k": 5,
+      "ground_truth_answer": "Super Bowl XLVIII",
+      "supporting_facts": [
+        [
+          "Malcolm Smith (American football)",
+          3
+        ],
+        [
+          "Super Bowl XLVIII",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "What U.S Highway gives access to Zilpo Road, and is also known as Midland Trail?",
+      "answer": "Highway 60",
+      "context": "[Zilpo Road]\nZilpo Road is a National Forest Scenic Byway in the forested hills of eastern Kentucky, United States.  The nine mile byway starts south of Morehead, Kentucky and can be accessed by U.S. Highway 60.  The byway travels through the Daniel Boone National Forest and ends on the western shore of Cave Run Lake at the Zilpo Recreation Area.  It follows FSR 918, which is a two lane paved road suitable for all motor vehicles and is usually open throughout the year.\n\n[RISE (sculpture)]\nRISE i\n\ncross what is now West Virginia), many early travelers on this road stopped to see the view of the river below.  In modern times, the Midland Trail carries U.S. Route 60 through the same general route.  Ample parking at the overlook in the state park provides tourists with free access to the views.\n\n[Hawaii Route 64]\nRoute 64 is a three-mile (5 km) road that stretches from Nimitz Highway (Hawaii Route 92) to the entrance of Sand Island State Recreation Area just west of downtown Honolulu.  The r\n\n originally known as Midland Trail and later U.S. 60 alternate until 1964 when it reverted to county maintenance.  It is now State Route 3294.\n\n[Arkansas Highway 113]\nArkansas Highway 113 (AR 113 and Hwy.  113) is a north–south state highway that runs in Central Arkansas.  The route runs 29.48 mi from Arkansas Highway 10 to Morrilton.  This also gives access to some rural areas west of Morrilton.  It runs through Pulaski, Perry, and Conway Counties.  It contains no spur of business routes.\n\n[Cal\n\nat formed at Elkmont and Tremont branched out across the relatively broad northern slopes of Meigs Mountain.  Other than a crude mountain cemetery, the occasional detritus, and a few rock walls, however, very little remains of the mountain's former inhabitants.\n\n[Blue Ridge Parkway]\nThe Blue Ridge Parkway is a National Parkway and All-American Road in the United States, noted for its scenic beauty.  The parkway, which is America's longest linear park, runs for 469 mi through 29 Virginia and Nort\n\nthough there is one traffic signal in the North Smithfield business district.  The southern terminus of the freeway is at Interstate 95 in downtown Providence, and the route's northern terminus is at the Rhode Island-Massachusetts state line in Millville, where it continues northward towards the Massachusetts Turnpike and the city of Worcester as Massachusetts Route 146.\n\n[New York State Route 890]\nNew York State Route 890 (NY 890) is a 1.00 mi long state highway located northwest of downtown Sc",
+      "sources": [
+        "hotpotqa_sample_14",
+        "hotpotqa_sample_14",
+        "hotpotqa_sample_14",
+        "hotpotqa_sample_220",
+        "hotpotqa_sample_389"
+      ],
+      "latency_s": 5.924,
+      "top_k": 5,
+      "ground_truth_answer": "US 60",
+      "supporting_facts": [
+        [
+          "Zilpo Road",
+          1
+        ],
+        [
+          "Morehead, Kentucky",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "The 1988 American comedy film, The Great Outdoors, starred a four-time Academy Award nominee, who received a star on the Hollywood Walk of Fame in what year?",
+      "answer": "2003",
+      "context": "n.  In 2003, Bacon received a star on the Hollywood Walk of Fame for his contributions to the motion pictures industry.\n\n[Larry R. Williams]\nLarry Richard Williams (born October 6, 1942) is an American author, stock and commodity trader, and politician from the state of Montana.  He is the father of four-time Academy Award and one-time Tony Award nominee actress Michelle Williams.\n\n[The Great Outdoors (film)]\nThe Great Outdoors is a 1988 American comedy film directed by Howard Deutch, and writte\n\noors (film)]\nThe Great Outdoors is a 1988 American comedy film directed by Howard Deutch, and written and produced by John Hughes.  It stars Dan Aykroyd, John Candy, Stephanie Faracy and Annette Bening in her film debut.\n\n[John Lithgow]\nJohn Arthur Lithgow ( ; born October 19 , 1945) is an American actor, musician, singer, comedian, voice actor, and author.  He has received two Tony Awards, six Emmy Awards, two Golden Globe Awards, three Screen Actors Guild Awards, an American Comedy Award, four\n\nAcademy Award nominations for \"Affliction\" (1998) and \"Warrior\" (2011).  His other film appearances include \"The Deep\" (1977), \"48 Hrs. \" (1982), \"Down and Out in Beverly Hills\" (1986), \"Another 48 Hrs. \" (1990), \"Everybody Wins\" (1990), \"Cape Fear\" (1991), \"Lorenzo's Oil\" (1992), \"The Thin Red Line\" (1998), \"The Good Thief\" (2002), \"Hulk\" (2003), \"Hotel Rwanda\" (2004), \"Tropic Thunder\" (2008), \"A Walk in the Woods\" (2015) and \"The Ridiculous 6\" (2015).  He was also nominated for a Golden Globe \n\nTop Gun\" (the highest-grossing film that year), and also starred opposite Paul Newman in the Martin Scorsese-directed drama \"The Color of Money\".  Two years later he played opposite Dustin Hoffman in the Academy Award for Best Picture-winning drama \"Rain Man\" (1988), and also appeared in the Golden Raspberry Award for Worst Picture-winning romantic drama \"Cocktail\" (1988).  In doing so Cruise became the first and only person as of 2014 to star in a Best Picture Oscar winner and a Worst Picture R\n\nmy Awards, two Golden Globe Awards, three Screen Actors Guild Awards, an American Comedy Award, four Drama Desk Awards and has also been nominated for two Academy Awards and four Grammy Awards.  Lithgow has received a star on the Hollywood Walk of Fame and has been inducted into the American Theater Hall of Fame.",
+      "sources": [
+        "hotpotqa_sample_15",
+        "hotpotqa_sample_15",
+        "hotpotqa_sample_68",
+        "hotpotqa_sample_68",
+        "hotpotqa_sample_15"
+      ],
+      "latency_s": 5.614,
+      "top_k": 5,
+      "ground_truth_answer": "2006",
+      "supporting_facts": [
+        [
+          "The Great Outdoors (film)",
+          0
+        ],
+        [
+          "The Great Outdoors (film)",
+          1
+        ],
+        [
+          "Annette Bening",
+          0
+        ],
+        [
+          "Annette Bening",
+          3
+        ],
+        [
+          "Annette Bening",
+          4
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "What are the names of the current members of  American heavy metal band who wrote the music for  Hurt Locker The Musical? ",
+      "answer": "Dave McClain",
+      "context": " Formed on October 12, 1991, the group was founded by vocalist/guitarist Robb Flynn and bassist Adam Duce.  The current lineup of the band comprises Flynn, drummer Dave McClain, guitarist Phil Demmel and bassist Jared MacEachern.  Machine Head is one of the pioneering bands in the new wave of American heavy metal.\n\n[Dan Spitz]\nDaniel Alan Spitz (born January 28, 1963) is an American musician and watchmaker best known for his work as the lead guitarist, principal songwriter and co-producer of the\n\nanger, Marcello - Vestry), Fredrik Bergh, (Street Talk, Bloodbound), Tommy Stråhle and Mike Andersson (Cloudscape, Planet Alliance).\n\n.  His first solo album, \"A Thousand Faces\", was released in 1994.  His current solo project, A Chinese Firedrill, released an album titled \"Circles\" in 2007.\n\n[Hurt Locker (musical)]\nHurt Locker The Musical is a fictional musical in the 2014 Broadway premiere production of \"Hedwig and the Angry Inch\".  In the Broadway performance of \"Hedwig and the Angry Inch\" the musical opens with Hedwig explaining that the musical only ran for a single night before closing during intermission, and that she h\n\ntters.  Spike Slawson (also from Swingin' Utters) later joined the band, along with recording engineer Randy Burk.  Greg Lisher from Camper Van Beethoven guested on guitar for several songs on their second release.  Their music is influenced by folk rock, Celtic rock, country music, 60's pop, and punk rock, with an acknowledged and oft-noted debt to the music of The Pogues.\n\nnny Rogers, Matraca Berg, Pam Tillis, Crystal Gayle, Brenda Lee, B. J. Thomas, Alabama, Michelle Wright, Loverboy, Randy Travis, The Oak Ridge Boys, Conway Twitty, Barbara Mandrell, Lonestar, Steve Wariner, Joe Diffie, Michael Martin Murphey, Marty Balin, Cindy Alexander, Kim Carnes, Keith Stegall, Shawn Camp, Lee Greenwood, Russ Taff, George Canyon, The Kendalls, Chris LeDoux, Sylvia, Mickey Gilley, Eddy Raven, John Conlee, Bryan White, Blaine Larsen, Tammy Cochran, John Berry, Rick Trevino, Ma",
+      "sources": [
+        "hotpotqa_sample_16",
+        "hotpotqa_sample_10",
+        "hotpotqa_sample_16",
+        "hotpotqa_sample_67",
+        "hotpotqa_sample_123"
+      ],
+      "latency_s": 8.248,
+      "top_k": 5,
+      "ground_truth_answer": "Hetfield and Ulrich, longtime lead guitarist Kirk Hammett, and bassist Robert Trujillo.",
+      "supporting_facts": [
+        [
+          "Hurt Locker (musical)",
+          3
+        ],
+        [
+          "Metallica",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Human Error\" is the season finale of the third season of a tv show that aired on what network?",
+      "answer": "USA Network",
+      "context": "ond-season finale aired on April 6, 2011 and drew 1,265,000 viewers.  The third season debuted on January 11, 2012 with 1,361,000 viewers, and the season finale drew 968,000 viewers.\n\n[Human Error (House)]\n\"Human Error\" is the twenty-fourth episode and season finale of the third season of \"House\" and the seventieth episode overall.\n\n[The Price of Free and Fair Elections]\n\"The Price of Free and Fair Elections\" is the 18th episode and season finale of the third season of the American political thr\n\nt series finale of the USA Network original criminal mystery dramedy television series, \"Monk\".  It is the fifteenth and sixteenth episodes of the eighth and final season, and is the 124th and 125th episodes in the series overall.  Adrian Monk (Tony Shalhoub) finally discovers his wife Trudy's (Melora Hardin) murderer after twelve years of searching, concluding a seven-year, eight-season long arc.  When \"Part 2\" aired, it set a series high and a new viewership record for the most watched episode\n\non finale of the ABC television series \"Lost\", consisting of the 22nd and 23rd episodes of the third season.  It is also the 71st and 72nd episodes overall.  It was written by co-creator/executive producer Damon Lindelof and executive producer Carlton Cuse, and directed by executive producer Jack Bender.  When first aired on May 23, 2007, in the United States and Canada, it was watched by an average of 14 million American viewers.  Like the previous two season finales, it was two hours long with\n\nr Elections\" is the 18th episode and season finale of the third season of the American political thriller television series \"Scandal\", and is the 47th overall episode.  It aired on April 17, 2014 on ABC in the United States.  The episode was written by showrunner Shonda Rhimes and executive producer Mark Wilding and directed by executive producer Tom Verica.  The season finale was originally supposed to be the 22nd episode, but because of the show's lead Kerry Washington's pregnancy, the episode\n\nsed to be the 22nd episode, but because of the show's lead Kerry Washington's pregnancy, the episode count was trimmed by ABC by four episodes, leading the season finale to be the 18th episode.\n\n[Robert Chase]\nRobert Chase, MBBS is a fictional character on the Fox medical drama \"House\".  He is portrayed by Jesse Spencer.  His character was a part of the team of diagnosticians who worked under Gregory House until the end of the third season when House fires him.  However, he resumed work at the h",
+      "sources": [
+        "hotpotqa_sample_17",
+        "hotpotqa_sample_222",
+        "hotpotqa_sample_17",
+        "hotpotqa_sample_17",
+        "hotpotqa_sample_17"
+      ],
+      "latency_s": 6.86,
+      "top_k": 5,
+      "ground_truth_answer": "Fox",
+      "supporting_facts": [
+        [
+          "Human Error (House)",
+          0
+        ],
+        [
+          "House (TV series)",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Dua Lipa, an English singer, songwriter and model, the album spawned the number-one single \"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album, released in what year?",
+      "answer": "2017",
+      "context": "  The tour supports her debut studio album \"Dua Lipa\" (2017).  The tour began on 24 February 2017 in Chicago.\n\n[Dua Lipa (album)]\nDua Lipa is the debut studio album by English singer Dua Lipa.  It was released on 2 June 2017 by Warner Bros.  Records.  The lyrical themes revolve around her personal views of love, rising above, sex and self-empowerment.\n\n[New Rules (song)]\n\"New Rules\" is a song by English singer Dua Lipa from her eponymous debut studio album (2017).  The track was written by Carol\n\nnumber 50 and peaked at number 30 on the UK Singles Chart; in the United States, it reached number 72 on the \"Billboard\" Hot 100, becoming Lipa's first song to chart in the country.  It also topped the \"Billboard\" Dance Club Songs chart, becoming Lipa's first number-one single on that chart.\n\n[US and Europe Tour]\nThe US and Europe Tour is the third official concert tour by English singer Dua Lipa.  The tour supports her debut studio album \"Dua Lipa\" (2017).  The tour began on 24 February 2017 in\n\noard\" Twitter Emerging Artists chart, spending seven weeks on it.\n\n[Dua Lipa]\nDua Lipa ( ; ] ; born 22 August 1995) is an English singer, songwriter and model.  Her musical career began at age 16, when she began covering songs by other artists on YouTube.  In 2015, she was signed with Warner Music Group, and released her first single soon after.  In December 2016, a documentary about Lipa was commissioned by \"The Fader\" magazine, titled \"See in Blue\".  In January 2017, she won the EBBA Public Ch\n\ng)]\n\"Hotter than Hell\" is a song by English singer Dua Lipa from her eponymous debut studio album (2017).  It was written by Lipa, Adam Midgley, Tommy Baxter and Gerard O'Connell, and produced by Stephen \"Koz\" Kozmeniuk.  The song was released on 6 May 2016 as the album's third single.  \"Hotter than Hell\" peaked at number 15 on the UK Singles Chart, while reaching the top 20 in Australia, Belgium and the Netherlands.\n\n[Last Dance (Dua Lipa song)]\n\"Last Dance\" is a song by English singer Dua Lipa from her eponymous debut studio album (2017).  Lipa wrote the song with Stephen \"Koz\" Kozmeniuk and Talay Riley, with Kozmeniuk handling the song's production.  It was released on 9 February 2016 as the album's second single.  The track appears on the deluxe edition of \"Dua Lipa\".  It peaked at number four on the \"Billboard\" Twitter Emerging Artists chart, spending seven weeks on it.\n\n[Dua Lipa]\nDua Lipa ( ; ] ; born ",
+      "sources": [
+        "hotpotqa_sample_18",
+        "hotpotqa_sample_18",
+        "hotpotqa_sample_18",
+        "hotpotqa_sample_18",
+        "hotpotqa_sample_18"
+      ],
+      "latency_s": 6.091,
+      "top_k": 5,
+      "ground_truth_answer": "2017",
+      "supporting_facts": [
+        [
+          "Dua Lipa",
+          5
+        ],
+        [
+          "New Rules (song)",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "American politician Joe Heck ran unsuccessfully against Democrat Catherine Cortez Masto, a woman who previously served as the 32nd Attorney General of where?",
+      "answer": "Nevada",
+      "context": " and served as a Nevada State Senator from 2004-08.  He ran unsuccessfully against Democrat Catherine Cortez Masto in the general election for the open Nevada United States Senate seat in 2016.  In the same year, Heck made headlines by joining a long list of Republicans who opposed the GOP nominee for President, Donald Trump.\n\n[List of United States Senators from Nevada]\nNevada was admitted to the Union on October 31, 1864.  Its current senators are Democrat Catherine Cortez Masto (Class 3) and \n\nviously served as a member of the West Virginia House of Delegates from 2003 to 2009.  He is the son of Mario Palumbo, the 32nd Attorney General of West Virginia as well as a former five-term state senator.\n\n[Catherine Cortez Masto]\nCatherine Marie Cortez Masto (born March 29, 1964) is an American attorney and politician who is the junior United States Senator from Nevada.  She is a member of the Democratic Party.  She previously served as the 32nd Attorney General of Nevada from 2007 to 2015.\n\n\n\n Union on October 31, 1864.  Its current senators are Democrat Catherine Cortez Masto (Class 3) and Republican Dean Heller (Class 1).\n\n[Dennis Heck]\nDennis Lynn \"Denny\" Heck (born July 29, 1952) is an American politician who has been the United States Representative for Washington's 10th congressional district since 2013.  Heck was previously the Democratic nominee for U.S. Representative for the 3rd district in 2010, but was defeated by Jaime Herrera Beutler (R).  In 2012 Heck ran and won in th\n\nDemocratic Party.  She previously served as the 32nd Attorney General of Nevada from 2007 to 2015.\n\n[Joe Heck]\nJoseph John “Joe” Heck (born October 30, 1961) is an American politician, physician, and U.S. Army Brigadier General who had served as the U.S. Representative for Nevada's 3rd congressional district from 2011 to 2017.  Heck, a member of the Republican Party, is a board-certified physician and served as a Nevada State Senator from 2004-08.  He ran unsuccessfully against Democrat Catherin\n\nhicago.  She was appointed to her position by Mayor Richard M. Daley in 1990, to fill a vacancy after the death of Alderman Ernest Jones.  Troutman was the 16th woman to serve as a Chicago alderman.  Despite her arrest and indictment on bribery charges, Troutman ran for alderman in 2007; she lost.\n\n[Rahm Emanuel]\nRahm Israel Emanuel ( ; born November 29, 1959) is an American politician who is the 44th and current mayor of Chicago.  A member of the Democratic Party, Emanuel was elected in 2011.  ",
+      "sources": [
+        "hotpotqa_sample_19",
+        "hotpotqa_sample_19",
+        "hotpotqa_sample_19",
+        "hotpotqa_sample_19",
+        "hotpotqa_sample_263"
+      ],
+      "latency_s": 9.373,
+      "top_k": 5,
+      "ground_truth_answer": "Nevada",
+      "supporting_facts": [
+        [
+          "Joe Heck",
+          0
+        ],
+        [
+          "Joe Heck",
+          2
+        ],
+        [
+          "Catherine Cortez Masto",
+          2
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Which state does the drug stores, of which the CEO is Warren Bryant, are located?",
+      "answer": "California",
+      "context": " operated for over 100 years; currently, it is the second-oldest family-run pharmacy chain in the United States.\n\n[Warren Bryant]\nWarren Bryant was the CEO of Longs Drugs Store Corporation out of California prior to the retail chain's acquisition by CVS/Caremark.  Hired in 2002 to Longs, he was Senior Vice President of The Kroger Company. , a retail grocery chain, from 1999 to 2002.  Prior to that, from 1996 to 1999, he was President and Chief Executive Officer of Dillon Companies, Inc., a retai\n\n[USA Drug]\nUSA Drug is a convenience store and pharmacy chain in the United States that operates more than 160 stores in Arkansas, Oklahoma, Mississippi, Missouri, and Tennessee.  It was founded in Pine Bluff, Arkansas in 1986.  Its headquarters are still located in Pine Bluff with additional offices in Little Rock, Arkansas, Tulsa, Oklahoma, and Memphis, Tennessee.  Its parent company, Walgreens, operates Super D Drug Stores and Ikes Deep Discount Drug, both acquired in October 1997, and May's \n\n, from 1996 to 1999, he was President and Chief Executive Officer of Dillon Companies, Inc., a retail grocery chain and subsidiary of The Kroger Co.  He is also a director of OfficeMax Incorporated.\n\n[Cunningham Drug (U.S.)]\nCunningham Drug was a drugstore chain based in Detroit, Michigan.  Founded in October 1889 by Andrew Cunningham, the chain operated primarily within the state of Michigan, and was once the largest drugstore chain in the state.  Its Michigan locations were closed and reopened\n\n operates Super D Drug Stores and Ikes Deep Discount Drug, both acquired in October 1997, and May's Drug, Med-X Drug, Drug Warehouse, and Drug Mart, all acquired in July 2004, as \"Part of the USA Drug Family\".  Wal-Mart and CVS/Pharmacy are two of its primary competitors.  The company's slogan is \"America's Low Price Drug Store\".\n\n[Perry Drug Stores]\nPerry Drug Stores was an American retail pharmacy chain founded in 1957 in the city of Pontiac, Michigan, United States.  At its peak in the 1980s,\n\nlso owns the franchise chain The Medicine Shoppe.  It operates like a retailers' cooperative, though it is not owned by its members.\n\n[Gray Drug]\nGray Drug was a drugstore chain in Cleveland, Ohio.  The chain began in 1912 and grew to 46 stores by 1946 and over 100 by the 1970s.  Besides Ohio, stores later opened in Florida and Maryland.  The chain later acquired Drug Fair in 1981, shortly before Sherwin Williams bought the chain.  Gray Drug acquired several Cunningham Drug stores in 1982.\n\n[Har",
+      "sources": [
+        "hotpotqa_sample_20",
+        "hotpotqa_sample_20",
+        "hotpotqa_sample_20",
+        "hotpotqa_sample_20",
+        "hotpotqa_sample_20"
+      ],
+      "latency_s": 4.928,
+      "top_k": 5,
+      "ground_truth_answer": "Hawaii",
+      "supporting_facts": [
+        [
+          "Warren Bryant",
+          0
+        ],
+        [
+          "Longs Drugs",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which  American politician did Donahue replaced ",
+      "answer": "Kelli Ward",
+      "context": "point\", a quarterly mental health publication distributed for free throughout Vermont.\n\n[Sue Donahue]\nSue Donahue is an American politician.  Donahue was appointed in 2016 to serve in the Arizona State Senate representing the fifth legislative district as a member of the Republican Party.  Donahue replaced Kelli Ward who resigned to run for the United States Senate.  Donahue did not run for re-election in 2016 and was replaced by Sonny Borrelli.\n\n[Frank J. Donahue]\nFrank J. Donahue (1881–1979) w\n\nor to the 2008 elections and was replaced by David P. Hinkins.\n\n[Maurice A. Donahue]\nMaurice A. Donahue (September 21, 1918 – January 13, 1999) is an American politician who served as President of the Massachusetts Senate from 1964 to 1971.\n\n[John Hoeven]\nJohn Henry Hoeven III (born March 13, 1957) is an American politician and the senior United States Senator from North Dakota, in office since 2011.  A member of the North Dakota Republican Party, he previously served as the 31st Governor of Nor\n\nnd osteopathic physician.  A member of the Republican Party, Ward was elected in 2012 to serve in the Arizona State Senate representing the fifth legislative district.  She was unopposed for election in 2014.  While serving in office, she continued to practice medicine in the emergency departments in Lake Havasu City and Kingman, Arizona.\n\n[Dan Donahue]\nDaniel M. Donahue is an American politician serving in the Massachusetts House of Representatives since September 2013.  He is a Worcester resid\n\ni Heitkamp, who was once Hoeven's opponent for the Governor's office.\n\n[Anne Donahue]\nAnne de la Blanchetai Donahue is an American politician from the state of Vermont.  She has served as a Republican member of the Vermont House of Representatives since 2003, representing the Washington-2 district, which includes the Washington County towns of Berlin and Northfield.  She is also editor of \"Counterpoint\", a quarterly mental health publication distributed for free throughout Vermont.\n\n[Sue Donahue\n\n and served as a Nevada State Senator from 2004-08.  He ran unsuccessfully against Democrat Catherine Cortez Masto in the general election for the open Nevada United States Senate seat in 2016.  In the same year, Heck made headlines by joining a long list of Republicans who opposed the GOP nominee for President, Donald Trump.\n\n[List of United States Senators from Nevada]\nNevada was admitted to the Union on October 31, 1864.  Its current senators are Democrat Catherine Cortez Masto (Class 3) and ",
+      "sources": [
+        "hotpotqa_sample_21",
+        "hotpotqa_sample_21",
+        "hotpotqa_sample_21",
+        "hotpotqa_sample_21",
+        "hotpotqa_sample_19"
+      ],
+      "latency_s": 5.887,
+      "top_k": 5,
+      "ground_truth_answer": "Kelli Ward",
+      "supporting_facts": [
+        [
+          "Sue Donahue",
+          2
+        ],
+        [
+          "Kelli Ward",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Which band was founded first, Hole, the rock band that Courtney Love was a frontwoman of, or The Wolfhounds?",
+      "answer": "Hole",
+      "context": "n Courtney Love, lead guitarist Eric Erlandson and drummer Patty Schemel.  The song was released as the band's fourth single in April 1993 on the European label City Slang.  To coincide with the song's lyrics, Love used a photograph of her husband, Kurt Cobain, at age 7 as the single's artwork.\n\n[The Wolfhounds]\nThe Wolfhounds are an indie pop/noise pop band formed in Romford, UK in 1985 by Dave Callahan, Paul Clark, Andy Golding, Andy Bolton and Frank Stebbing, and originally active until 1990.\n\n and grunge scenes of the 1990s, Love has enjoyed a career that spans four decades.  She rose to prominence as the frontwoman of the alternative rock band Hole, which she formed in 1989.  Love has drawn public attention for her uninhibited live performances and confrontational lyrics, as well as her highly publicized personal life following her marriage to Kurt Cobain.\n\n Courtney Love's husband, Kurt Cobain, died in their home.  It was Hole's only album to feature bassist Kristen Pfaff before her death in June 1994.  Recorded in October 1993, the album marked a divergence from the band's unpolished hardcore aesthetics to more refined melodies and song structure, and features production by Sean Slade and Paul Q. Kolderie, with mixing by Scott Litt and J Mascis.  The album's lyrics and packaging reflect Love's preoccupation with beauty, and its songs contain repe\n\nong was released as the band's eighth single and fourth and final single from their second studio album, \"Live Through This\", in December 1995.  The single was released just as the band finished their extensive touring in 1995.\n\n[Courtney Love]\nCourtney Michelle Love (born Courtney Michelle Harrison; July 9, 1964) is an American singer, songwriter, actress, and visual artist.  Prolific in the punk and grunge scenes of the 1990s, Love has enjoyed a career that spans four decades.  She rose to pro\n\nel]\nPatricia Theresa Schemel (born April 24, 1967) is an American drummer and musician who rose to prominence as the drummer of alternative rock band Hole from 1992 until 1998.  In 1998, Schemel left Hole, and in the early 2000s reunited with Hole frontwoman Courtney Love during her solo career, and later drummed for Juliette and the Licks.  As of 2010, Schemel continues to play music and gives drum lessons, in addition to owning a dog daycare/boarding business.  In 2013, Schemel joined the indi",
+      "sources": [
+        "hotpotqa_sample_22",
+        "hotpotqa_sample_22",
+        "hotpotqa_sample_22",
+        "hotpotqa_sample_22",
+        "hotpotqa_sample_22"
+      ],
+      "latency_s": 6.844,
+      "top_k": 5,
+      "ground_truth_answer": "The Wolfhounds",
+      "supporting_facts": [
+        [
+          "Courtney Love",
+          0
+        ],
+        [
+          "Courtney Love",
+          2
+        ],
+        [
+          "The Wolfhounds",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "How old is the female main protagonist of Catching Fire?",
+      "answer": "18",
+      "context": "[Catching Fire]\nCatching Fire is a 2009 science fiction young adult novel by the American novelist Suzanne Collins, the second book in \"The Hunger Games trilogy\".  As the sequel to the 2008 bestseller \"The Hunger Games\", it continues the story of Katniss Everdeen and the post-apocalyptic nation of Panem.  Following the events of the previous novel, a rebellion against the oppressive Capitol has begun, and Katniss and fellow tribute Peeta Mellark are forced to return to the arena in a special edi\n\n Malone, Sam Claflin, Lynn Cohen, Amanda Plummer, Alan Ritchson, and Meta Golding.  Filming began on September 10, 2012, in Atlanta, Georgia, before moving to Hawaii.  The plot of \"Catching Fire\" takes place a few months after the previous installment; Katniss Everdeen and fellow District 12 tribute Peeta Mellark have returned home safely after winning the 74th Annual Hunger Games.  Throughout the story, Katniss senses that a rebellion against the oppressive Capitol is simmering throughout the d\n\nacre]\nJenny Runacre (born 18 August 1946) is a South African-born English actress.  Her film appearances include \"The Passenger\" (1975), \"The Duellists\" (1977), \"Jubilee\" (1978), \"The Lady Vanishes\" (1979), and \"The Witches\" (1990).\n\ncoal indicates that wildfires began soon after the appearance of terrestrial plants 420 million years ago.  Wildfire’s occurrence throughout the history of terrestrial life invites conjecture that fire must have had pronounced evolutionary effects on most ecosystems' flora and fauna.  Earth is an intrinsically flammable planet owing to its cover of carbon-rich vegetation, seasonally dry climates, atmospheric oxygen, and widespread lightning and volcano ignitions.\n\n common names include glorybower, bagflower and bleeding-heart.  It is currently classified in the subfamily Ajugoideae, being one of several genera transferred from Verbenaceae to Lamiaceae in the 1990s, based on phylogenetic analysis of morphological and molecular data.\n\n[Wildfire]\nA wildfire or wildland fire is a fire in an area of combustible vegetation that occurs in the countryside or rural area.  Depending on the type of vegetation where it occurs, a wildfire can also be classified more s",
+      "sources": [
+        "hotpotqa_sample_23",
+        "hotpotqa_sample_23",
+        "hotpotqa_sample_367",
+        "hotpotqa_sample_121",
+        "hotpotqa_sample_230"
+      ],
+      "latency_s": 4.478,
+      "top_k": 5,
+      "ground_truth_answer": "16-year-old",
+      "supporting_facts": [
+        [
+          "Catching Fire",
+          0
+        ],
+        [
+          "The Hunger Games (novel)",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Chang Ucchin was born in korea during a time that ended with the conclusion of what? ",
+      "answer": "World War Two",
+      "context": " Korean writer.  Chang was born in Hamyeong Buk-do in what is now North Korea.  He studied at Waseda University in Japan, before being drafted into the Japanese army.  After the end of World War Two, he taught high school in Korea, writing fiction on the side.\n\n[Chang Ucchin]\nChang Ucchin (26 November 1917 – 27 December 1990) is one of the representatives of modern Korean fine art.  Chang was born when Korea was still under Japanese colonial rule.  He studied western art at Tokyo's Imperial Scho\n\n-hyang jeon\" directed by Park Tae-won and TBC TV drama, \"Haenyeo Dang-sil\" (Sea Woman Dang-sil).  Chang was commonly referred to as \"New Troika\" or \"Second Troika\" along with her rival actresses, Jeong Yun-hui and Yu Ji-in of the 1970s and 1980s after the \"First Troika\", Moon Hee, Nam Jeong-im, and Yoon Jeong-hee of the 1960s.\n\n[Chang Yong-hak]\nChang Yong-hak (25 April 1921 – 31 August 1999) was a Korean writer.  Chang was born in Hamyeong Buk-do in what is now North Korea.  He studied at Waseda\n\nremaining combat troops from South Korea.  North Korea saw its opportunity and attacked South Korean forces at the 38th parallel on June 25, 1950 and thus initiating the Korean War.\n\n[Chang Mi-hee]\nChang Mi-hee (born December 8, 1958) is a South Korean actress active since 1976.  She was born Lee Yun-hui in Seoul, South Korea in 1957.  Chang debuted as an actress in 1976 as starring in \"Seong Chun-hyang jeon\" directed by Park Tae-won and TBC TV drama, \"Haenyeo Dang-sil\" (Sea Woman Dang-sil).  Ch\n\nrotectorate of Japan.  The annexation of Korea by Japan was set up in the Japan–Korea Treaty of 1910, which was never actually signed by the Korean Regent, Gojong.\n\n[Tommy Chang (martial artist)]\nBorn and raised in Kyong Ki Do, South Korea, Master Tommy Chang is a Korean-Canadian world-renowned 7th degree Taekwondo and 8Th Degree Hapkido instructor and Grandmaster, actor, stunt performer, stunt coordinator and producer.  With over 40 years of training and experience in Taekwondo and Hapkido, Mas\n\n; born 21 March 1952) is a South Korean businessman.  He is best known as the president of the \"Maeil Business Newspaper\", South Korea's main business daily.  He also served a brief stint as South Korea's acting prime minister in August 2002 under president Kim Dae-jung, but the National Assembly voted not to confirm him.\n\n[Chang Won-jun]\nChang Won-jun (Hangul: 장원준, Hanja: 張元準) (born July 31, 1985 in Seoul) is a South Korean starting pitcher who currently plays for the Doosan Bears.  Chang playe",
+      "sources": [
+        "hotpotqa_sample_24",
+        "hotpotqa_sample_24",
+        "hotpotqa_sample_24",
+        "hotpotqa_sample_24",
+        "hotpotqa_sample_24"
+      ],
+      "latency_s": 6.727,
+      "top_k": 5,
+      "ground_truth_answer": "World War II",
+      "supporting_facts": [
+        [
+          "Chang Ucchin",
+          1
+        ],
+        [
+          "Korea under Japanese rule",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Who is the director of the 2003 film which has scenes in it filmed at the Quality Cafe in Los Angeles?",
+      "answer": "Pablo Trapero",
+      "context": "e, con aroma de mujer\" were filmed.\n\n[Quality Cafe (diner)]\nThe Quality Cafe (also known as Quality Diner) is a now-defunct diner at 1236 West 7th Street in Los Angeles, California.  The restaurant ceased to function as a diner in late 2006 but has appeared as a location featured in a number of Hollywood films, including \"Training Day\", \"Old School\", \"Se7en\", \"Ghost World\", \"Gone in 60 Seconds\", \"The Stepfather\", \"What's Love Got to Do with It\", \"Sex and Death 101\", and \"Catch Me If You Can.\"  I\n\nblanco ) is a 2012 Argentine drama film directed by Pablo Trapero.  The film competed in the \"Un Certain Regard\" section at the 2012 Cannes Film Festival.\n\n[Pablo Trapero]\nPablo Trapero (Born 4 October 1971) is an Argentine film producer, editor and director.\n\n[El Bonaerense]\nEl bonaerense is a 2000 Argentine, Chilean, French, and Dutch drama film.  It was directed and produced by Pablo Trapero.  The screenplay was a joint effort of Nicolas Gueilburt, Ricardo Ragendorfer, Dodi Shoeuer, Pablo Tra\n\nrtment of Quindio and the nation.  The town's best-known tourist attractions are its \"mirador\" (viewing tower) with its extensive views over the Cauca River valley to the west and the Parque Nacional Natural los Nevados to the east (it is also possible to see both Armenia and Pereira from the top of the tower), and the cafe in the main square where scenes from the popular Colombian telenovela \"Cafe, con aroma de mujer\" were filmed.\n\n[Quality Cafe (diner)]\nThe Quality Cafe (also known as Quality \n\nnvestor Mike Lewis was instrumental in financing and staging Heavens Cafe.  The Tributary Music Label released a live CD of Heavens Cafe to the progressive rock community in 2000.\n\n[Quality Cafe]\nQuality Cafe is the name of two different former locations in Downtown Los Angeles, California.\n\n[Quality Cafe (jazz club)]\nQuality Cafe was a historical restaurant and jazz club located at 1143 East 12th Street near the corner of Central Avenue in Downtown Los Angeles.  Quality Four, a jazz quartet fou\n\numentary about the cafe, \"This Is The Life\".  The film featured a number of hip hop artists discussing the importance of the Good Life Cafe to themselves and the hip hop scene.  The Cafe was open from 1989 to 1999.\n\n[Austin Young]\nAustin Young (born April 12, 1966) is an American photographer, film maker and new media artist currently based in Los Angeles.  His work has created an encyclopedic documentation of sub and trans culture in New York, Los Angeles and San Francisco.  Young's photographs",
+      "sources": [
+        "hotpotqa_sample_25",
+        "hotpotqa_sample_31",
+        "hotpotqa_sample_25",
+        "hotpotqa_sample_25",
+        "hotpotqa_sample_25"
+      ],
+      "latency_s": 5.815,
+      "top_k": 5,
+      "ground_truth_answer": "Todd Phillips",
+      "supporting_facts": [
+        [
+          "Quality Cafe (diner)",
+          0
+        ],
+        [
+          "Quality Cafe (diner)",
+          1
+        ],
+        [
+          "Old School (film)",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "New Faces of 1952 is a musical revue with songs and comedy skits, it helped jump start the career of which young performer, and American actress?",
+      "answer": "Chloe Anderson",
+      "context": "l variety stars Dick Van Dyke as the resident \"grown-up\" alongside 15 children (8 boys and 7 girls) ranging in age from 7 to 13.  Several of the special's young performers would subsequently go on to achieve child stardom in their own right, most notably Corey Feldman, Billy Jacoby and Georg Olden.\n\n[New Faces (film)]\nNew Faces is a 1954 American film adaptation of the musical revue \"New Faces of 1952\" directed by Harry Horner and sketches directed by John Beal.  Filmed in Cinemascope and Eastma\n\ncist for the stage.  He contributed songs to the musical revue \"New Faces of 1956\", and wrote both the music and lyric to the Broadway shows \"Happy Town\" (1959), \"A Joyful Noise\" (1966), and \"The Education of H*Y*M*A*N K*A*P*L*A*N\" (1968).  He married Chloe Anderson on December 23, 1953.  The couple had two children: Robert and Julie.\n\n[New Faces of 1952]\nNew Faces of 1952 is a musical revue with songs and comedy skits.  It ran on Broadway for nearly a year in 1952 and was then made into a motio\n\nions of \"New Faces\" were produced in 1934, 1936 (made into the film \"New Faces of 1937\"), 1943, 1952 (made into the film \"New Faces\"), 1956, 1962 and 1968.  The very first \"New Faces\" in 1934 included actors Henry Fonda, Imogene Coca and Frances Dewey Wormser.\n\n[Leonard Sillman's New Faces of 1968]\nLeonard Sillman's New Faces of 1968 is a 1968 musical revue produced by Leonard Sillman.  The original production included Madeline Kahn.\n\nadway producer.  Born in Detroit, Michigan on May 9, 1908, he was the brother of June Carroll, the brother-in-law of Sidney Carroll and the uncle of Steve Reich and Jonathan Carroll.  He is perhaps best known for his series of musical revues, \"Leonard Sillman's New Faces\", which introduced many major stars to Broadway audiences, such as Eartha Kitt, Inga Swenson, Paul Lynde and Maggie Smith.  Versions of \"New Faces\" were produced in 1934, 1936 (made into the film \"New Faces of 1937\"), 1943, 1952\n\n[Guess Who I Saw Today]\n\"Guess Who I Saw Today\" is a popular jazz song written by Murray Grand with lyrics by Elisse Boyd.  The song was originally composed for Leonard Sillman's Broadway musical revue \"New Faces of 1952\" in which it was sung by June Carroll.\n\n[Paul Nassau]\nPaul David Nassau (January 30, 1930 in New York City – March 9, 2013 in Palm Beach Gardens) was an American composer and lyricist for the stage.  He contributed songs to the musical revue \"New Faces of 1956\", and wrote both t",
+      "sources": [
+        "hotpotqa_sample_26",
+        "hotpotqa_sample_26",
+        "hotpotqa_sample_26",
+        "hotpotqa_sample_26",
+        "hotpotqa_sample_26"
+      ],
+      "latency_s": 7.331,
+      "top_k": 5,
+      "ground_truth_answer": "Carol Lawrence",
+      "supporting_facts": [
+        [
+          "New Faces of 1952",
+          2
+        ],
+        [
+          "Carol Lawrence",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Were Pavel Urysohn and Leonid Levin known for the same type of work?",
+      "answer": "no",
+      "context": "h Levin ( ; Russian: Леони́д Анато́льевич Ле́вин ; Ukrainian: Леоні́д Анато́лійович Ле́він ; born November 2, 1948) is a Soviet-American computer scientist.\n\n[Pavel Urysohn]\nPavel Samuilovich Urysohn (Па́вел Самуи́лович Урысо́н ) (February 3, 1898 – August 17, 1924) was a Soviet mathematician of Jewish origin who is best known for his contributions in dimension theory, and for developing Urysohn's Metrization Theorem and Urysohn's Lemma, both of which are fundamental results in topology.  His na\n\n Metrization Theorem and Urysohn's Lemma, both of which are fundamental results in topology.  His name is also commemorated in the terms Urysohn universal space, Fréchet–Urysohn space, Menger–Urysohn dimension and Urysohn integral equation.  He and Pavel Alexandrov formulated the modern definition of compactness in 1923.\n\n[Meyer Levin]\nMeyer Levin (October 7, 1905 – July 9, 1981) was an American novelist.  Perhaps best known for his work on the Leopold and Loeb case, Levin worked as a journalist\n\novelist.  Perhaps best known for his work on the Leopold and Loeb case, Levin worked as a journalist (for the \"Chicago Daily News\" and, from 1933–39, as an editor for \"Esquire\").\n\n[Leonid Bunimovich]\nLeonid Bunimovich is a Soviet and American mathematician, who specializes in dynamical systems.  He is known for discovery of a fundamental mechanism of chaos (hyperbolicity) in Dynamical systems, which is called mechanism of defocusing.  The most famous class of chaotic dynamical systems of this ty\n\n\", a volume written in response to operation \"Cast Lead\" (2008), was set by British composer Alexander Goehr for tenor, children's choir, and ensemble and premiered September 2012 at the CBSO Centre in Birmingham.  Levin is the son of the American novelist Meyer Levin (best known for \"Compulsion\", the first \"non-fiction novel\") and French novelist Tereska Torres.\n\n[Leonid Levin]\nLeonid Anatolievich Levin ( ; Russian: Леони́д Анато́льевич Ле́вин ; Ukrainian: Леоні́д Анато́лійович Ле́він ; born No\n\n Pavlovich Titov (Russian: Владимир Павлович Титов ; 12 [O.S. 1807] March , selo Noviki, Spassky Rayon, Ryazan Oblast — 27 [O.S. 1891] September , Kharkov), better known under the pseudonym Tit Kosmokratov (Russian: Тит Космократов ), was a Russian writer, statesman, diplomat.  As a writer he is best known for the novella \"The Remote House on Vasilyevsky Island\" (Уединённый домик на Васильевском), which was influenced by the writings of Aleksandr Pushkin.\n\n[The Last Summer (novella)]\nThe Last Su",
+      "sources": [
+        "hotpotqa_sample_27",
+        "hotpotqa_sample_27",
+        "hotpotqa_sample_27",
+        "hotpotqa_sample_27",
+        "hotpotqa_sample_266"
+      ],
+      "latency_s": 5.693,
+      "top_k": 5,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "Pavel Urysohn",
+          0
+        ],
+        [
+          "Leonid Levin",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Are both The New Pornographers and Kings of Leon American rock bands?",
+      "answer": "yes",
+      "context": "nds Superconductor and Zumpano in the 1990s.  Following the breakup of those bands, he reemerged as the leader of the New Pornographers in 2000, a band who have enjoyed commercial and critical success.\n\n[Kings of Leon]\nKings of Leon is an American rock band that formed in Nashville, Tennessee, in 1999.  The band is composed of brothers Caleb Followill (b. January 14, 1982, lead vocals, rhythm guitar), Nathan Followill (b. June 26, 1979, drums, percussion, backing vocals) and Jared Followill (b. \n\n the Time-Lag Records label and in the UK on Rough Trade Records.  The band's jangly, psychedelic pop music has been compared to The Byrds and New Zealand's The Chills, as well as North American indie-pop acts like The Shins and The New Pornographers.\n\n[The New Pornographers]\nThe New Pornographers is a Canadian indie rock band formed in 1997 in Vancouver, British Columbia.  Presented as a musical collective of singer-songwriters and musicians from multiple projects, the band has released seven s\n\n15 with a music video that was premiered on Pitchfork Media.\n\n[Kathryn Calder]\nKathryn Jane Calder (born June 17, 1982) is a Canadian indie rock musician, who performs as a solo artist, and is a member of the band The New Pornographers.  She is a former member of Immaculate Machine.  Calder started with The New Pornographers by filling in for Neko Case for live performances and was made a permanent member in 2006.\n\n[Kurt Dahle]\nKurt Colin Dahle is a Canadian musician best known for his work as a\n\nl and psychedelic.  The group amassed a following beginning in the 2000s in part due to their live performances.\n\nnny Rogers, Matraca Berg, Pam Tillis, Crystal Gayle, Brenda Lee, B. J. Thomas, Alabama, Michelle Wright, Loverboy, Randy Travis, The Oak Ridge Boys, Conway Twitty, Barbara Mandrell, Lonestar, Steve Wariner, Joe Diffie, Michael Martin Murphey, Marty Balin, Cindy Alexander, Kim Carnes, Keith Stegall, Shawn Camp, Lee Greenwood, Russ Taff, George Canyon, The Kendalls, Chris LeDoux, Sylvia, Mickey Gilley, Eddy Raven, John Conlee, Bryan White, Blaine Larsen, Tammy Cochran, John Berry, Rick Trevino, Ma",
+      "sources": [
+        "hotpotqa_sample_28",
+        "hotpotqa_sample_28",
+        "hotpotqa_sample_28",
+        "hotpotqa_sample_411",
+        "hotpotqa_sample_123"
+      ],
+      "latency_s": 6.191,
+      "top_k": 5,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "The New Pornographers",
+          0
+        ],
+        [
+          "Kings of Leon",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "comparison"
+    },
+    {
+      "question": "750 7th Avenue and 101 Park Avenue, are located in which city?",
+      "answer": "New York City",
+      "context": "ginning in 2001, Powell represented the 68th Assembly District, which includes parts of Harlem and East Harlem.  He was defeated by Charles Rangel in the 2010 Democratic Primary for the seat of the 15th Congressional District.\n\n[Seventh Avenue (Manhattan)]\nSeventh Avenue – known as Adam Clayton Powell Jr. Boulevard north of Central Park – is a thoroughfare on the West Side of the borough of Manhattan in New York City.  It is southbound below Central Park and a two-way street north of the park.\n\n\n\n.E.R. Carpenter\", and Mott B. Schmidt.  Carpenter is considered the leading architect for luxury residential high-rise buildings in New York City in the early 1900s, while Schmidt is known for his buildings in the American Georgian Classical style, including Sutton Place and houses for New York City's society figures and business elite.\n\n[101 Park Avenue]\n101 Park Avenue is a 629 ft tall skyscraper in New York City, New York.  It was completed in 1979 to 1982 and has 49 floors.  Eli Attia Archit\n\n[655 Park Avenue]\n655 Park Avenue is a Georgian-style co-op residential building on Manhattan's Upper East Side, located on Park Avenue between 67th Street and 68th Street, adjacent to the Park Avenue Armory.  It was developed in 1924 by Dwight P. Robinson & Company.  The building at 655 Park Avenue was designed by architects James Edwin Ruthven Carpenter, Jr., often referred to by the initials \"J.E.R. Carpenter\", and Mott B. Schmidt.  Carpenter is considered the leading architect for luxury res\n\n 8th Avenue N to the south; and Crowchild Trail, 12th Avenue N, Juniper Road, and 22nd Street W to the west.  Lions Park C-Train station is located within the community.  The community is built on an escarpment and is popular for its views of downtown to the south and the Rocky Mountains to the west.\n\n[Greenwich Avenue]\nGreenwich Avenue, formerly Greenwich Lane, is a southeast-northwest avenue located in the Greenwich Village neighborhood of Manhattan, New York City.  It extends from the interse\n\n and 67th Avenue, as well as the center of the block of Oak Park Avenue, 173rd Street, 67th Court and 172nd Street.  Another parking area exists along South Street opposite the main parking lot at the station.  The station itself is lies 23.5 mi away from LaSalle Street, the northern terminus of the line.",
+      "sources": [
+        "hotpotqa_sample_35",
+        "hotpotqa_sample_29",
+        "hotpotqa_sample_29",
+        "hotpotqa_sample_29",
+        "hotpotqa_sample_29"
+      ],
+      "latency_s": 6.444,
+      "top_k": 5,
+      "ground_truth_answer": "New York City",
+      "supporting_facts": [
+        [
+          "750 7th Avenue",
+          0
+        ],
+        [
+          "101 Park Avenue",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "comparison"
+    },
+    {
+      "question": "Which actress played the part of fictitious character Kimberly Ann Hart, in the franchise built around a live action superhero television series taking much of its footage from the Japanese tokusatsu 'Super Sentai'?",
+      "answer": "Amy Jo Johnson",
+      "context": "unko Kōmura.\n\n[Chouriki Sentai Ohranger]\nChōriki Sentai Ohranger (超力戦隊オーレンジャー , Chōriki Sentai Ōrenjā ) is a Japanese tokusatsu television series and the 19th installment in the long-running Super Sentai franchise of superhero programs.  Its footage was used in the American series, \"Power Rangers Zeo\" (the closing credits of \"Zeo\" referred to it as \"O Rangers\").\n\n[Kimberly Hart]\nKimberly Ann Hart is a fictitious character in the \"Power Rangers\" universe.  Played by actress Amy Jo Johnson during \n\nis a fictitious character in the \"Power Rangers\" universe.  Played by actress Amy Jo Johnson during the first three seasons of the show, plus on the two feature films of the franchise, Kimberly has the longest tenure of any female ranger in the series' history, and fourth overall.  She is possibly the best remembered as the first Pink Ranger and first Pink Ninja Ranger from the first entry of the franchise \"Mighty Morphin Power Rangers\".  Kimberly was the Pink Ranger for nearly three years befor\n\nfranchise \"Mighty Morphin Power Rangers\".  Kimberly was the Pink Ranger for nearly three years before she was written off the show as having given up her powers for good to Zordon's new alumna Katherine Hillard.\n\nranchises in Japan, alongside the Ultra Series and the Kamen Rider Series, which it currently airs alongside in the \"Super Hero Time\" programming block on Sundays.  Outside Japan, the Super Sentai Series is best known as the source material for the \"Power Rangers\" franchise.\n\n[Unofficial Sentai Akibaranger]\nUnofficial Sentai Akibaranger (非公認戦隊アキバレンジャー , Hikōnin Sentai Akibarenjā ) is a Japanese tokusatsu comedy series based on the Super Sentai Series.  It is not part of the official line up in T\n\ns a long-running Japanese superhero team franchise of TV series produced by Toei Co., Ltd., Toei Agency and Bandai, and aired by TV Asahi (\"Sentai\" is the Japanese word for \"task force\" or \"fighting squadron\").  The shows are of the \"tokusatsu\" genre, featuring live action characters and colorful special effects, and are aimed at children.  \"Super Sentai\" is one of the most prominent \"tokusatsu\" franchises in Japan, alongside the Ultra Series and the Kamen Rider Series, which it currently airs a",
+      "sources": [
+        "hotpotqa_sample_30",
+        "hotpotqa_sample_30",
+        "hotpotqa_sample_30",
+        "hotpotqa_sample_30",
+        "hotpotqa_sample_30"
+      ],
+      "latency_s": 6.901,
+      "top_k": 5,
+      "ground_truth_answer": "Amy Jo Johnson",
+      "supporting_facts": [
+        [
+          "Kimberly Hart",
+          0
+        ],
+        [
+          "Kimberly Hart",
+          1
+        ],
+        [
+          "Power Rangers",
+          0
+        ],
+        [
+          "Power Rangers",
+          1
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was born first, Pablo Trapero or Aleksander Ford?",
+      "answer": "Pablo Trapero",
+      "context": "ased in Nuevo Laredo, Tamaulipas, Mexico.  He worked for a number of media outlets in Mexico, including the \"El Norte\" and \"El Diario de Monterrey\", prior to his assassination.\n\nmerican actor, director, singer, and choreographer.  He is the brother of dancer Gregory Hines.\n\nClan ) is a 2015 Argentine biographical crime film directed by Pablo Trapero.  It was selected to be screened in the main competition section of the 72nd Venice International Film Festival, where director Pablo Trapero won the Silver Lion.  The film was selected as the Argentine entry for the Best Foreign Language Film at the 88th Academy Awards but was not nominated.\n\n[Aleksander Ford]\nAleksander Ford (born Mosze Lifszyc; 24 November 1908 in Kiev, Russian Empire – 4 April 1980 in Naples, Florid\n\n1937) was an American writer and dentist of Sephardic descent.  Born in Charleston, South Carolina, he moved to New York City, where he would spend most of his adult life, in 1877.\n\n16 March 1862 – 17 May 1941) was a nurse and early feminist.  She is best known as the youngest sister of the artist Vincent van Gogh and the art dealer Theo van Gogh.\n\n[Chris Carter (screenwriter)]\nChristopher Carl Carter (born October 13, 1956) is an American television and film producer, director and writer.  Born in Bellflower, California, Carter graduated with a degree in journalism from California State University, Long Beach before spending thirteen years working for \"Surfing Magazine\".  ",
+      "sources": [
+        "hotpotqa_sample_297",
+        "hotpotqa_sample_88",
+        "hotpotqa_sample_31",
+        "hotpotqa_sample_252",
+        "hotpotqa_sample_457"
+      ],
+      "latency_s": 6.084,
+      "top_k": 5,
+      "ground_truth_answer": "Aleksander Ford",
+      "supporting_facts": [
+        [
+          "Pablo Trapero",
+          0
+        ],
+        [
+          "Aleksander Ford",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "comparison"
+    },
+    {
+      "question": "Are Jane and First for Women both women's magazines?",
+      "answer": "yes",
+      "context": "e, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common in Malaysia.\n\n[First for Women]\nFirst for Women is a woman's magazine published by Bauer Media Group in the USA.  The magazine was started in 1989.  It is based in Englewood Cliffs, New Jersey.  In 2011 the circulation of the magazine was 1,310,696 copies.\n\n[Jane (magazine)]\nJane was an American magazine created to appeal to the women who grew up reading \"Sassy Magazine\"; Jane Pratt was the foundi\n\n everyday life\" experienced by its readers.\n\n[List of magazines in China]\nIn 1898 the first women's magazine was published in China.  The number of women's magazines has increased in the country since the late 1980s.  In addition to national titles international magazines are also published in the country. \" Madame Figaro\", and \"Elle\" are among such titles both of which entered into the Chinese market in 1988.  In 1998 \"Cosmopolitan\" began to be published in the country. \" Esquire\" is the first \n\n[List of magazines in Malaysia]\nThe first women's magazine was published in Malaysia in 1932.  In the 2000s there were nearly fifty local titles addressing women in the country.  These magazines also include those having an Islamic perspective.  Some international women's magazines are also published in Malaysia.  One of them is \"Elle Malaysia\", which was first published in March 2014.  Another one, \"Women’s Health\", was started in April 2015.  Comic magazines and film magazines are also common \n\nThe self-published magazine was founded by Kirsten Grimstad and Susan Rennie at the Woman's Building in downtown Los Angeles.  \"Chysalis\" grew from Grimstad and Rennie's editorial work on the self-help resource books, The New Woman's Survival Catalog and The New Woman's Survival Sourcebook.  \"Chrysalis\" distinguished itself from other feminist publications through an organic integration of politics, literature, cultural studies, and art.  The magazine was produced through a collective process th\n\nwer.\n\n[Jane Cunningham Croly]\nJane Cunningham Croly (December 19, 1829 – December 23, 1901) was an American author and journalist, better known by her pseudonym, Jennie June.  She was a pioneer author and editor of women's columns in leading newspapers and magazines in New York.  She founded the Sorosis club for women in New York in 1868 and in 1889 expanded it nationwide to the General Federation of Women's Clubs.  She also founded the Woman's Press Club of New York City.\n\n[My Secret Garden]\nMy",
+      "sources": [
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_32",
+        "hotpotqa_sample_156",
+        "hotpotqa_sample_32"
+      ],
+      "latency_s": 9.958,
+      "top_k": 5,
+      "ground_truth_answer": "yes",
+      "supporting_facts": [
+        [
+          "Jane (magazine)",
+          0
+        ],
+        [
+          "First for Women",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "What profession does Nicholas Ray and Elia Kazan have in common?",
+      "answer": "film director",
+      "context": "out a Cause.\"\n\n[Elia Kazan]\nElia Kazan (born Elias Kazantzoglou September 7, 1909 – September 28, 2003) was a Greek-American director, producer, writer and actor, described by \"The New York Times\" as \"one of the most honored and influential directors in Broadway and Hollywood history\".\n\n[Art &amp; Gadg]\nArt & Gadg is an original radio play by Gregory Evans about the relationship between Arthur Miller (Art) and Elia Kazan (Gadg short for gadget, a nickname of Kazan).  The 45-minute play was first\n\n Mississippi; after one of the men commits arson against the other's gin, the owner retaliates by attempting to seduce the arsonist's nineteen-year-old virgin bride with the hopes of receiving an admission by her of her husband's guilt.\n\n[Nicholas Ray]\nNicholas Ray (born Raymond Nicholas Kienzle Jr., August 7, 1911 – June 16, 1979) was an American film director best known for the movie \"Rebel Without a Cause.\"\n\n[Elia Kazan]\nElia Kazan (born Elias Kazantzoglou September 7, 1909 – September 28, 20\n\nNicholas Kazan and Robin Swicord.  She is the granddaughter of film director Elia Kazan and playwright Molly Kazan.  Maya is the younger sister of actress Zoe Kazan.\n\n[Macao (film)]\nMacao is a 1952 black-and-white film noir adventure directed by Josef von Sternberg and Nicholas Ray.  Producer Howard Hughes fired director von Sternberg during filming and hired Nicholas Ray to finish it.  The drama features Robert Mitchum, Jane Russell, William Bendix, and Gloria Grahame.\n\nler (Art) and Elia Kazan (Gadg short for gadget, a nickname of Kazan).  The 45-minute play was first transmitted on BBC Radio 4 15 January 2013.  It was directed by Marc Beeby.\n\n[A Letter to Elia]\nA Letter to Elia is a 2010 documentary film directed by Kent Jones and Martin Scorsese that follows the life and career of film director Elia Kazan and how he influenced Scorsese.  Made from clips from films, stills, readings from Kazan's autobiography, a speech he wrote on directing read by Elias Kote\n\nhe story to the more similar biblical story of Naboth's Vineyard, where a King vies for his subjects' land and is motivated by his Queen to obtain it in a sly manner.  The character development of the protagonist parallels another biblical figure, Job.  The producer Alexander Rodnyansky has said: \"It deals with some of the most important social issues of contemporary Russia while never becoming an artist's sermon or a public statement; it is a story of love and tragedy experienced by ordinary pe",
+      "sources": [
+        "hotpotqa_sample_33",
+        "hotpotqa_sample_33",
+        "hotpotqa_sample_33",
+        "hotpotqa_sample_33",
+        "hotpotqa_sample_361"
+      ],
+      "latency_s": 8.784,
+      "top_k": 5,
+      "ground_truth_answer": "director",
+      "supporting_facts": [
+        [
+          "Nicholas Ray",
+          0
+        ],
+        [
+          "Elia Kazan",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Where is the company that purchased Aixam based in?",
+      "answer": "Savoie",
+      "context": "nc. in 2003.  (Topps was, in turn, acquired by Michael Eisner's Tornante Company and Madison Dearborn Partners in 2007.)\n\n[Aixam]\nAixam-Mega is a French automobile manufacturer based in Aix-les-Bains, Savoie.  It was founded in 1983 to make microcars following the acquisition of Arola.  On April 11, 2013, US based Polaris Industries announced that it had acquired Aixam-Mega.\n\n[Arola (microcar)]\nArola SARL was a small manufacturing company based in Lyon-Corbas, France, which manufactured a range \n\n is a Canadian integrated logistics services company specializing in customs brokerage, freight forwarding and North American transport.  The company opened in Montreal, Quebec in 1951.  In 2011, Milgram expanded into its new headquarters within a fully renovated facility built with green materials at 400 Wellington Street in close proximity to the Old Port of Montreal.  That year, it was also named one of Canada's 50 best managed companies by the National Post, Deloitte and CIBC.  Milgram also \n\nen, and Rotterdam — both in the Netherlands — Paris, and Guangzhou.  It employs about 300 people.  The company was acquired by Cognizant in 2016.\n\ner of the House of Commons.\n\n[Jardine Matheson]\nJardine Matheson Holdings Limited, also known as Jardines, is a British conglomerate incorporated in Bermuda, with its primary listing on the Singapore Exchange.  The majority of its business interests are in Asia, and its subsidiaries include Jardine Pacific, Jardine Motors, Jardine Lloyd Thompson, Hongkong Land, Jardine Strategic Holdings, Dairy Farm, Mandarin Oriental Hotel Group, Jardine Cycle & Carriage and Astra International.\n\n[David Sheepsh\n\nola SARL was a small manufacturing company based in Lyon-Corbas, France, which manufactured a range of microcars, designed to be driven without a licence.  Arola became part of the Aixam group in 1983.\n\n[Knapp, Stout &amp; Co.]\nKnapp, Stout & Co. was a lumber company based in Menomonie, Wisconsin in the 19th and early 20th centuries.  The company was established in 1846, when John Holly Knapp and William Wilson purchased half of interest in a lumber mill on the Red Cedar River from David Black; ",
+      "sources": [
+        "hotpotqa_sample_34",
+        "hotpotqa_sample_154",
+        "hotpotqa_sample_138",
+        "hotpotqa_sample_135",
+        "hotpotqa_sample_34"
+      ],
+      "latency_s": 5.79,
+      "top_k": 5,
+      "ground_truth_answer": "Roseau, Minnesota, USA",
+      "supporting_facts": [
+        [
+          "Aixam",
+          2
+        ],
+        [
+          "Polaris Industries",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which documentary is about Finnish rock groups, Adam Clayton Powell or The Saimaa Gesture?",
+      "answer": "The Saimaa Gesture",
+      "context": " designed by the African-American architecture firm of Ifill Johnson Hanchard in the shape of an African mask in the Brutalist Architecture style.  It is the tallest building in Harlem, overtaking the nearby Hotel Theresa.\n\n[The Saimaa Gesture]\nThe Saimaa Gesture (Finnish: \"Saimaa-ilmiö\" ) is a 1981 film by Finnish directors Aki and Mika Kaurismäki.  It is a documentary of three Finnish rock groups aboard the steamboat SS Heinävesi on their tour around Lake Saimaa.\n\n[Adam Clayton Powell Sr.]\nAda\n\ne would later go on to direct and score the film Andalusian Doug: Academic Freedom vs. Religious Conservatism, a documentary about the controversial teaching methods of his music professor, Douglas DiBianco.  Between 1997 and 2011 he was a touring member of Tub Ring, Super 8-Bit Brothers, and occasional fill-in for Mindless Self Indulgence.\n\n[Tappi Tíkarrass]\nTappi Tíkarrass was an Icelandic punk band which added elements of funk, rock and jazz to their music, marking a difference from other tra\n\n[Adam (musical)]\nAdam is a musical with a book by June Tansey, lyrics and music by Richard Ahlert, based on the life of the controversial politician Adam Clayton Powell Jr..\n\n[Adam Clayton Powell (film)]\nAdam Clayton Powell is a 1989 American documentary film directed by Richard Kilberg about the civil rights leader.  It was nominated for an Academy Award for Best Documentary Feature.\n\n[Adam Clayton Powell Jr.]\nAdam Clayton Powell Jr. (November 29, 1908 – April 4, 1972) was a Baptist pastor and \n\ness in the 20th century; Powell was the fourth.\n\n[Adam Clayton Powell IV]\nAdam Clayton Powell IV (born Adam Clayton Powell Diago in 1962) is an American politician from the state of New York.  He was a member of the New York State Assembly from 2001 to 2010.  From 1992–1997, he served as New York City Council Member representing East Harlem and parts of the Upper West Side and the South Bronx.  Beginning in 2001, Powell represented the 68th Assembly District, which includes parts of Harlem and E\n\ni's Journey Inside Germany's Neo-Nazi Movement\" by Yaron Svoray and Nick Taylor",
+      "sources": [
+        "hotpotqa_sample_35",
+        "hotpotqa_sample_368",
+        "hotpotqa_sample_35",
+        "hotpotqa_sample_35",
+        "hotpotqa_sample_447"
+      ],
+      "latency_s": 12.396,
+      "top_k": 5,
+      "ground_truth_answer": "The Saimaa Gesture",
+      "supporting_facts": [
+        [
+          "Adam Clayton Powell (film)",
+          0
+        ],
+        [
+          "The Saimaa Gesture",
+          0
+        ],
+        [
+          "The Saimaa Gesture",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Who was inducted into the Rock and Roll Hall of Fame, David Lee Roth or Cia Berg?",
+      "answer": "David Lee Roth",
+      "context": "le \"Hobo Humpin' Slobo Babe\".\n\n[David Lee Roth]\nDavid Lee Roth (born October 10, 1954) is an American rock vocalist, musician, songwriter, actor, author, and former radio personality.  In 2007, he was inducted into the Rock and Roll Hall of Fame.\n\n[David Lee Roth discography]\nDavid Lee Roth is an American rock music singer.  His discography consists of six studio albums, one extended play, one compilation album, and twenty singles.  Of his eight albums, four have been certified Gold or higher by\n\nThe Midnighters as a \"group\" were inducted into the Rock and Roll Hall of Fame on April 14, 2012.\n\n[The David Lee Roth Show]\nThe David Lee Roth Show is a former short-lived American radio show that aired from January 3 to April 21, 2006, hosted by rock musician David Lee Roth.  It was the replacement of \"The Howard Stern Show\" following its departure from terrestrial to Sirius Satellite Radio.  It was simulcast on seven stations across the United States owned by CBS Radio, who launched the show \n\nng Magazine Hall of Fame in 1969 and the International Boxing Hall of Fame in 2013.\n\nries, occasionally uncomfortable debates on intellectual matters, and interviews with people Roth admired, such as guitarist Brian May, baseball player Johnny Damon, and Roth's uncle, Manny Roth.\n\n[Cia Berg]\nCia Berg (born 2 December 1963), now known as Cia Soro, is a Swedish television presenter and singer.  She was at one time the lead singer of the Swedish rock band Whale, who released the single \"Hobo Humpin' Slobo Babe\".\n\n[David Lee Roth]\nDavid Lee Roth (born October 10, 1954) is an America\n\n\", \"It's Love Baby (24 Hours a Day)\", \"Annie Had a Baby\", \"The Hoochi Coochi Coo\", \"Teardrops on Your Letter\", \"Get It\", \"The Float\" and \"Nothing but Good\".  They received the Rhythm and Blues Foundation's prestigious Pioneer Award in 1992 and were inducted into the Vocal Group Hall of Fame in 1999.  The group's lead singer, Hank Ballard, was inducted into the Rock and Roll Hall of Fame in 1990.  The Midnighters as a \"group\" were inducted into the Rock and Roll Hall of Fame on April 14, 2012.\n\n[",
+      "sources": [
+        "hotpotqa_sample_36",
+        "hotpotqa_sample_36",
+        "hotpotqa_sample_485",
+        "hotpotqa_sample_36",
+        "hotpotqa_sample_36"
+      ],
+      "latency_s": 7.746,
+      "top_k": 5,
+      "ground_truth_answer": "David Lee Roth",
+      "supporting_facts": [
+        [
+          "Cia Berg",
+          0
+        ],
+        [
+          "Cia Berg",
+          1
+        ],
+        [
+          "David Lee Roth",
+          0
+        ],
+        [
+          "David Lee Roth",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    },
+    {
+      "question": "Zimbabwe's Guwe Secondary School has a sister school in what New York cunty?",
+      "answer": "Carle Place",
+      "context": "or seating of students.  Head of school is thought to be Principal or headmaster and the former principal was Mr.Mahesh Niraula whereas the current Principal is Mr. Ram Prasad Timsina.Since it is a government school it has not any sister school however few name of schools may come with the same name but they are distinguished by location.\n\n[Guwe Secondary School]\nGuwe Secondary School is located in Zimbabwe.  It has a sister school in Carle Place, New York, United States.\n\n[Singwango Secondary S\n\nt is also the first formal points within Zimbabwe to have guardedly resisted Western incursions into the region by the missionaries.  Finally, it was also the site of mutual co-existence between the Kingdom of King Mzilikazi and the Western Missionaries.  Inyathi High School is a boarding co-educational secondary school in Inyathi, Zimbabwe designed along the lines of the traditional British Boarding Public School System (without the attendant social implications).  Together with sister institut\n\n[Inyathi High School]\nInyathi High School (formerly, Inyathi Secondary School and prior to that Inyathi Mission) holds the distinction of being the oldest formal educational institution of any kind in Zimbabwe.  Inyathi High School stands out in the history of Zimbabwe as having been amongst the first places in modern-day Zimbabwe to have seen the dawn of Western Civilization within the region.  It is also the first formal points within Zimbabwe to have guardedly resisted Western incursions into\n\nn Zimbabwe.  It has a sister school in Carle Place, New York, United States.\n\n[Singwango Secondary School]\nSingwango Secondary School is located in Filabusi, Matabeleland South Province, Zimbabwe.  It had a sister school in Carle Place, New York, United States, although Carle Place High School still donates sports equipment and clothes.\n\n[Carle Place High School]\nCarle Place Middle/High School is a six-year comprehensive public high school located in the hamlet of Carle Place in Nassau County, N\n\nridge International Examinations syllabus, allowing students to sit for the International General Certificate of Secondary Education (IGCSE) after four years of secondary education, and the A-Level examination after a further two years.Legae academy is the best school for Cambridge in not only Botswana but Southern africa itself\n\n[Winslow Township High School]\nWinslow Township High School (WTHS) is a four-year comprehensive public high school in Winslow Township, in Camden County, New Jersey, Un",
+      "sources": [
+        "hotpotqa_sample_37",
+        "hotpotqa_sample_37",
+        "hotpotqa_sample_37",
+        "hotpotqa_sample_37",
+        "hotpotqa_sample_37"
+      ],
+      "latency_s": 7.012,
+      "top_k": 5,
+      "ground_truth_answer": "Nassau County",
+      "supporting_facts": [
+        [
+          "Guwe Secondary School",
+          1
+        ],
+        [
+          "Carle Place High School",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "The Royal Commission into Drug Trafficking (1977–1979) or Woodward Royal Commission was a royal commission initiated by the New South Wales Government to investigate drug trafficking in New South Wales, Australia, especially links between the New South Wales Police and Mafia, The Honoured Society, is a Calabrian 'Ndrangheta criminal confederation, started in Melbourne and currently active in all of which country?  ",
+      "answer": "Australia",
+      "context": "ner or simply just \"Commissioner\".  The New South Wales Police Force has had 22 Commissioners since 1851.\n\n[Royal Commission into Drug Trafficking]\nThe Royal Commission into Drug Trafficking (1977–1979) or Woodward Royal Commission was a royal commission initiated by the New South Wales Government to investigate drug trafficking in New South Wales, Australia, especially links between the Mafia and New South Wales Police and the disappearance of anti-marijuana campaigner Donald Mackay.\n\n[New Sout\n\nd in the Victoria Market Murders.  It was led by gangster Frank Benvenuto until his slaying in 2000.  Tony Romeo, another high-ranking member, was shot in 2002.\n\n[Royal Commission of Inquiry into Drug Trafficking]\nThe Royal Commission of Inquiry into Drug Trafficking (1981–1983), also known as the Stewart Royal Commission, was a Royal Commission set up in 1981 by the Commonwealth, Queensland, New South Wales and Victorian governments to inquire into various drug trafficking and related criminal \n\nSouth Wales and Victorian governments to inquire into various drug trafficking and related criminal activities of Terence John Clark and his associates.  However, the Commission would spend much of its time examining how criminals were using and abusing the passport system for criminal purposes.\n\n[Chelmsford Royal Commission]\nThe Chelmsford Royal Commission (1988–1990), chaired by Justice John Patrick Slattery, was established by the New South Wales state government, ostensibly to investigate me\n\nic Institute.  Following media pressure it focused more on the Deep Sleep Therapy of Dr Harry Bailey, the director, from 1963 to 1979, of the state-funded Neuropsychiatric Institute and then the Chelmsford Private Hospital, a private psychiatric institution in Sydney.\n\n[Robert Trimbole]\nBruno Robert Trimbole (19 March 1931 – 12 May 1987) was an Australian businessman, drug baron and organised crime boss whose was alleged involvement in drug trafficking in the Griffith, New South Wales area, whic\n\n New South Wales Police and the disappearance of anti-marijuana campaigner Donald Mackay.\n\n[New South Wales Police Force]\nThe New South Wales Police Force (NSW Police Force; previously the New South Wales Police Service and New South Wales Police) is the primary law enforcement agency of the state of New South Wales, Australia.  It is a servant of the Crown, independent of Government, although a minister of the Crown has administration.  Divided into seventy six local area commands (LAC), the NS",
+      "sources": [
+        "hotpotqa_sample_38",
+        "hotpotqa_sample_38",
+        "hotpotqa_sample_38",
+        "hotpotqa_sample_38",
+        "hotpotqa_sample_38"
+      ],
+      "latency_s": 5.941,
+      "top_k": 5,
+      "ground_truth_answer": "Australia",
+      "supporting_facts": [
+        [
+          "Royal Commission into Drug Trafficking",
+          0
+        ],
+        [
+          "Honoured Society (Australia)",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The 337th Flight Test Squadron (337 FLTS) was most recently part of the 46th Test Wing and based at McClellan Air Force Base, a former United States Air Force base located in the North Highlands area of Sacramento County, in which US state?",
+      "answer": "California",
+      "context": "e]\nMcClellan Air Force Base (1935–2001) is a former United States Air Force base located in the North Highlands area of Sacramento County, 7 mi northeast of Sacramento, California.\n\n[417th Flight Test Squadron]\nThe 417th Flight Test Squadron is an inactive United States Air Force squadron.  It was last assigned to the 412th Operations Group at Edwards Air Force Base, California, where it was inactivated on 14 February 2012.  The squadron was first activated in 1989 as the 6517th Test Squadron an\n\n operations and intelligence missions world-wide.  Official documents make it clear that operations fall under the aegis of Air Force Special Operations Command.\n\n[586th Flight Test Squadron]\nThe 586th Flight Test Squadron (586 FLTS) is part of the 96th Test Wing based at Holloman Air Force Base, New Mexico.\n\n[337th Flight Test Squadron]\nThe 337th Flight Test Squadron (337 FLTS) was most recently part of the 46th Test Wing and based at McClellan Air Force Base, California.  It performed depot ac\n\nal New Mexico.  It is adjacent to the White Sands Missile Range and is operated by the 846th Test Squadron of the 96th Test Group of the 96th Test Wing at Eglin Air Force Base.  The Test Track provides its services to a wide variety of American defense and governmental agencies such as the Air Force, Army, Navy, and the Missile Defense Agency, as well as America's allies.\n\n[McClellan Air Force Base]\nMcClellan Air Force Base (1935–2001) is a former United States Air Force base located in the Nort\n\nivated on 14 February 2012.  The squadron was first activated in 1989 as the 6517th Test Squadron and conducted flight testing of the McDonnell Douglas C-17 Globemaster III until it was inactivated in 1995 as the 417th Test Squadron.  It was reactivated in 2006 and performed ground and flight testing on the Boeing YAL-1A until 2012.\n\n[96th Test Wing]\nThe 96th Test Wing is a United States Air Force unit assigned to the Air Force Test Center of Air Force Materiel Command at Eglin Air Force Base, F\n\n Base, Florida.  The wing's 46th Test Group was a tenant unit at Holloman Air Force Base, New Mexico.\n\n[46th Test Group]\nThe 46th Test Group was a United States Air Force unit active from 1992 to 2012.  It was last active with 46th Test Wing, at Eglin Air Force Base, Florida.  The 46th Test Group was stationed as a tenant unit at Holloman Air Force Base, New Mexico, throughout its existence.  It was inactivated on 18 July 2012, being replaced by the 96th Test Group in an administrative reorganiz",
+      "sources": [
+        "hotpotqa_sample_39",
+        "hotpotqa_sample_39",
+        "hotpotqa_sample_39",
+        "hotpotqa_sample_39",
+        "hotpotqa_sample_39"
+      ],
+      "latency_s": 6.132,
+      "top_k": 5,
+      "ground_truth_answer": "California",
+      "supporting_facts": [
+        [
+          "337th Flight Test Squadron",
+          0
+        ],
+        [
+          "McClellan Air Force Base",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "The axial turbojet Pirna 014 was designed by engineers from this German aircraft and aircraft engine manufacturer based in which city?",
+      "answer": "East Germany",
+      "context": "s AG is a German aircraft engine manufacturer.  MTU develops, manufactures and provides service support for military and civil aircraft engines.  MTU Aero Engines was formerly known as MTU München.\n\n[Pirna 014]\nThe Pirna 014 was an axial turbojet designed in East Germany (or the GDR) in the mid- to late 1950s by former Junkers engineers, who were repatriated to East Germany in 1954 after being held in custody in the Soviet Union following World War II.\n\n[Stratus 2000]\nStratus 2000, Inc was an Am\n\nengine manufacturer Orenda Engines, a part of the Avro Canada group.  Intended for the CF-105 Arrow interceptor, development was cancelled, along with the Arrow, in 1959.\n\n[D-Motor]\nD-Motor is a Belgian aircraft engine manufacturer based in Deerlijk.  The company specializes in the design and manufacture of aircraft engines for homebuilt and ultralight aircraft.\n\n[MTU Aero Engines]\nMTU Aero Engines AG is a German aircraft engine manufacturer.  MTU develops, manufactures and provides service supp\n\n BMW name.  An aircraft engine manufacturer during World War I, BMW was forced to diversify after the Treaty of Versailles banned the German air force and German aircraft manufacture.  BMW initially turned to industrial engine design and manufacturing.\n\n[Orenda Iroquois]\nThe Orenda PS.13 Iroquois was an advanced turbojet engine designed for military use.  It was developed by the Canadian aircraft engine manufacturer Orenda Engines, a part of the Avro Canada group.  Intended for the CF-105 Arrow \n\nd in custody in the Soviet Union following World War II.\n\n[Stratus 2000]\nStratus 2000, Inc was an American aircraft engine manufacturer based in Camano Island, Washington and later in Corvallis, Oregon.  The company specialized in the design and manufacture of engines based on Subaru automotive engines for homebuilt aircraft.\n\n[Junkers]\nJunkers Flugzeug- und Motorenwerke AG (JFM, earlier JCO or JKO in World War I), more commonly Junkers, was a major German aircraft and aircraft engine manufactur\n\n[Hexatron Engineering]\nHexatron Engineering Co., Inc. is an American aerospace engineering, aircraft engine and aircraft parts manufacturer based in Salt Lake City, Utah.  The company was founded in 1982 by Cy Williams and specializes in the design and manufacture of airline aircraft crew seats and also has an aircraft engine design in production for homebuilt, ultralight aircraft and the American light-sport aircraft categories.\n\n[History of BMW]\nBMW AG originated with three other manufacturing",
+      "sources": [
+        "hotpotqa_sample_40",
+        "hotpotqa_sample_40",
+        "hotpotqa_sample_40",
+        "hotpotqa_sample_40",
+        "hotpotqa_sample_40"
+      ],
+      "latency_s": 5.662,
+      "top_k": 5,
+      "ground_truth_answer": "Dessau",
+      "supporting_facts": [
+        [
+          "Pirna 014",
+          0
+        ],
+        [
+          "Junkers",
+          0
+        ],
+        [
+          "Junkers",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Which faith is designated to the University of Providence, private university accredited by the NW association of Schools and Colleges and located in a third largest city in Montana after being passed by Missoula? ",
+      "answer": "Roman Catholic",
+      "context": "nd private institutions as well as 2-year community colleges, all of which are non-profit schools accredited by the New England Association of Schools and Colleges.\n\n[University of Providence]\nThe University of Providence (UP) (renamed from University of Great Falls in July 2017), is a private Roman Catholic university located in Great Falls, Montana within the Diocese of Great Falls–Billings.  The university is accredited by the Northwest Association of Schools and Colleges.  The University's m\n\nrrently, the university offers associate’s, bachelor's and master's degrees through the University’s five colleges.  The five colleges of Montana State University Billings are Arts and Sciences, Business, Allied Health professions, Education and City College.  It has the third largest campus population in the Montana State University System.\n\n[Media in Missoula, Montana]\nSince its incorporation in 1885, Missoula, Montana has been one of the primary media markets in the state of Montana, beginnin\n\nket includes Missoula, Ravalli, Granite, Mineral, Lake, Flathead, and Sanders and serves over 113,000 television homes (2011).  Missoula is also home to the state's third largest daily newspaper, the \"Missoulian\", and the state's largest alternative weekly, the \"Missoula Independent\".\n\n[Ohio Northern University]\nOhio Northern University is a private, United Methodist Church-affiliated university located in the United States in Ada, Ohio, founded by Henry Solomon Lehr in 1871.  ONU is accredited \n\nssessment and Accreditation Council, an autonomous organization instituted by the University Grants Commission.  In September 2010, St. Thomas College completed the re-accreditation process and National Assessment and Accreditation Council accredited the college with A grade and 3.58 points out of 4.00.  With this grade this college stand first in Thrissur district and third in Kerala state.\n\n[Monument to Andrew the Apostle]\nMonument to Andrew the Apostle (Russian: Памятник Андрею Первозванному \n\nrogram (M-CMRS).  The CMRS has long been affiliated with Keble College, Oxford, and participants are associate members of the College with access to all its facilities.  Among the American colleges and universities that have sent students to CMRS are The University of Georgia, Elmhurst College, St. Mary's College of California, St. Mary's College of Maryland, St. Olaf College, William Jewell College, Middlebury College.\n\n[Renaissance studies]\nRenaissance studies (also \"Renaissance and Early Mode",
+      "sources": [
+        "hotpotqa_sample_41",
+        "hotpotqa_sample_41",
+        "hotpotqa_sample_41",
+        "hotpotqa_sample_238",
+        "hotpotqa_sample_131"
+      ],
+      "latency_s": 4.985,
+      "top_k": 5,
+      "ground_truth_answer": "Roman Catholic",
+      "supporting_facts": [
+        [
+          "University of Providence",
+          0
+        ],
+        [
+          "University of Providence",
+          1
+        ],
+        [
+          "Great Falls, Montana",
+          0
+        ],
+        [
+          "Great Falls, Montana",
+          5
+        ],
+        [
+          "Great Falls, Montana",
+          6
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Pauline Henry was known as the vocalist of a very popular cover song. Which album was this song from?",
+      "answer": "The Joshua Tree",
+      "context": " vocals, the album includes their cover of U2's \"I Still Haven't Found What I'm Looking For\", which reached number 6 in the UK Singles Chart, along with their other Top 40 hit \"Heaven\", which reached number 24.  The album was certified silver in the UK, and gold in Australia.\n\n[The Chimes (Scottish band)]\nThe Chimes were a successful dance music trio.  Pauline Henry (born in Jamaica) with Mike Peden and James Locke from Edinburgh, in Scotland.  They are best known for their hits \"Heaven\" and a r\n\n\"I Still Haven't Found What I'm Looking For\" is a song by Irish rock band U2.  It is the second track from their 1987 album \"The Joshua Tree\" and was released as the album's second single in May 1987.  The song was a hit, becoming the band's second consecutive number-one single on the US \"Billboard\" Hot 100 while peaking at number six on the UK Singles Chart.\n\n[Pauline Henry]\nPauline Henry (born 29 January 1961) is a British Jamaican recording artist.  She was the vocalist in the Scottish band T\n\n Britpop in the 1990s, comprising Crispin Hunt (vocals), Richard Hawley (guitar), Simon Stafford (bass guitar) and former Cabaret Voltaire member Dee Boyle (drums) who was replaced by Andy Cook for their second album.  Hailing from Sheffield, the group had success with singles such as \"She Said\", \"On and On\", and their well-received debut album \"The Sun Is Often Out\" (1996).\n\nis a live album by jazz composer, arranger, conductor and pianist Gil Evans, recorded in 1973 by Evans with an orchestra featuring Ted Dunbar, Howard Johnson, David Sanborn, Billy Harper, Richard Williams, Trevor Koehler, and Hannibal Marvin Peterson.  The name of the album is an anagram for Gil Evans.\n\n written and produced by Alison Goldfrapp and Will Gregory, with additional production by Richard X.  The song was released on 7 June 2010 as the album's second single.  The single failed to chart on the UK Singles Chart, while becoming Goldfrapp's fifth single to top the Hot Dance Club Songs chart in the United States.\n\n[Pearl Lowe]\nPearl Lowe (born Pearl Samantha Davis; 1970), is an English fashion and textiles designer, and former singer-songwriter.\n\n[Alison Goldfrapp]\nAlison Elizabeth Margar",
+      "sources": [
+        "hotpotqa_sample_42",
+        "hotpotqa_sample_42",
+        "hotpotqa_sample_86",
+        "hotpotqa_sample_490",
+        "hotpotqa_sample_134"
+      ],
+      "latency_s": 6.65,
+      "top_k": 5,
+      "ground_truth_answer": "The Joshua Tree",
+      "supporting_facts": [
+        [
+          "Pauline Henry",
+          0
+        ],
+        [
+          "Pauline Henry",
+          1
+        ],
+        [
+          "I Still Haven't Found What I'm Looking For",
+          0
+        ],
+        [
+          "I Still Haven't Found What I'm Looking For",
+          1
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Guitars for Wounded Warriors is an album that was recorded in the village in which New York county?",
+      "answer": "Greene County",
+      "context": "tal District.\n\n[Guitars for Wounded Warriors]\nGuitars for Wounded Warriors is the sixth solo studio album by guitarist Brian Tarquin, released in August 2014 by Cleopatra Records.  In 2016, it received a Best Compilation Album nomination by the Independent Music Awards.  All tracks were recorded at Tarquin's Jungle Room Studios in New Paltz (village), New York.  Being moved by the lack of support for returning veterans through his life Tarquin decided to compose a heavy instrumental rock album a\n\nrent counties.  Another change that occurred was the transfer of Dutchess County's northern section, the Livingston Manor, to Columbia County.  Greene County was formed in 1800 by the combination of the southernmost towns of Albany County with the northernmost towns of Ulster.  The history of the towns of Greene and Columbia counties can be found at the Timeline of town creation in New York's Capital District.\n\n[Guitars for Wounded Warriors]\nGuitars for Wounded Warriors is the sixth solo studio \n\nd\", \"Extra\", \"Alias\" and the Keanu Reeves film \"The Watcher\".  In 2014, Tarquin produced, engineered and composed \"Guitars for Wounded Warriors\", which showcases Tarquin’s guitar prowess alongside other guitarists such as, Steve Morse, Billy Sheehan, Gary Hoey, Bumblefoot (Guns N' Roses), Reb Beach (Whitesnake), Hal Lindes (Dire Straits), Chris Poland (Megadeth) and Chuck Loeb (Fourplay).  The album features exclusively released tracks inspired by those military soldiers who fought for our count\n\nn \"Escape Kabul\", Hal Lindes on \"Sand & Blood\", Gary Hoey on \"5 Klicks To Hell\" and \"Baghdad\", Alex De Rosso Dokken on \"Broken Arrow\", and The Flyin' Ryan Brothers on \"Surgical Strike\".  The entire album was engineered, produced and composed by Tarquin especially for each one of the guest guitarists.  Partial proceeds are donated to the Fisher House Foundation from sales.\n\n[Aaron B. Rollins]\nAaron B. Rollins (1818 - December 4, 1878) was a member of the New York State Assembly for the 9th distri\n\ny pioneers of the Washington, DC hardcore punk music scene over a decade (1980-1990) including Minor Threat, Fugazi, Bad Brains, Government Issue, Youth Brigade, Teen Idles, Rites of Spring, and others.\n\n[Rozzlyn Rangers]\nRozzlyn Rangers was the name taken by the 5 original members of the Dischord House in Arlington, Virginia (fairly near Rosslyn, Virginia) in October 1981: Ian MacKaye, Jeff Nelson, Rich Moore, Eddie Janney, and Sab Grey.  Dischord House housed Dischord Records (founded a year e",
+      "sources": [
+        "hotpotqa_sample_43",
+        "hotpotqa_sample_43",
+        "hotpotqa_sample_43",
+        "hotpotqa_sample_43",
+        "hotpotqa_sample_346"
+      ],
+      "latency_s": 5.116,
+      "top_k": 5,
+      "ground_truth_answer": "Ulster County",
+      "supporting_facts": [
+        [
+          "Guitars for Wounded Warriors",
+          2
+        ],
+        [
+          "New Paltz (village), New York",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "What American country music singer-songwriter, born in May of 1942, sang a duet with her ex-husband the same year that he released the song \"The Battle?\"",
+      "answer": "Loretta Lynn",
+      "context": "[Loretta Lynn]\nLoretta Lynn (née Webb; born April 14, 1932) is an American country music singer-songwriter with multiple gold albums over a career of almost 60 years.  She has received numerous awards and other accolades for her groundbreaking role in country music, including awards from both the Country Music Association and Academy of Country Music as a duet partner and an individual artist.  She is the most awarded female country recording artist and the only female ACM Artist of the Decade (\n\ne an Oscar-nominated hit from a soundtrack album.  Besides \"The Yellow Rose\", Brody has eleven other chart singles on the Billboard country charts.\n\n[The Battle (George Jones song)]\n\"The Battle\" is a song by American country music artist George Jones.  It was composed by Norro Wilson, George Richey, and Linda Kimball and became the title track of Jones' 1976 LP.  The song uses war as a metaphor in describing an argument and eventual reconciliation between a couple, with the woman emerging victor\n\n a charting single when \"Just Like That\" debuted on the \"Billboard\" Hot Country Singles & Tracks chart in 1984.\n\n[Tammy Wynette]\nTammy Wynette (born Virginia Wynette Pugh; May 5, 1942 – April 6, 1998) was an American country music singer-songwriter and one of country music's best-known artists and biggest-selling female singers.\n\n[Bobby Lewis (country singer)]\nBobby Lewis (born May 9, 1942 in Hodgenville, Kentucky) is an American country music singer-songwriter.  Between 1963 and 1985, Lewis rel\n\nby Pinmonkey).  Other artists who have recorded his work include Kenny Chesney, Tim McGraw, Easton Corbin, Patty Loveless, Keith Whitley, John Michael Montgomery, Billy Ray Cyrus, Charley Pride, Anne Murray, Mindy McCready, Diamond Rio, Sammy Kershaw, Emmylou Harris, Ronnie Milsap, Highway 101, Molly Hatchet, Johnny Lee, Neal McCoy, Reba McEntire, Joe Nichols, Bob Welch, Nitty Gritty Dirt Band, Kenny Rogers, Matraca Berg, Pam Tillis, Crystal Gayle, Brenda Lee, B. J. Thomas, Alabama, Michelle Wri\n\nng and in 2005 her original song, \"Shine\" was 1st Runner-Up out of 12,000 entries in USA Weekend Magazine's national songwriting competition judged by Simon Cowell and Fantasia Barrino.  In March 2007 Loveland released her solo harp album, \"Moments\".  A month later she signed with a talent agency, appearing in music videos and commercials for companies including Toyota and Target and films including \"A Pure Country Gift II\" and \"Country Strong\".\n\n[Gloria Almonte]\nAlmonte won the Miss New York Te",
+      "sources": [
+        "hotpotqa_sample_44",
+        "hotpotqa_sample_44",
+        "hotpotqa_sample_44",
+        "hotpotqa_sample_123",
+        "hotpotqa_sample_108"
+      ],
+      "latency_s": 5.669,
+      "top_k": 5,
+      "ground_truth_answer": "Tammy Wynette",
+      "supporting_facts": [
+        [
+          "The Battle (George Jones song)",
+          0
+        ],
+        [
+          "The Battle (George Jones song)",
+          5
+        ],
+        [
+          "Tammy Wynette",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "bridge"
+    },
+    {
+      "question": "Who was born first, Francis Nethersole or Elizabeth Stuart?",
+      "answer": "Francis Nethersole",
+      "context": "garet Stuart (or Stewart) (c. 1591 – 4 August 1639), was an English court office holder.  She served as lady-in-waiting to the queen consort of England, Anne of Denmark.  She was the daughter of James Stewart, 2nd Earl of Moray, and Elizabeth Stuart, 2nd Countess of Moray.\n\n[Francis Nethersole]\nSir Francis Nethersole (1587–1659) was an English diplomat, secretary to the Electress Elizabeth, Member of Parliament for Corfe Castle, Dorset, and a Civil War political pamphleteer.\n\n[Gustavus Adolphus \n\nvus was born in the Dutch Republic, where his family had sought refuge after the sequestration of the Electorate during the Thirty Years' War.  Gustavus's brother Charles Louis was, as part of the Peace of Westphalia, restored to the Palatinate.\n\n[Elizabeth Stuart, Queen of Bohemia]\nElizabeth Stuart (19 August 1596 – 13 February 1662) was Electress of the Palatinate and briefly Queen of Bohemia as the wife of Frederick V of the Palatinate.  Due to her husband’s reign in Bohemia lasting for just \n\n[James Stuart, 3rd Earl of Moray]\nJames Stuart, 3rd Earl of Moray (1581 – 6 August 1638) was the son of James Stewart, 2nd Earl of Moray and Elizabeth Stuart, 2nd Countess of Moray.\n\n[Charlotte of the Palatinate (1628–1631)]\nCharlotte of the Palatinate (\"Princess Palatine Charlotte\", 19 December 1628 – 14 January 1631), was the fourth daughter of Frederick V, Elector Palatine (of the House of Wittelsbach), the \"Winter King\" of Bohemia, by his consort, the English princess Elizabeth Stuart.  Char\n\nelsbach), the \"Winter King\" of Bohemia, by his consort, the English princess Elizabeth Stuart.  Charlotte was born up in the Dutch Republic, where her family had sought refuge after the sequestration of their Electorate during the Thirty Years' War.  Charlotte's brother Charles Louis was, as part of the Peace of Westphalia, restored to the Palatinate.\n\n[Margaret Howard, Countess of Nottingham]\nMargaret Stuart (or Stewart) (c. 1591 – 4 August 1639), was an English court office holder.  She served\n\ntrathclyde.  He succeeded Lord Wilson of Tillyorn as President of The Royal Society of Edinburgh in October 2011 and was succeeded by Dame Jocelyn Bell Burnell in October 2014.",
+      "sources": [
+        "hotpotqa_sample_45",
+        "hotpotqa_sample_45",
+        "hotpotqa_sample_45",
+        "hotpotqa_sample_45",
+        "hotpotqa_sample_209"
+      ],
+      "latency_s": 6.399,
+      "top_k": 5,
+      "ground_truth_answer": "Sir Francis Nethersole",
+      "supporting_facts": [
+        [
+          "Francis Nethersole",
+          0
+        ],
+        [
+          "Elizabeth Stuart, Queen of Bohemia",
+          0
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "What does the Hacker-Pschorr Brewery have to limit in order to comply with German regulations?",
+      "answer": "ingredients in beer",
+      "context": "[Hacker-Pschorr Brewery]\nHacker-Pschorr is a brewery in Munich, formed in 1972 out of the merger of two breweries, Hacker and Pschorr.  Hacker was founded in 1417, 99 years before the enactment of the Reinheitsgebot Purity Law of 1516.\n\n[Reinheitsgebot]\nThe Reinheitsgebot (] , literally \"purity order\"), sometimes called the \"German Beer Purity Law\" in English, is the collective name for a series of regulations limiting the ingredients in beer in Germany and the states of the former Holy Roman Em\n\nf regulations limiting the ingredients in beer in Germany and the states of the former Holy Roman Empire.  The best-known version of the law was adopted in Bavaria in 1516, but similar regulations predate the Bavarian order, and modern regulations also significantly differ from the 1516 Bavarian version.\n\n[KAGG (law)]\nGesetz über Kapitalanlagegesellschaften (KAGG) — (German for Investment Company Act) — was a set of German regulations for Mutual Funds that was phased out in 2007 and replaced by \n\nf corporate governance and financial supervision.  Rather than setting out binding laws, government regulators (in the UK, the Financial Reporting Council, in Germany, under the Aktiengesetz) set out a code, which listed companies may either comply with, or if they do not comply, explain publicly why they do not.  The UK Corporate Governance Code, the German Corporate Governance Code (or Deutscher Corporate Governance Kodex) and the Dutch Corporate Governance Code 'Code Tabaksblat' () use this a\n\norities]\nThe Joint Aviation Authorities (JAA) was an associated body of the ECAC representing the civil aviation regulatory authorities of a number of European States who had agreed to co-operate in developing and implementing common safety regulatory standards and procedures.  It was not a regulatory body, regulation being achieved through the member authorities.\n\n[German Football Association]\nThe German Football Association (German: \"Deutscher Fußball-Bund\" ] ; DFB ] ) is the governing body of\n\nmpliance with the spirit of the law, ethical standards and national or international norms. With some models, a firm's implementation of CSR goes beyond compliance and statutory requirements, which engages in \"actions that appear to further some social good, beyond the interests of the firm and that which is required by law\".  The binary choice between 'complying' with the law and 'going beyond' the law must be qualified with some nuance.  In many areas such as environmental or labor regulations",
+      "sources": [
+        "hotpotqa_sample_46",
+        "hotpotqa_sample_46",
+        "hotpotqa_sample_46",
+        "hotpotqa_sample_419",
+        "hotpotqa_sample_46"
+      ],
+      "latency_s": 5.706,
+      "top_k": 5,
+      "ground_truth_answer": "ingredients in beer",
+      "supporting_facts": [
+        [
+          "Hacker-Pschorr Brewery",
+          0
+        ],
+        [
+          "Reinheitsgebot",
+          0
+        ],
+        [
+          "Reinheitsgebot",
+          1
+        ]
+      ],
+      "level": "hard",
+      "type": "bridge"
+    },
+    {
+      "question": "Don Barry Mason was the founder of the Psychedelic Shamanistic Institute (PSI), which other member that's Welsh, that died on 10 April 2016?",
+      "answer": "John Entwistle",
+      "context": "nistic Institute (PSI), a networking organisation that encouraged ethnobotany and scientific research into cannabis and other psychoactive plants while contributing substantially to the public debate about drug policy reform.  Associates of PSI include: Mathew Atha, Colin Angus, Brian Barritt, Michael Carmichael, Fraser Clark, Paul Devereux, the late John Entwistle, Paul Flynn MP, Ben Ganly, Lee Harris, Mike Jay, Howard Marks, Dr John Marks, Jonathan Ott, Dr Russell Newcombe, Richard Rudgley and\n\nl and psychedelic.  The group amassed a following beginning in the 2000s in part due to their live performances.\n\nere It Comes Again (The Fortunes song)]\n\"Here It Comes Again\" is a song written by Barry Mason and Les Reed in 1965.  It was recorded by The Fortunes and released on 10 September 1965.  It reached number four on the UK Singles Chart and number twenty-seven on the U.S. \"Billboard\" Hot 100 chart that same year.\n\n[Don Barry Mason]\nDon 'Barry' Mason (1950–2006) was the founder of the Psychedelic Shamanistic Institute (PSI), a networking organisation that encouraged ethnobotany and scientific researc\n\nic Institute.  Following media pressure it focused more on the Deep Sleep Therapy of Dr Harry Bailey, the director, from 1963 to 1979, of the state-funded Neuropsychiatric Institute and then the Chelmsford Private Hospital, a private psychiatric institution in Sydney.\n\n[Robert Trimbole]\nBruno Robert Trimbole (19 March 1931 – 12 May 1987) was an Australian businessman, drug baron and organised crime boss whose was alleged involvement in drug trafficking in the Griffith, New South Wales area, whic\n\nterly fantasy magazine first published in 2000.  O'Neill holds a doctorate in Chemical Engineering and continued to work in the high technology area.  He developed a passion for science fiction and fantasy at an early age and has continued to actively promote this literature genre.  He was one of the founders of SF Site, a popular science fiction webzine, before leaving to found New Epoch Press in 2000.  New Epoch Press publishes the fantasy adventure magazine \"Black Gate\".\n\n[Warriors Path State",
+      "sources": [
+        "hotpotqa_sample_47",
+        "hotpotqa_sample_411",
+        "hotpotqa_sample_47",
+        "hotpotqa_sample_38",
+        "hotpotqa_sample_458"
+      ],
+      "latency_s": 7.051,
+      "top_k": 5,
+      "ground_truth_answer": "Dennis Howard Marks",
+      "supporting_facts": [
+        [
+          "Don Barry Mason",
+          1
+        ],
+        [
+          "Howard Marks",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "What male actor starred in The Messenger?",
+      "answer": "Robert Sheehan",
+      "context": "nuary 1988) is an Irish actor.  He is best known for television roles such as Nathan Young in \"Misfits\" and Darren in \"Love/Hate\", as well as the 2009 film \"Cherrybomb\" alongside Rupert Grint.  He also co-starred in the film \"Killing Bono\" as Ivan McCormick.  In late 2011 he starred in John Crowley's production of J. M. Synge's comic play \"The Playboy of the Western World\" at the Old Vic Theatre in London.\n\n[The Messenger (2015 horror film)]\nThe Messenger is a 2015 British supernatural mystery h\n\nn London.\n\n[The Messenger (2015 horror film)]\nThe Messenger is a 2015 British supernatural mystery horror film directed by David Blair, written by Andrew Kirk and starring Robert Sheehan and Lily Cole.\n\n[Mohammad-Reza Foroutan]\nMohammad-Reza Foroutan (Persian: محمد رضا فروتن‎ ‎ , born December 28, 1968 in Tehran, Iran) is an Iranian actor.  He graduated with a master's degree in clinical psychology from Azad University and now is a Ph.D candidate of Health Psychology.  He has passed some free co\n\nere, Lara Flynn Boyle, Brian Doyle-Murray, Chris Farley, Ed O'Neill, Ione Skye, Meat Loaf, and Alice Cooper.\n\n[Jonah Meyerson]\nJonah Meyerson (born September 20, 1991) is an American actor.  He has worked with actors such as Gene Hackman, Pierce Brosnan, Robin Williams, Ben Stiller, Dermot Mulroney, Alison Pill, and Aidan Quinn.  He was born in New York City, where he currently lives.  He is a graduate of Stuyvesant High School, and the University of Pennsylvania as a member of the class of 2013\n\n2, 2006) was a Swiss-reared German actor.  Kreuger once was the third most requested male actor at 20th Century Fox.  He starred with, among others, Ingrid Bergman and Humphrey Bogart.\n\nScreen Actors Guild Awards.  He has been nominated for multiple Golden Globe, Screen Actors Guild, BAFTA and Emmy awards, having starred in over eighty film and television productions during his fifty-year career.  He has also starred in numerous stage productions.  AllMovie historian Hal Erickson characterized Waterston as having \"cultivated a loyal following with his quietly charismatic, unfailingly solid performances.\"\n\n[Ben Affleck]\nBenjamin Geza Affleck-Boldt (born August 15, 1972) is an Am",
+      "sources": [
+        "hotpotqa_sample_48",
+        "hotpotqa_sample_48",
+        "hotpotqa_sample_405",
+        "hotpotqa_sample_48",
+        "hotpotqa_sample_342"
+      ],
+      "latency_s": 6.738,
+      "top_k": 5,
+      "ground_truth_answer": "Robert Sheehan",
+      "supporting_facts": [
+        [
+          "The Messenger (2015 horror film)",
+          0
+        ],
+        [
+          "Robert Sheehan",
+          0
+        ]
+      ],
+      "level": "easy",
+      "type": "bridge"
+    },
+    {
+      "question": "Are Gin and tonic and Paloma both cocktails based on tequila?",
+      "answer": "yes",
+      "context": "and G minor have different modes but both have the same tonic, G; so we say that G minor is the parallel minor of G major.  In contrast, a major scale and a minor scale that have the same key signature (and therefore different tonics) are called relative keys.\n\n[Paloma (cocktail)]\nThe paloma (Spanish for \"dove\") is a tequila-based cocktail.  This drink is most commonly prepared by mixing tequila with a grapefruit-flavored soda such as Fresca, Squirt, or Jarritos and served on the rocks with a li\n\nog (cocktail)]\nA salty dog is a cocktail of tequila, or gin, and grapefruit juice, served in a highball glass with a salted rim.  The salt is the only difference between a salty dog and a greyhound.  Vodka may be used as a substitute for tequila; nevertheless, it is historically a tequila drink.\n\n[Sweet Melissa]\nA Sweet Melissa is a gin-based cocktail that was named by its creator, Daniel Bouie, after his wife Melissa Chabran Bouie.  Sweet Melissa is made with gin, tonic water and a splash of Ja\n\n and tonic is a highball cocktail made with gin and tonic water poured over ice.  It is usually garnished with a slice or wedge of lime.  The amount of gin varies according to taste.  Suggested ratios of gin to tonic are between 1:1 and 1:3.\n\n[Mário-Henrique Leiria]\nMário-Henrique Leiria (1923–1980) was a Portuguese surrealist poet.  Born in Lisbon, he studied at the Escola de Belas Artes.  He and his fellow surrealists were involved in an absurdist plot to overthrow the dictatorship of Antonio \n\nfter his wife Melissa Chabran Bouie.  Sweet Melissa is made with gin, tonic water and a splash of Jack Daniel's in a short glass of ice.  Care must be taken not to add too much whiskey to this gin & tonic beverage.\n\n[Tequila and tonic]\nTequila and tonic, also known as TnT or Teqtonic, is a non-standard highball beverage.  The drink is made with a 2:1 ratio of tonic water to tequila and is served with lemon or lime wedges on ice.\n\n[Tonic water]\nTonic water (or Indian tonic water) is a carbonated \n\nith lemon or lime wedges on ice.\n\n[Tonic water]\nTonic water (or Indian tonic water) is a carbonated soft drink in which quinine is dissolved.  Originally used as a prophylactic against malaria, tonic water usually now has a significantly lower quinine content and is consumed for its distinctive bitter flavour.  It is often used in mixed drinks, particularly in gin and tonic.\n\n[Gin and tonic]\nA gin and tonic is a highball cocktail made with gin and tonic water poured over ice.  It is usually garn",
+      "sources": [
+        "hotpotqa_sample_49",
+        "hotpotqa_sample_49",
+        "hotpotqa_sample_49",
+        "hotpotqa_sample_49",
+        "hotpotqa_sample_49"
+      ],
+      "latency_s": 6.756,
+      "top_k": 5,
+      "ground_truth_answer": "no",
+      "supporting_facts": [
+        [
+          "Gin and tonic",
+          0
+        ],
+        [
+          "Paloma (cocktail)",
+          0
+        ]
+      ],
+      "level": "medium",
+      "type": "comparison"
+    }
+  ],
+  "summary": {
+    "total_queries": 50,
+    "avg_latency_s": 6.985,
+    "timestamp": "2026-05-16T19:37:56.379615"
+  }
+}

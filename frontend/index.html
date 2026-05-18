@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReCurRAG — RAG vs RLM Comparison Dashboard</title>
+    <meta name="description" content="Visual comparison dashboard for Retrieval-Augmented Generation vs Recursive Language Model performance across multiple datasets.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow-1"></div>
+    <div class="bg-glow bg-glow-2"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🚀</span>
+                <div>
+                    <h1>ReCurRAG</h1>
+                    <p class="subtitle">From Retrieval to Recursive Reasoning</p>
+                </div>
+            </div>
+            <div class="header-meta">
+                <span class="badge badge-rag">RAG</span>
+                <span class="vs-text">vs</span>
+                <span class="badge badge-rlm">RLM</span>
+                <span class="separator">|</span>
+                <span id="report-date" class="date-text"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Loading State -->
+        <div id="loading" class="loading-container">
+            <div class="spinner"></div>
+            <p>Loading comparison report...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-container" style="display:none;">
+            <span class="error-icon">⚠️</span>
+            <h2>No Comparison Data Found</h2>
+            <p>Run <code>python main.py --eval-only</code> first to generate the comparison report.</p>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard" style="display:none;">
+
+            <!-- Overall Summary Cards -->
+            <section id="summary-section" class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">📊</span>
+                    Overall Comparison
+                </h2>
+                <div class="summary-grid" id="summary-cards"></div>
+            </section>
+
+            <!-- Architecture Comparison -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">🏗️</span>
+                    Architecture Comparison
+                </h2>
+                <div class="arch-comparison">
+                    <div class="arch-card arch-rag">
+                        <div class="arch-header">
+                            <span class="arch-badge badge-rag">Standard RAG</span>
+                        </div>
+                        <div class="arch-flow">
+                            <div class="flow-step">Query</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">Retrieve</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">Generate</div>
+                        </div>
+                        <p class="arch-desc">Linear, single-pass retrieval. Relies entirely on the initial similarity search to provide all necessary context.</p>
+                        <ul class="arch-traits">
+                            <li><span class="trait-icon good">⚡</span> Fast response time</li>
+                            <li><span class="trait-icon bad">❌</span> Limited context coverage</li>
+                            <li><span class="trait-icon bad">❌</span> No multi-hop reasoning</li>
+                            <li><span class="trait-icon bad">❌</span> Single retrieval pass</li>
+                        </ul>
+                    </div>
+                    <div class="arch-card arch-rlm">
+                        <div class="arch-header">
+                            <span class="arch-badge badge-rlm">Recursive LM</span>
+                        </div>
+                        <div class="arch-flow">
+                            <div class="flow-step">Plan</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">Tool Use</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step">Reason</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-step loop-step">Refine ↻</div>
+                        </div>
+                        <p class="arch-desc">Iterative, agent-based reasoning. Dynamically plans, searches, analyzes, and refines through multiple passes.</p>
+                        <ul class="arch-traits">
+                            <li><span class="trait-icon good">✅</span> Deep context coverage</li>
+                            <li><span class="trait-icon good">✅</span> Multi-hop reasoning</li>
+                            <li><span class="trait-icon good">✅</span> Dynamic tool selection</li>
+                            <li><span class="trait-icon bad">⏱️</span> Higher latency</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Per-Dataset Sections -->
+            <div id="dataset-sections"></div>
+
+            <!-- Detailed Q&A Comparison -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="section-icon">🔍</span>
+                    Detailed Q&A Comparison
+                </h2>
+                <div class="dataset-tabs" id="qa-tabs"></div>
+                <div id="qa-content"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>ReCurRAG — A research-driven benchmarking framework by <strong>bpragatirao</strong></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

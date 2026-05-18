@@ -1,0 +1,37 @@
+{
+    "long_docs": {
+        "description": "Queries for arXiv Climate-Finance research papers (Long Documents)",
+        "questions": [
+            "What are the main methods used for climate risk modeling in finance?",
+            "How do carbon emissions affect financial market performance?",
+            "What machine learning techniques are applied to climate change prediction?",
+            "What is the relationship between green finance and sustainable development?",
+            "How are deep learning models used for environmental data analysis?",
+            "What are the key findings about climate change impact on economic systems?",
+            "What statistical methods are used for time series analysis of climate data?",
+            "How do neural networks contribute to climate forecasting models?",
+            "What are the limitations of current climate risk assessment frameworks?",
+            "How does natural language processing help in analyzing climate research?"
+        ]
+    },
+    "semi_structured": {
+        "description": "Queries for Wine Quality CSV dataset (Semi-Structured)",
+        "questions": [
+            "What is the average alcohol content in the wine dataset?",
+            "How does pH level relate to wine quality ratings?",
+            "What are the most important features that determine wine quality?",
+            "What is the distribution of quality scores in the dataset?",
+            "How does volatile acidity affect wine quality?",
+            "What is the correlation between residual sugar and alcohol content?",
+            "What are the differences between high-quality and low-quality wines?",
+            "How do sulfate levels impact the overall quality rating?",
+            "What is the range of density values in the dataset?",
+            "How does citric acid concentration vary across quality levels?"
+        ]
+    },
+    "multi_hop": {
+        "description": "Uses built-in HotpotQA questions (Multi-Hop QA)",
+        "note": "Questions come from the dataset itself — see run_hotpotqa_evaluation()",
+        "max_eval_samples": 50
+    }
+}
