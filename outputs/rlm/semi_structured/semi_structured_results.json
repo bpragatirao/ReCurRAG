@@ -9,15 +9,15 @@
     "chunk_overlap": 150,
     "max_iterations": 8,
     "model": "flan-t5-base",
-    "load_time_s": 1.67,
-    "chunk_time_s": 0.01,
-    "embed_time_s": 493.47,
-    "timestamp": "2026-05-18T13:35:10.854504"
+    "load_time_s": 0.68,
+    "chunk_time_s": 0.0,
+    "embed_time_s": 440.32,
+    "timestamp": "2026-06-06T22:06:14.936736"
   },
   "results": [
     {
       "question": "What is the average alcohol content in the wine dataset?",
-      "answer": "8.400000",
+      "answer": "0.179060",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -92,7 +92,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "8.400000"
+          "content": "0.179060"
         }
       ],
       "num_iterations": 5,
@@ -102,12 +102,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 20.312
+      "reasoning_depth": 5,
+      "latency_s": 113.981
     },
     {
       "question": "How does pH level relate to wine quality ratings?",
-      "answer": "pH level correlates with wine quality ratings",
+      "answer": "1.000000 volatile acidity 0.234937 alcohol 0.205633 free sulfur dioxide",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -182,7 +182,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "pH level correlates with wine quality ratings"
+          "content": "1.000000 volatile acidity 0.234937 alcohol 0.205633 free sulfur dioxide"
         }
       ],
       "num_iterations": 5,
@@ -192,12 +192,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 7.794
+      "reasoning_depth": 5,
+      "latency_s": 68.462
     },
     {
       "question": "What are the most important features that determine wine quality?",
-      "answer": "text search",
+      "answer": "alcohol, sulphates, free sulfur dioxide, citric acid, residual sugar, fixed acidity",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -272,7 +272,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "text search"
+          "content": "alcohol, sulphates, free sulfur dioxide, citric acid, residual sugar, fixed acidity"
         }
       ],
       "num_iterations": 5,
@@ -282,12 +282,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 4.435
+      "reasoning_depth": 5,
+      "latency_s": 37.85
     },
     {
       "question": "What is the distribution of quality scores in the dataset?",
-      "answer": "Mean: 5.6360 Median: 6.0000 Std: 0.8076",
+      "answer": "10 5 681 6 638 7 199 8 18",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -362,7 +362,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "Mean: 5.6360 Median: 6.0000 Std: 0.8076"
+          "content": "10 5 681 6 638 7 199 8 18"
         }
       ],
       "num_iterations": 5,
@@ -372,12 +372,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 9.05
+      "reasoning_depth": 5,
+      "latency_s": 32.067
     },
     {
       "question": "How does volatile acidity affect wine quality?",
-      "answer": "winequality-red.csv --- Correlations wi",
+      "answer": "sulphates free sulfur dioxide citric acid -0.009209 residual sugar",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -452,7 +452,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "winequality-red.csv --- Correlations wi"
+          "content": "sulphates free sulfur dioxide citric acid -0.009209 residual sugar"
         }
       ],
       "num_iterations": 5,
@@ -462,12 +462,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 8.986
+      "reasoning_depth": 5,
+      "latency_s": 33.15
     },
     {
       "question": "What is the correlation between residual sugar and alcohol content?",
-      "answer": "0.042075",
+      "answer": "1.000000 quality",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -542,7 +542,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "0.042075"
+          "content": "1.000000 quality"
         }
       ],
       "num_iterations": 5,
@@ -552,12 +552,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 5.158
+      "reasoning_depth": 5,
+      "latency_s": 45.705
     },
     {
       "question": "What are the differences between high-quality and low-quality wines?",
-      "answer": "High-quality wines have a higher quality than low-quality wine.",
+      "answer": "high-quality wines have a higher alcohol content and a lower pH.",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -632,7 +632,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "High-quality wines have a higher quality than low-quality wine."
+          "content": "high-quality wines have a higher alcohol content and a lower pH."
         }
       ],
       "num_iterations": 5,
@@ -642,12 +642,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 12.609
+      "reasoning_depth": 5,
+      "latency_s": 29.793
     },
     {
       "question": "How do sulfate levels impact the overall quality rating?",
-      "answer": "sulfate levels affect the overall quality rating",
+      "answer": "free sulfur dioxide 0.008158 citric acid -0.009209 residual sugar",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -722,7 +722,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "sulfate levels affect the overall quality rating"
+          "content": "free sulfur dioxide 0.008158 citric acid -0.009209 residual sugar"
         }
       ],
       "num_iterations": 5,
@@ -732,12 +732,12 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 7.512
+      "reasoning_depth": 5,
+      "latency_s": 30.017
     },
     {
       "question": "What is the range of density values in the dataset?",
-      "answer": "1 0.9907 2 0.99020 1 0.99064 2 099080 1 09984 1 0.099120 1 0.199150 1 0.991154 1 0.215157 1 0.31516 2 0.91962 1 0.79170 1 0.89182 2 0.71991 1 0.49220 2 0.99235 1 0.69236 1 0.59224 3 0.99242 2 0.29252 1 0.999256",
+      "answer": "0.99007 2 0.99020 1 0.99064 2 0.9980 1 0.9984 1 0.19940 1 0.99940 1 0.99162 1 4.99171 1 2.99191 1 1.99220 2 0.99242 2",
       "reasoning_trace": [
         {
           "iteration": 1,
@@ -812,7 +812,7 @@
         {
           "iteration": 6,
           "type": "final_answer",
-          "content": "1 0.9907 2 0.99020 1 0.99064 2 099080 1 09984 1 0.099120 1 0.199150 1 0.991154 1 0.215157 1 0.31516 2 0.91962 1 0.79170 1 0.89182 2 0.71991 1 0.49220 2 0.99235 1 0.69236 1 0.59224 3 0.99242 2 0.29252 "
+          "content": "0.99007 2 0.99020 1 0.99064 2 0.9980 1 0.9984 1 0.19940 1 0.99940 1 0.99162 1 4.99171 1 2.99191 1 1.99220 2 0.99242 2"
         }
       ],
       "num_iterations": 5,
@@ -822,8 +822,8 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 50.253
+      "reasoning_depth": 5,
+      "latency_s": 37.494
     },
     {
       "question": "How does citric acid concentration vary across quality levels?",
@@ -912,16 +912,16 @@
         "analyze_data": 3,
         "search_knowledge_base": 1
       },
-      "reasoning_depth": 4,
-      "latency_s": 6.979
+      "reasoning_depth": 5,
+      "latency_s": 26.369
     }
   ],
   "summary": {
     "total_queries": 10,
-    "avg_latency_s": 13.309,
+    "avg_latency_s": 45.489,
     "avg_iterations": 5.0,
     "avg_tool_calls": 5.0,
-    "avg_reasoning_depth": 4.0,
-    "timestamp": "2026-05-18T13:37:23.948768"
+    "avg_reasoning_depth": 5.0,
+    "timestamp": "2026-06-06T22:13:49.852356"
   }
 }
