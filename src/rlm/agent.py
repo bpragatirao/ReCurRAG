@@ -5,19 +5,22 @@ Uses a SCRIPTED tool-calling strategy with a local model (google/flan-t5-base).
 No API keys or billing required.
 
 Unlike RAG (single retrieve → generate), the RLM agent:
-  1. Surveys available documents (get_document_summary)
-  2. Searches with the original query (search_knowledge_base)
-  3. Decomposes complex questions into sub-questions
-  4. Searches for each sub-question separately
+  1. Extracts key entities from the question
+  2. Searches with the original query and entity-specific queries
+  3. Extracts intermediate answers from each search
+  4. Decomposes complex questions into sub-questions
   5. Performs data analysis when appropriate (analyze_data)
-  6. Synthesizes all evidence into a final answer
+  6. Synthesizes all evidence with verification
 """
 
 from .tools import ToolExecutor
 from ..utils.local_llm import (
     answer_question,
+    extract_answer_from_context,
+    extract_entities,
     decompose_question,
     synthesize_answer,
+    verify_answer,
 )
 
 
@@ -63,7 +66,7 @@ class RLMAgent:
         Strategy varies by data type:
           - long_docs:       survey → search → decompose → search subs → synthesize
           - semi_structured: survey → analyze → search → analyze deeper → synthesize
-          - multi_hop:       decompose → search each sub → reason → synthesize
+          - multi_hop:       entities → search each → decompose → intermediate answers → verify
 
         Args:
             question: The question to answer.
@@ -117,30 +120,50 @@ class RLMAgent:
         })
         evidence_pieces.append((question, search_result))
 
-        # Step 3: Decompose into sub-questions and search each
-        sub_questions = decompose_question(question)
-        for i, sub_q in enumerate(sub_questions):
-            sub_result = self.tool_executor.execute(
-                "search_knowledge_base", {"query": sub_q, "num_results": 3}
+        # Step 3: Extract entities and search each
+        entities = extract_entities(question)
+        for i, entity in enumerate(entities[:2]):
+            entity_result = self.tool_executor.execute(
+                "search_knowledge_base",
+                {"query": f"{entity} in the context of {question[:50]}", "num_results": 3}
             )
             reasoning_trace.append({
                 "iteration": 3 + i, "type": "tool_call",
                 "tool": "search_knowledge_base",
-                "arguments": {"query": sub_q}
+                "arguments": {"query": entity}
             })
             reasoning_trace.append({
                 "iteration": 3 + i, "type": "tool_result",
+                "tool": "search_knowledge_base",
+                "result": entity_result[:300]
+            })
+            evidence_pieces.append((entity, entity_result))
+
+        # Step 4: Decompose and search sub-questions
+        sub_questions = decompose_question(question)
+        for i, sub_q in enumerate(sub_questions[:2]):
+            sub_result = self.tool_executor.execute(
+                "search_knowledge_base", {"query": sub_q, "num_results": 3}
+            )
+            iter_num = 3 + len(entities[:2]) + i
+            reasoning_trace.append({
+                "iteration": iter_num, "type": "tool_call",
+                "tool": "search_knowledge_base",
+                "arguments": {"query": sub_q}
+            })
+            reasoning_trace.append({
+                "iteration": iter_num, "type": "tool_result",
                 "tool": "search_knowledge_base",
                 "result": sub_result[:300]
             })
             evidence_pieces.append((sub_q, sub_result))
 
-        # Step 4: Synthesize final answer
+        # Step 5: Synthesize final answer
         final_answer = synthesize_answer(question, evidence_pieces)
 
-        num_iterations = 3 + len(sub_questions)
+        num_iterations = 3 + len(entities[:2]) + len(sub_questions[:2])
         reasoning_trace.append({
-            "iteration": num_iterations,
+            "iteration": num_iterations + 1,
             "type": "final_answer",
             "content": final_answer[:200]
         })
@@ -250,75 +273,141 @@ class RLMAgent:
                                    num_iterations)
 
     # ------------------------------------------------------------------
-    # Strategy: Multi-Hop QA (HotpotQA)
+    # Strategy: Multi-Hop QA (HotpotQA) — IMPROVED
     # ------------------------------------------------------------------
     def _run_multi_hop(self, question: str) -> dict:
-        """Multi-step reasoning for multi-hop questions."""
+        """
+        Enhanced multi-step reasoning for multi-hop questions.
+
+        Strategy:
+          1. Extract entities from the question
+          2. Search for the full question
+          3. Search for each entity separately
+          4. Extract intermediate answers from each search
+          5. Decompose into sub-questions and search those too
+          6. Synthesize from all evidence
+          7. Verify the answer against the best context
+        """
         reasoning_trace = []
         evidence_pieces = []
+        all_context = []
 
-        # Step 1: Direct search with original question
+        # Step 1: Extract key entities
+        entities = extract_entities(question)
+        reasoning_trace.append({
+            "iteration": 1, "type": "entity_extraction",
+            "entities": entities
+        })
+
+        # Step 2: Direct search with original question
         search_result = self.tool_executor.execute(
             "search_knowledge_base", {"query": question, "num_results": 5}
         )
         reasoning_trace.append({
-            "iteration": 1, "type": "tool_call",
+            "iteration": 2, "type": "tool_call",
             "tool": "search_knowledge_base",
             "arguments": {"query": question}
         })
         reasoning_trace.append({
-            "iteration": 1, "type": "tool_result",
+            "iteration": 2, "type": "tool_result",
             "tool": "search_knowledge_base",
             "result": search_result[:300]
         })
         evidence_pieces.append((question, search_result))
+        all_context.append(search_result)
 
-        # Step 2: Decompose the question
-        sub_questions = decompose_question(question)
-
-        # Step 3: Search for each sub-question
-        for i, sub_q in enumerate(sub_questions):
-            sub_result = self.tool_executor.execute(
-                "search_knowledge_base", {"query": sub_q, "num_results": 5}
+        # Step 3: Entity-specific searches
+        for i, entity in enumerate(entities[:3]):
+            entity_result = self.tool_executor.execute(
+                "search_knowledge_base", {"query": entity, "num_results": 5}
             )
+            iter_num = 3 + i
             reasoning_trace.append({
-                "iteration": 2 + i, "type": "tool_call",
+                "iteration": iter_num, "type": "tool_call",
+                "tool": "search_knowledge_base",
+                "arguments": {"query": entity}
+            })
+            reasoning_trace.append({
+                "iteration": iter_num, "type": "tool_result",
+                "tool": "search_knowledge_base",
+                "result": entity_result[:300]
+            })
+            evidence_pieces.append((f"About {entity}", entity_result))
+            all_context.append(entity_result)
+
+        # Step 4: Extract intermediate answer from combined context
+        combined_context = "\n\n".join(all_context[:3])  # Use top 3 contexts
+        intermediate = extract_answer_from_context(question, combined_context)
+        reasoning_trace.append({
+            "iteration": 3 + len(entities[:3]),
+            "type": "intermediate_answer",
+            "content": intermediate
+        })
+
+        # Step 5: Decompose and search sub-questions
+        sub_questions = decompose_question(question)
+        sub_iter_start = 4 + len(entities[:3])
+        for i, sub_q in enumerate(sub_questions[:2]):
+            sub_result = self.tool_executor.execute(
+                "search_knowledge_base", {"query": sub_q, "num_results": 3}
+            )
+            iter_num = sub_iter_start + i
+            reasoning_trace.append({
+                "iteration": iter_num, "type": "tool_call",
                 "tool": "search_knowledge_base",
                 "arguments": {"query": sub_q}
             })
             reasoning_trace.append({
-                "iteration": 2 + i, "type": "tool_result",
+                "iteration": iter_num, "type": "tool_result",
                 "tool": "search_knowledge_base",
                 "result": sub_result[:300]
             })
             evidence_pieces.append((sub_q, sub_result))
+            all_context.append(sub_result)
 
-        # Step 4: Explicit reasoning step
-        reasoning_summary = f"Found {len(evidence_pieces)} pieces of evidence."
+        # Step 6: Reasoning step — combine evidence
+        reasoning_summary = (
+            f"Found {len(evidence_pieces)} pieces of evidence from "
+            f"{len(entities)} entities. Intermediate answer: {intermediate}"
+        )
         reason_result = self.tool_executor.execute(
             "reason_step", {
                 "current_findings": reasoning_summary,
-                "reasoning": f"Combining evidence from {len(sub_questions)} sub-questions",
-                "next_action": "Synthesize final answer"
+                "reasoning": f"Combining evidence across {len(entities)} entities and {len(sub_questions)} sub-questions",
+                "next_action": "Synthesize and verify final answer"
             }
         )
-        reason_iter = 2 + len(sub_questions)
+        reason_iter = sub_iter_start + len(sub_questions[:2])
         reasoning_trace.append({
             "iteration": reason_iter, "type": "tool_call",
             "tool": "reason_step",
-            "arguments": {"current_findings": reasoning_summary}
+            "arguments": {"current_findings": reasoning_summary[:200]}
         })
         reasoning_trace.append({
             "iteration": reason_iter, "type": "tool_result",
             "tool": "reason_step", "result": reason_result[:300]
         })
 
-        # Step 5: Synthesize final answer
+        # Step 7: Synthesize final answer
         final_answer = synthesize_answer(question, evidence_pieces)
 
-        num_iterations = reason_iter + 1
+        # Step 8: Verify with the best context
+        best_context = "\n".join(all_context[:2])
+        verified = verify_answer(question, final_answer, best_context)
+        verify_iter = reason_iter + 1
         reasoning_trace.append({
-            "iteration": num_iterations,
+            "iteration": verify_iter, "type": "verification",
+            "proposed": final_answer[:100],
+            "verified": verified[:100]
+        })
+
+        # Use verified answer if it's substantive
+        if verified and len(verified.strip()) > 1 and "yes" not in verified.lower()[:5]:
+            final_answer = verified
+
+        num_iterations = verify_iter
+        reasoning_trace.append({
+            "iteration": num_iterations + 1,
             "type": "final_answer",
             "content": final_answer[:200]
         })
@@ -362,7 +451,8 @@ class RLMAgent:
         search_count = tool_breakdown.get("search_knowledge_base", 0)
         reason_count = tool_breakdown.get("reason_step", 0)
         analyze_count = tool_breakdown.get("analyze_data", 0)
-        reasoning_depth = search_count + reason_count + analyze_count
+        summary_count = tool_breakdown.get("get_document_summary", 0)
+        reasoning_depth = search_count + reason_count + analyze_count + summary_count
 
         return {
             "question": question,

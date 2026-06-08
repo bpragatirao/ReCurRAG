@@ -7,6 +7,7 @@ requires no API keys or billing.
 Model: google/flan-t5-base (~250MB, downloads automatically on first use)
 """
 
+import re
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
@@ -89,9 +90,75 @@ def answer_question(question: str, context: str) -> str:
     return generate_text(prompt, max_new_tokens=256)
 
 
+def extract_answer_from_context(question: str, context: str) -> str:
+    """
+    Extract a precise, short answer from context.
+    Uses a more focused extractive prompt for better accuracy.
+
+    Args:
+        question: The question to answer.
+        context: The relevant context.
+
+    Returns:
+        Extracted answer string.
+    """
+    max_context_chars = 1200
+    if len(context) > max_context_chars:
+        context = context[:max_context_chars] + "..."
+
+    prompt = (
+        f"Extract the precise answer to the question from the context. "
+        f"Give only the answer, nothing else.\n\n"
+        f"Context: {context}\n\n"
+        f"Question: {question}\n\n"
+        f"Answer:"
+    )
+
+    return generate_text(prompt, max_new_tokens=64)
+
+
+def extract_entities(question: str) -> list:
+    """
+    Extract key named entities and noun phrases from a question.
+    Uses a combination of pattern matching and model-based extraction.
+
+    Args:
+        question: The question to extract entities from.
+
+    Returns:
+        List of entity strings.
+    """
+    # First try model-based extraction
+    prompt = (
+        f"List the key entities (people, places, things, events) mentioned "
+        f"in this question, separated by commas:\n\n"
+        f"Question: {question}\n\n"
+        f"Entities:"
+    )
+
+    result = generate_text(prompt, max_new_tokens=100)
+    entities = [e.strip() for e in result.split(",") if e.strip() and len(e.strip()) > 2]
+
+    # Fallback: extract quoted terms and capitalized words
+    if not entities:
+        # Get quoted strings
+        quoted = re.findall(r'"([^"]+)"', question)
+        entities.extend(quoted)
+
+        # Get capitalized multi-word names (at least 2 chars, not starting words)
+        words = question.split()
+        for i, word in enumerate(words):
+            clean = word.strip('?.,!;:()[]"\'')
+            if clean and clean[0].isupper() and i > 0 and len(clean) > 2:
+                entities.append(clean)
+
+    return entities[:5]  # Max 5 entities
+
+
 def decompose_question(question: str) -> list:
     """
     Break a multi-hop question into simpler sub-questions.
+    Uses entity extraction to create targeted sub-questions.
 
     Args:
         question: The complex question to decompose.
@@ -99,38 +166,46 @@ def decompose_question(question: str) -> list:
     Returns:
         List of simpler sub-questions.
     """
+    # Extract entities for targeted sub-questions
+    entities = extract_entities(question)
+
+    sub_questions = []
+
+    # Create entity-based sub-questions
+    for entity in entities[:3]:
+        sub_q = f"What is {entity}?"
+        sub_questions.append(sub_q)
+
+    # Also try model-based decomposition
     prompt = (
-        f"Break this question into 2-3 simpler sub-questions that can be "
-        f"answered independently:\n\n"
+        f"Break this complex question into 2 simpler questions:\n\n"
         f"Question: {question}\n\n"
-        f"Sub-questions:"
+        f"Simple questions:"
     )
 
-    result = generate_text(prompt, max_new_tokens=200)
+    result = generate_text(prompt, max_new_tokens=150)
 
-    # Parse the result into individual sub-questions
-    sub_questions = []
     for line in result.split("\n"):
         line = line.strip()
-        # Remove numbering prefixes like "1.", "1)", "-", etc.
         if line:
             for prefix in ["1.", "2.", "3.", "1)", "2)", "3)", "-", "•", "*"]:
                 if line.startswith(prefix):
                     line = line[len(prefix):].strip()
                     break
-            if line and len(line) > 5:
+            if line and len(line) > 5 and line not in sub_questions:
                 sub_questions.append(line)
 
-    # If decomposition failed, use the original question with slight variations
+    # Ensure we always have at least the original question
     if not sub_questions:
         sub_questions = [question]
 
-    return sub_questions[:3]  # Max 3 sub-questions
+    return sub_questions[:4]  # Max 4 sub-questions
 
 
 def synthesize_answer(question: str, evidence_pieces: list) -> str:
     """
     Synthesize a final answer from multiple pieces of evidence.
+    Uses a two-step approach: extract key facts, then synthesize.
 
     Args:
         question: The original question.
@@ -139,20 +214,51 @@ def synthesize_answer(question: str, evidence_pieces: list) -> str:
     Returns:
         Synthesized answer string.
     """
-    evidence_text = ""
-    for i, (sub_q, evidence) in enumerate(evidence_pieces):
-        evidence_text += f"\nFinding {i+1} (about: {sub_q}):\n{evidence[:500]}\n"
+    # Step 1: Extract key facts from each evidence piece
+    key_facts = []
+    for sub_q, evidence in evidence_pieces:
+        if not evidence or len(evidence.strip()) < 10:
+            continue
+        fact = extract_answer_from_context(sub_q, evidence)
+        if fact and len(fact.strip()) > 1:
+            key_facts.append(f"- {sub_q}: {fact}")
 
-    # Truncate if too long
-    if len(evidence_text) > 1500:
-        evidence_text = evidence_text[:1500] + "..."
+    facts_text = "\n".join(key_facts) if key_facts else "No clear facts extracted."
 
+    # Step 2: Synthesize from extracted facts
     prompt = (
-        f"Based on the following findings, provide a comprehensive answer "
-        f"to the question.\n\n"
+        f"Using these facts, answer the question concisely.\n\n"
+        f"Facts:\n{facts_text}\n\n"
         f"Question: {question}\n\n"
-        f"Findings:{evidence_text}\n\n"
         f"Answer:"
     )
 
-    return generate_text(prompt, max_new_tokens=512)
+    return generate_text(prompt, max_new_tokens=256)
+
+
+def verify_answer(question: str, answer: str, context: str) -> str:
+    """
+    Verify and potentially correct an answer using the context.
+
+    Args:
+        question: The original question.
+        answer: The proposed answer.
+        context: Supporting context.
+
+    Returns:
+        Verified/corrected answer.
+    """
+    max_context_chars = 800
+    if len(context) > max_context_chars:
+        context = context[:max_context_chars] + "..."
+
+    prompt = (
+        f"Given the context, is this answer correct? If not, provide the "
+        f"correct answer.\n\n"
+        f"Context: {context}\n\n"
+        f"Question: {question}\n"
+        f"Proposed answer: {answer}\n\n"
+        f"Correct answer:"
+    )
+
+    return generate_text(prompt, max_new_tokens=64)

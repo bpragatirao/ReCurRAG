@@ -65,6 +65,7 @@ def compare_all_datasets() -> dict:
     all_rag_f1 = []
     all_rlm_f1 = []
     all_rlm_depth = []
+    all_rlm_tools = []
 
     for ds_key, ds_config in DATASET_CONFIG.items():
         print(f"\n{'─'*60}")
@@ -107,6 +108,7 @@ def compare_all_datasets() -> dict:
         all_rag_latency.append(agg["rag"]["avg_latency_s"])
         all_rlm_latency.append(agg["rlm"]["avg_latency_s"])
         all_rlm_depth.append(agg["rlm"]["avg_reasoning_depth"])
+        all_rlm_tools.append(agg["rlm"].get("avg_tool_calls", 0))
 
         if "exact_match" in agg.get("rag", {}):
             all_rag_em.append(agg["rag"]["exact_match"])
@@ -152,6 +154,7 @@ def compare_all_datasets() -> dict:
             "avg_quality": safe_avg(all_rlm_quality),
             "avg_latency_s": safe_avg(all_rlm_latency),
             "avg_reasoning_depth": safe_avg(all_rlm_depth),
+            "avg_tool_calls": safe_avg(all_rlm_tools),
         },
     }
 
