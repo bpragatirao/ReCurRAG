@@ -722,3 +722,182 @@ footer strong { color: var(--text-secondary); }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--bg-elevated); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ============================================================
+   Key Insights Section
+   ============================================================ */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.insight-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.insight-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+}
+
+.insight-card.insight-rlm-wins::before {
+    background: linear-gradient(90deg, var(--accent-rlm), #a78bfa);
+}
+
+.insight-card.insight-rag-wins::before {
+    background: linear-gradient(90deg, var(--accent-rag), #fb923c);
+}
+
+.insight-card.insight-neutral::before {
+    background: linear-gradient(90deg, var(--accent-blue), #60a5fa);
+}
+
+.insight-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: var(--shadow-lg);
+}
+
+.insight-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.insight-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.insight-value {
+    font-size: 1.8rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    margin-bottom: 8px;
+}
+
+.insight-value.rlm-color { color: var(--accent-rlm); }
+.insight-value.rag-color { color: var(--accent-rag); }
+.insight-value.green-color { color: var(--accent-green); }
+.insight-value.blue-color { color: var(--accent-blue); }
+
+.insight-desc {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   Per-Dataset Verdict (Findings) Section
+   ============================================================ */
+.findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.finding-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.finding-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: var(--shadow-lg);
+}
+
+.finding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.finding-dataset {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.finding-winner {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.finding-winner.rlm-winner {
+    background: var(--accent-rlm-soft);
+    color: var(--accent-rlm);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.finding-winner.rag-winner {
+    background: var(--accent-rag-soft);
+    color: var(--accent-rag);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.finding-winner.tie-winner {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.finding-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.finding-stat {
+    background: var(--bg-elevated);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    text-align: center;
+}
+
+.finding-stat-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.finding-stat-value {
+    font-size: 1.2rem;
+    font-weight: 800;
+    font-family: var(--font-mono);
+}
+
+.finding-stat-value.rag-val { color: var(--accent-rag); }
+.finding-stat-value.rlm-val { color: var(--accent-rlm); }
+
+.finding-reason {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+

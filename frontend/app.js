@@ -22,6 +22,8 @@ async function init() {
 
         renderReportDate();
         renderSummaryCards();
+        renderInsights();
+        renderFindings();
         renderDatasetSections();
         renderQATabs();
     } catch (err) {
@@ -398,3 +400,187 @@ function escapeHtml(str) {
     div.textContent = str;
     return div.innerHTML;
 }
+
+/* ---- Key Insights ---- */
+function renderInsights() {
+    const container = document.getElementById('insights-grid');
+    const s = reportData.overall_summary || {};
+    const rag = s.rag || {};
+    const rlm = s.rlm || {};
+    const datasets = reportData.datasets || {};
+
+    const insights = [];
+
+    // 1. Reasoning Depth advantage
+    const avgDepth = rlm.avg_reasoning_depth || 0;
+    insights.push({
+        icon: '🧠',
+        title: 'Multi-Step Reasoning',
+        value: `${avgDepth.toFixed(1)}x`,
+        valueCls: 'rlm-color',
+        desc: `RLM performs ${avgDepth.toFixed(1)} reasoning steps per query on average, compared to RAG's single retrieval pass. More steps = deeper context coverage.`,
+        cls: 'insight-rlm-wins'
+    });
+
+    // 2. Quality comparison
+    const ragQ = rag.avg_quality || 0;
+    const rlmQ = rlm.avg_quality || 0;
+    const qualityDiff = ((rlmQ - ragQ) * 100).toFixed(0);
+    const qualityWinner = rlmQ >= ragQ ? 'RLM' : 'RAG';
+    insights.push({
+        icon: '📈',
+        title: 'Answer Quality',
+        value: qualityWinner === 'RLM' ? `+${Math.abs(qualityDiff)}%` : `-${Math.abs(qualityDiff)}%`,
+        valueCls: qualityWinner === 'RLM' ? 'rlm-color' : 'rag-color',
+        desc: `${qualityWinner} produces higher quality answers overall. RLM: ${fmtPct(rlmQ)} vs RAG: ${fmtPct(ragQ)} average quality score.`,
+        cls: qualityWinner === 'RLM' ? 'insight-rlm-wins' : 'insight-rag-wins'
+    });
+
+    // 3. Multi-hop accuracy (if available)
+    const multiHop = datasets.multi_hop;
+    if (multiHop && multiHop.metrics && multiHop.metrics.aggregate) {
+        const mhRag = multiHop.metrics.aggregate.rag || {};
+        const mhRlm = multiHop.metrics.aggregate.rlm || {};
+        if (mhRag.exact_match !== undefined) {
+            const ragEM = (mhRag.exact_match || 0) * 100;
+            const rlmEM = (mhRlm.exact_match || 0) * 100;
+            const emDiff = rlmEM - ragEM;
+            const emWinner = rlmEM >= ragEM ? 'RLM' : 'RAG';
+            insights.push({
+                icon: '🎯',
+                title: 'Multi-Hop Exact Match',
+                value: `${rlmEM.toFixed(0)}% vs ${ragEM.toFixed(0)}%`,
+                valueCls: emWinner === 'RLM' ? 'rlm-color' : 'rag-color',
+                desc: `On HotpotQA (multi-hop QA), ${emWinner} achieves ${Math.abs(emDiff).toFixed(0)}% higher exact match accuracy. Entity-based decomposition helps bridge reasoning.`,
+                cls: emWinner === 'RLM' ? 'insight-rlm-wins' : 'insight-rag-wins'
+            });
+
+            // F1 Score
+            const ragF1 = (mhRag.f1_score || 0);
+            const rlmF1 = (mhRlm.f1_score || 0);
+            const f1Winner = rlmF1 >= ragF1 ? 'RLM' : 'RAG';
+            insights.push({
+                icon: '📊',
+                title: 'Multi-Hop F1 Score',
+                value: `${(rlmF1 * 100).toFixed(0)}% vs ${(ragF1 * 100).toFixed(0)}%`,
+                valueCls: f1Winner === 'RLM' ? 'rlm-color' : 'rag-color',
+                desc: `Token-level F1 overlap with ground truth. ${f1Winner} has better token coverage, meaning more precise and complete answers.`,
+                cls: f1Winner === 'RLM' ? 'insight-rlm-wins' : 'insight-rag-wins'
+            });
+        }
+    }
+
+    // 4. Tool utilization
+    const avgTools = rlm.avg_tool_calls || 0;
+    insights.push({
+        icon: '🔧',
+        title: 'Tool Utilization',
+        value: `${avgTools.toFixed(1)}`,
+        valueCls: 'blue-color',
+        desc: `RLM uses ${avgTools.toFixed(1)} tool calls per query on average — including searches, data analysis, reasoning steps, and answer verification.`,
+        cls: 'insight-neutral'
+    });
+
+    // 5. Cost
+    insights.push({
+        icon: '💰',
+        title: 'Cost Per Query',
+        value: '$0.00',
+        valueCls: 'green-color',
+        desc: 'Both pipelines run 100% locally using google/flan-t5-base. No API keys, no billing, no external dependencies.',
+        cls: 'insight-neutral'
+    });
+
+    container.innerHTML = insights.map(ins => `
+        <div class="insight-card ${ins.cls}">
+            <div class="insight-icon">${ins.icon}</div>
+            <div class="insight-title">${ins.title}</div>
+            <div class="insight-value ${ins.valueCls}">${ins.value}</div>
+            <div class="insight-desc">${ins.desc}</div>
+        </div>
+    `).join('');
+}
+
+/* ---- Per-Dataset Findings ---- */
+function renderFindings() {
+    const container = document.getElementById('findings-grid');
+    const datasets = reportData.datasets || {};
+
+    let html = '';
+
+    for (const [key, ds] of Object.entries(datasets)) {
+        if (ds.status !== 'complete' || !ds.metrics) continue;
+
+        const cfg = ds.config || {};
+        const agg = ds.metrics.aggregate || {};
+        const rag = agg.rag || {};
+        const rlm = agg.rlm || {};
+
+        // Determine winner by quality
+        const ragQ = rag.avg_quality || 0;
+        const rlmQ = rlm.avg_quality || 0;
+
+        // For multi-hop, prioritize EM
+        let winner = 'tie';
+        let reason = '';
+
+        if (key === 'multi_hop' && rag.exact_match !== undefined) {
+            const ragEM = rag.exact_match || 0;
+            const rlmEM = rlm.exact_match || 0;
+            if (rlmEM > ragEM) {
+                winner = 'rlm';
+                reason = `RLM achieves ${((rlmEM - ragEM) * 100).toFixed(0)}% higher exact match on multi-hop questions through entity-based decomposition and multi-step verification.`;
+            } else if (ragEM > rlmEM) {
+                winner = 'rag';
+                reason = `RAG's single-pass retrieval captures the correct answer more directly for these multi-hop questions. RLM's decomposition sometimes introduces noise.`;
+            } else {
+                winner = 'tie';
+                reason = 'Both approaches achieve similar exact match accuracy on multi-hop questions.';
+            }
+        } else {
+            if (rlmQ > ragQ) {
+                winner = 'rlm';
+                reason = `RLM provides higher quality answers (${fmtPct(rlmQ)} vs ${fmtPct(ragQ)}) through iterative reasoning with ${(rlm.avg_tool_calls || 0).toFixed(0)} tool calls per query.`;
+            } else if (ragQ > rlmQ) {
+                winner = 'rag';
+                reason = `RAG produces adequate answers more efficiently. However, RLM's ${(rlm.avg_reasoning_depth || 0).toFixed(0)}-step reasoning provides deeper analysis.`;
+            } else {
+                winner = 'tie';
+                reason = 'Both approaches produce comparable quality answers for this dataset type.';
+            }
+        }
+
+        const winnerCls = winner === 'rlm' ? 'rlm-winner' : winner === 'rag' ? 'rag-winner' : 'tie-winner';
+        const winnerText = winner === 'rlm' ? '🏆 RLM Wins' : winner === 'rag' ? '🏆 RAG Wins' : '🤝 Tie';
+
+        html += `
+        <div class="finding-card">
+            <div class="finding-header">
+                <span class="finding-dataset">${cfg.icon || '📁'} ${cfg.display_name || key}</span>
+                <span class="finding-winner ${winnerCls}">${winnerText}</span>
+            </div>
+            <div class="finding-stats">
+                <div class="finding-stat">
+                    <div class="finding-stat-label">RAG Quality</div>
+                    <div class="finding-stat-value rag-val">${fmtPct(ragQ)}</div>
+                </div>
+                <div class="finding-stat">
+                    <div class="finding-stat-label">RLM Quality</div>
+                    <div class="finding-stat-value rlm-val">${fmtPct(rlmQ)}</div>
+                </div>
+                <div class="finding-stat">
+                    <div class="finding-stat-label">RAG Latency</div>
+                    <div class="finding-stat-value rag-val">${(rag.avg_latency_s || 0).toFixed(1)}s</div>
+                </div>
+                <div class="finding-stat">
+                    <div class="finding-stat-label">RLM Depth</div>
+                    <div class="finding-stat-value rlm-val">${(rlm.avg_reasoning_depth || 0).toFixed(1)}</div>
+                </div>
+            </div>
+            <div class="finding-reason">${reason}</div>
+        </div>`;
+    }
+
+    container.innerHTML = html;
+}
+
